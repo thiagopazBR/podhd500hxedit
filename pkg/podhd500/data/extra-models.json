@@ -1,0 +1,1519 @@
+{
+ "_doc": "Modelos do pacote extra (Metal Shop/Classic/Bass etc.) lidos do editor oficial v2.27 e confirmados no pedal. Tipo = id do modelo; parâmetros = ids que o próprio pedal preenche.",
+ "amps": [
+  {
+   "type": 458865,
+   "name": "PV Panama",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458866,
+   "name": "PV Panama Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458871,
+   "name": "Mahadeva",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458872,
+   "name": "Mahadeva Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458875,
+   "name": "Brit 2204",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458876,
+   "name": "Brit 2204 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458884,
+   "name": "Octone",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458885,
+   "name": "Insane",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458886,
+   "name": "Big Bottom",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458887,
+   "name": "Variac'ed Plexi",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458888,
+   "name": "Purge",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458889,
+   "name": "Aggro",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458890,
+   "name": "Smash",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458861,
+   "name": "Small Tweed",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458862,
+   "name": "Small Tweed Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458863,
+   "name": "Jazz Rivet",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458864,
+   "name": "Jazz Rivet Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458877,
+   "name": "Mandarin 80",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458878,
+   "name": "Mandarin 80 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458879,
+   "name": "A30 Fawn Bright",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458880,
+   "name": "A30 Fawn Bright Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458881,
+   "name": "A30 Fawn Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458882,
+   "name": "A30 Fawn Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458883,
+   "name": "Black Panel Pete",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458891,
+   "name": "Acoustic",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458867,
+   "name": "SVT Bright",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458868,
+   "name": "SVT Bright Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458869,
+   "name": "SVT Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458870,
+   "name": "SVT Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458873,
+   "name": "G Cougar 800",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458874,
+   "name": "G Cougar 800 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    }
+   ]
+  }
+ ],
+ "cabs": [
+  {
+   "type": 17235987,
+   "name": "1x8 Champ"
+  },
+  {
+   "type": 17235988,
+   "name": "212 Jazz Rivet"
+  },
+  {
+   "type": 17235989,
+   "name": "810 SV Beast"
+  },
+  {
+   "type": 17235990,
+   "name": "410 Rhino"
+  }
+ ]
+}

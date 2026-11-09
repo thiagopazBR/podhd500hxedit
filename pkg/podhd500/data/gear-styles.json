@@ -1,0 +1,932 @@
+{
+ "_doc": "Aparência por modelo: cor do gabinete e arquétipo. Inspirado no equipamento real que cada modelo imita; sem logos nem nomes. Edite à vontade (PRs bem-vindos). body: boss | mxr | muff | round | tall | treadle | echo | spring | rack | loop. knob: white | black | chrome | cream.",
+ "pedals": {
+  "Screamer": {
+   "color": "#3fae49",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Tube Drive": {
+   "color": "#d6a24a",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Overdrive": {
+   "color": "#f2c230",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Classic Dist": {
+   "color": "#2b2b30",
+   "body": "mxr",
+   "knob": "white"
+  },
+  "Heavy Dist": {
+   "color": "#1f1f23",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Color Drive": {
+   "color": "#e8b640",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Fuzz Pi": {
+   "color": "#3a3d44",
+   "body": "muff",
+   "knob": "chrome"
+  },
+  "Facial Fuzz": {
+   "color": "#d8453f",
+   "body": "round",
+   "knob": "chrome"
+  },
+  "Jumbo Fuzz": {
+   "color": "#8a5a3a",
+   "body": "round",
+   "knob": "cream"
+  },
+  "Octave Fuzz": {
+   "color": "#8e9299",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Sub Octave Fuzz": {
+   "color": "#7a8088",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Jet Fuzz": {
+   "color": "#c8c2b2",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Buzz Saw": {
+   "color": "#b5522f",
+   "body": "boss",
+   "knob": "cream"
+  },
+  "Line 6 Drive": {
+   "color": "#d9482b",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Line 6 Distortion": {
+   "color": "#222328",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Red Comp": {
+   "color": "#d8332f",
+   "body": "mxr",
+   "knob": "white"
+  },
+  "Blue Comp": {
+   "color": "#3b78d8",
+   "body": "mxr",
+   "knob": "white"
+  },
+  "Blue Comp Treble": {
+   "color": "#2f64bf",
+   "body": "mxr",
+   "knob": "white"
+  },
+  "Tube Comp": {
+   "color": "#7a8a8f",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Vetta Comp": {
+   "color": "#2d3138",
+   "body": "boss",
+   "knob": "chrome"
+  },
+  "Boost Comp": {
+   "color": "#e9e4d6",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Noise Gate": {
+   "color": "#303339",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Hard Gate": {
+   "color": "#25282d",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Phaser": {
+   "color": "#f08a24",
+   "body": "mxr",
+   "knob": "black"
+  },
+  "Dual Phaser": {
+   "color": "#e0701d",
+   "body": "mxr",
+   "knob": "black"
+  },
+  "Panned Phaser": {
+   "color": "#f29a3a",
+   "body": "mxr",
+   "knob": "black"
+  },
+  "Script Phase": {
+   "color": "#f4a53f",
+   "body": "mxr",
+   "knob": "black"
+  },
+  "Analog Chorus": {
+   "color": "#6cc3ea",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Tri Chorus": {
+   "color": "#4aa0d8",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Dimension": {
+   "color": "#d9d6cf",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Analog Flanger": {
+   "color": "#f1d13a",
+   "body": "mxr",
+   "knob": "black"
+  },
+  "Jet Flanger": {
+   "color": "#2e3036",
+   "body": "boss",
+   "knob": "chrome"
+  },
+  "AC Flanger": {
+   "color": "#a9b0b8",
+   "body": "boss",
+   "knob": "black"
+  },
+  "80A Flanger": {
+   "color": "#8fa0ad",
+   "body": "boss",
+   "knob": "black"
+  },
+  "U-Vibe": {
+   "color": "#35517f",
+   "body": "tall",
+   "knob": "cream"
+  },
+  "Opto Tremolo": {
+   "color": "#7ec0a8",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Bias Tremolo": {
+   "color": "#c9b58a",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Rotary Drum": {
+   "color": "#8a5a3a",
+   "body": "tall",
+   "knob": "cream"
+  },
+  "Rotary Drum/Hrn": {
+   "color": "#6f4730",
+   "body": "tall",
+   "knob": "cream"
+  },
+  "Tape Echo": {
+   "color": "#9aa0a6",
+   "body": "echo",
+   "knob": "black"
+  },
+  "Tube Echo": {
+   "color": "#2a2a2e",
+   "body": "echo",
+   "knob": "cream"
+  },
+  "Echo Platter": {
+   "color": "#a58f6a",
+   "body": "echo",
+   "knob": "black"
+  },
+  "Sweep Echo": {
+   "color": "#5d4f9e",
+   "body": "boss",
+   "knob": "cream"
+  },
+  "Analog Echo": {
+   "color": "#7a63c9",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Analog W/Mod": {
+   "color": "#6a58b8",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Digital Delay": {
+   "color": "#3a8fd9",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Digital Delay W/Mod": {
+   "color": "#2f7fc8",
+   "body": "boss",
+   "knob": "black"
+  },
+  "'63 Spring": {
+   "color": "#7d6a4f",
+   "body": "spring",
+   "knob": "chrome"
+  },
+  "Spring": {
+   "color": "#6f5f48",
+   "body": "spring",
+   "knob": "chrome"
+  },
+  "Fassel": {
+   "color": "#a8322e",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Chrome": {
+   "color": "#c9ced6",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Chrome Custom": {
+   "color": "#b4bac4",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Vetta Wah": {
+   "color": "#2d3138",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Weeper": {
+   "color": "#d9a43f",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Colorful": {
+   "color": "#d96f3a",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Throaty": {
+   "color": "#6e3b3b",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Conductor": {
+   "color": "#3a3d44",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Volume": {
+   "color": "#8a9099",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Pan": {
+   "color": "#6e7580",
+   "body": "treadle",
+   "knob": "black"
+  },
+  "Tron Up": {
+   "color": "#c8a24a",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Tron Down": {
+   "color": "#b88a3a",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Obi Wah": {
+   "color": "#2b2d33",
+   "body": "tall",
+   "knob": "chrome"
+  },
+  "Pitch Glide": {
+   "color": "#d8453f",
+   "body": "tall",
+   "knob": "white"
+  },
+  "Smart Harmony": {
+   "color": "#2e7d6a",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Bass Octaver": {
+   "color": "#3c4048",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Graphic EQ": {
+   "color": "#9aa3ad",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Studio EQ": {
+   "color": "#3d4a5c",
+   "body": "rack",
+   "knob": "chrome"
+  },
+  "Parametric EQ": {
+   "color": "#4a5b72",
+   "body": "rack",
+   "knob": "chrome"
+  },
+  "FX Loop": {
+   "color": "#7d8696",
+   "body": "loop",
+   "knob": "chrome"
+  },
+  "Plate": {
+   "color": "#b9c2cc",
+   "body": "rack",
+   "knob": "black"
+  },
+  "Room": {
+   "color": "#c08a5a",
+   "body": "boss",
+   "knob": "cream"
+  },
+  "Chamber": {
+   "color": "#8d8a84",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Hall": {
+   "color": "#6a4fb8",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Ducking": {
+   "color": "#2f8f8a",
+   "body": "mxr",
+   "knob": "white"
+  },
+  "Octo": {
+   "color": "#8b5fd0",
+   "body": "tall",
+   "knob": "white"
+  },
+  "Cave": {
+   "color": "#3a3340",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Tile": {
+   "color": "#d9eef2",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Echo": {
+   "color": "#5f6fd6",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Particle Verb": {
+   "color": "#1f2230",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Stereo Delay": {
+   "color": "#2b7fd0",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Multi-Head": {
+   "color": "#3b3f46",
+   "body": "echo",
+   "knob": "cream"
+  },
+  "Low Res Delay": {
+   "color": "#8a8f98",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Ping Pong": {
+   "color": "#2fa59a",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Reverse": {
+   "color": "#e0592f",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Dynamic Delay": {
+   "color": "#5b6b80",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Auto-Volume Echo": {
+   "color": "#e6dcc2",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Tube Echo Dry": {
+   "color": "#34343a",
+   "body": "echo",
+   "knob": "cream"
+  },
+  "Tape Echo Dry": {
+   "color": "#aab0b6",
+   "body": "echo",
+   "knob": "black"
+  },
+  "Sweep Echo Dry": {
+   "color": "#6d5fb0",
+   "body": "boss",
+   "knob": "cream"
+  },
+  "Echo Platter Dry": {
+   "color": "#b79f78",
+   "body": "echo",
+   "knob": "black"
+  },
+  "Pitch Vibrato": {
+   "color": "#2f9e8a",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Ring Modulator": {
+   "color": "#8a2f35",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Panner": {
+   "color": "#5e7ea0",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Barberpole Phaser": {
+   "color": "#e8903a",
+   "body": "mxr",
+   "knob": "black"
+  },
+  "Frequency Shifter": {
+   "color": "#7b4fb0",
+   "body": "boss",
+   "knob": "white"
+  },
+  "Pattern Tremolo": {
+   "color": "#4da56a",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Vetta Juice": {
+   "color": "#2a2d33",
+   "body": "boss",
+   "knob": "chrome"
+  },
+  "Seeker": {
+   "color": "#3c9d58",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Slow Filter": {
+   "color": "#8a9a3a",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Throbber": {
+   "color": "#2e9aa0",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Spin Cycle": {
+   "color": "#8a56c4",
+   "body": "tall",
+   "knob": "white"
+  },
+  "Comet Trails": {
+   "color": "#3b44a8",
+   "body": "tall",
+   "knob": "white"
+  },
+  "Octisynth": {
+   "color": "#c8403a",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Growler": {
+   "color": "#7a4a2a",
+   "body": "tall",
+   "knob": "cream"
+  },
+  "Synth O Matic": {
+   "color": "#f0c030",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Attack Synth": {
+   "color": "#e8802a",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Synth String": {
+   "color": "#e6dcc2",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Voice Box": {
+   "color": "#e06aa8",
+   "body": "tall",
+   "knob": "black"
+  },
+  "V-Tron": {
+   "color": "#e07a2a",
+   "body": "tall",
+   "knob": "black"
+  },
+  "Vocoder": {
+   "color": "#b8bec6",
+   "body": "tall",
+   "knob": "black"
+  },
+  "4 Band Shift EQ": {
+   "color": "#4aa860",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Mid Focus EQ": {
+   "color": "#8aa84a",
+   "body": "boss",
+   "knob": "black"
+  },
+  "Vintage Pre": {
+   "color": "#d8c8a0",
+   "body": "boss",
+   "knob": "black"
+  }
+ },
+ "amps": {
+  "Tweed B-Man": {
+   "tolex": "#d9c394",
+   "grille": "#c9a96a",
+   "panel": "#3a2a1a",
+   "trim": "#8c6a3a",
+   "layout": "combo",
+   "grilleType": "tweed",
+   "knob": "cream"
+  },
+  "Blackface ‘Lux": {
+   "tolex": "#1c1d21",
+   "grille": "#cfd2d6",
+   "panel": "#aeb2b8",
+   "trim": "#8a8e95",
+   "layout": "combo",
+   "grilleType": "silver",
+   "knob": "black"
+  },
+  "Blackface Double": {
+   "tolex": "#1a1b1f",
+   "grille": "#cfd2d6",
+   "panel": "#aeb2b8",
+   "trim": "#8a8e95",
+   "layout": "combo",
+   "grilleType": "silver",
+   "knob": "black"
+  },
+  "Hiway 100": {
+   "tolex": "#202226",
+   "grille": "#2a2b30",
+   "panel": "#e6e1d2",
+   "trim": "#c9a14a",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "Brit J-45": {
+   "tolex": "#1b1c20",
+   "grille": "#d8c58a",
+   "panel": "#c9a14a",
+   "trim": "#e9e4d6",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "Brit J-800": {
+   "tolex": "#18191c",
+   "grille": "#1f2023",
+   "panel": "#c9a14a",
+   "trim": "#e9e4d6",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Brit P-75": {
+   "tolex": "#2a2018",
+   "grille": "#d8c58a",
+   "panel": "#b8a37a",
+   "trim": "#c9a14a",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "cream"
+  },
+  "Plexi Lead 100": {
+   "tolex": "#17181b",
+   "grille": "#d8c58a",
+   "panel": "#d1ad55",
+   "trim": "#f1e7c9",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "Treadplate": {
+   "tolex": "#202226",
+   "grille": "#16171a",
+   "panel": "#9ea3ab",
+   "trim": "#c9ced6",
+   "layout": "combo",
+   "grilleType": "diamond-plate",
+   "knob": "chrome"
+  },
+  "Class A-15": {
+   "tolex": "#7a4a2a",
+   "grille": "#c9ad7a",
+   "panel": "#2a1c12",
+   "trim": "#c9ad7a",
+   "layout": "combo",
+   "grilleType": "diamond",
+   "knob": "cream"
+  },
+  "Class A-30 TB": {
+   "tolex": "#6a3f23",
+   "grille": "#d1b988",
+   "panel": "#241810",
+   "trim": "#d1b988",
+   "layout": "combo",
+   "grilleType": "diamond",
+   "knob": "cream"
+  },
+  "Super O": {
+   "tolex": "#b6482e",
+   "grille": "#d9cfa8",
+   "panel": "#2a1c12",
+   "trim": "#d9cfa8",
+   "layout": "combo",
+   "grilleType": "diamond",
+   "knob": "cream"
+  },
+  "Divide 9/15": {
+   "tolex": "#3b2f26",
+   "grille": "#cdbb94",
+   "panel": "#c9b88a",
+   "trim": "#8c7550",
+   "layout": "combo",
+   "grilleType": "tweed",
+   "knob": "cream"
+  },
+  "Gibtone 185": {
+   "tolex": "#5a3b27",
+   "grille": "#cdbb94",
+   "panel": "#b79a6a",
+   "trim": "#8c7550",
+   "layout": "combo",
+   "grilleType": "tweed",
+   "knob": "cream"
+  },
+  "Flip Top": {
+   "tolex": "#202226",
+   "grille": "#7d838d",
+   "panel": "#c9ced6",
+   "trim": "#9aa0a8",
+   "layout": "combo",
+   "grilleType": "basket",
+   "knob": "chrome"
+  },
+  "Solo 100": {
+   "tolex": "#18191c",
+   "grille": "#1f2023",
+   "panel": "#b5b9c0",
+   "trim": "#d7dae0",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Bomber Uber": {
+   "tolex": "#17181b",
+   "grille": "#1f2023",
+   "panel": "#2c2f35",
+   "trim": "#c0c4cc",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "Angel F-Ball": {
+   "tolex": "#1a1214",
+   "grille": "#2a1d20",
+   "panel": "#7a1f27",
+   "trim": "#c0c4cc",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "PhD Motorway": {
+   "tolex": "#232529",
+   "grille": "#2a2c31",
+   "panel": "#c8ccd2",
+   "trim": "#8a8e95",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "Line 6 Elektrik": {
+   "tolex": "#202226",
+   "grille": "#2a2c31",
+   "panel": "#e8e6df",
+   "trim": "#d9482b",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Line 6 Doom": {
+   "tolex": "#141416",
+   "grille": "#1c1d20",
+   "panel": "#3a3d44",
+   "trim": "#d9482b",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Line 6 Epic": {
+   "tolex": "#17181b",
+   "grille": "#1f2023",
+   "panel": "#e8e6df",
+   "trim": "#3b78d8",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Mandarin 80": {
+   "tolex": "#e8731f",
+   "grille": "#1b1b1e",
+   "panel": "#17171a",
+   "trim": "#f4d9a8",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "PV Panama": {
+   "tolex": "#17181b",
+   "grille": "#26272b",
+   "panel": "#ecebe6",
+   "trim": "#d8332f",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Mahadeva": {
+   "tolex": "#1d1e22",
+   "grille": "#7a6a46",
+   "panel": "#8c9099",
+   "trim": "#c9ced6",
+   "layout": "combo",
+   "grilleType": "basket",
+   "knob": "chrome"
+  },
+  "Brit 2204": {
+   "tolex": "#17181b",
+   "grille": "#1f2023",
+   "panel": "#c9a14a",
+   "trim": "#f1e7c9",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Octone": {
+   "tolex": "#15161a",
+   "grille": "#1c1d21",
+   "panel": "#2b2e36",
+   "trim": "#3fc5e0",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Insane": {
+   "tolex": "#15161a",
+   "grille": "#1c1d21",
+   "panel": "#2b2326",
+   "trim": "#d8332f",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Big Bottom": {
+   "tolex": "#1a1b1e",
+   "grille": "#222428",
+   "panel": "#3a3d44",
+   "trim": "#8a8e95",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "Variac'ed Plexi": {
+   "tolex": "#1a1814",
+   "grille": "#d8c58a",
+   "panel": "#b79a4a",
+   "trim": "#e6d9ae",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "Purge": {
+   "tolex": "#14161a",
+   "grille": "#1c1f23",
+   "panel": "#26302c",
+   "trim": "#46d18b",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Aggro": {
+   "tolex": "#18141a",
+   "grille": "#1f1a22",
+   "panel": "#2f2433",
+   "trim": "#b05fd0",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  },
+  "Smash": {
+   "tolex": "#1c1814",
+   "grille": "#241f19",
+   "panel": "#3a3022",
+   "trim": "#e0a040",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "Small Tweed": {
+   "tolex": "#d9c394",
+   "grille": "#c9a96a",
+   "panel": "#3a2a1a",
+   "trim": "#8c6a3a",
+   "layout": "combo",
+   "grilleType": "tweed",
+   "knob": "cream"
+  },
+  "Jazz Rivet": {
+   "tolex": "#d9dadd",
+   "grille": "#2a2c31",
+   "panel": "#17181b",
+   "trim": "#8a8e95",
+   "layout": "combo",
+   "grilleType": "basket",
+   "knob": "chrome"
+  },
+  "A30 Fawn": {
+   "tolex": "#b79a6a",
+   "grille": "#cdb98a",
+   "panel": "#2a1c12",
+   "trim": "#d1b988",
+   "layout": "combo",
+   "grilleType": "diamond",
+   "knob": "cream"
+  },
+  "Black Panel Pete": {
+   "tolex": "#18191c",
+   "grille": "#cfd2d6",
+   "panel": "#aeb2b8",
+   "trim": "#8a8e95",
+   "layout": "combo",
+   "grilleType": "silver",
+   "knob": "black"
+  },
+  "Acoustic": {
+   "tolex": "#c9a878",
+   "grille": "#8a6a3a",
+   "panel": "#e8dcc0",
+   "trim": "#6a4a2a",
+   "layout": "combo",
+   "grilleType": "basket",
+   "knob": "cream"
+  },
+  "SVT": {
+   "tolex": "#1b1c20",
+   "grille": "#7d838d",
+   "panel": "#c9ced6",
+   "trim": "#9aa0a8",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "chrome"
+  },
+  "G Cougar 800": {
+   "tolex": "#17181b",
+   "grille": "#26272b",
+   "panel": "#c8ccd2",
+   "trim": "#e0a02a",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
+  }
+ }
+}

@@ -1,0 +1,17 @@
+# Portable toolchains (Go, Node) — large, not source
+/.tools/
+
+# Build outputs
+/bin/
+/re/bin/
+
+# Copies of proprietary Line 6 binaries kept only for local analysis — NEVER commit
+/re/binaries/
+
+# Third-party projects cloned for reference (each has its own repo and license)
+/refs/
+
+# Line 6 manuals (copyrighted) kept locally for reference
+/docs/reference/*.pdf
+
+.DS_Store

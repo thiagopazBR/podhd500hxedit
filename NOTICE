@@ -1,0 +1,21 @@
+podhd500hxedit — third-party material and notices
+
+Source code in this repository is under the MIT License (see LICENSE), except:
+
+* pkg/podhd500/data/catalog.json (model / parameter tables) is derived from the
+  tables of lpedit-lib by Nicolas Schwartz (StarAurryon/lpedit-lib, LGPL-3.0),
+  via the hd500-editor project (MIT), and has since been corrected and extended
+  against the POD HD500's LCD. These tables remain available under the
+  LGPL-3.0: https://github.com/StarAurryon/lpedit-lib
+* pkg/podhd500/data/{gear-styles,amp-origins,fx-origins*,extra-models,descriptions}.json
+  come from the hd500-editor project (MIT, "Copyright (c) 2026 HD500 Editor
+  contributors").
+* third_party/purego is the purego library (see its own LICENSE).
+
+Protocol knowledge was cross-checked with these open projects (no code copied
+unless noted above): hd500-editor (MIT), lpedit-lib (LGPL-3.0), podhd (GPL-2.0)
+and the Linux snd-usb-pod driver.
+
+Line 6, POD, POD HD500, Helix and HX Edit are trademarks of Yamaha Guitar Group,
+Inc. This project is not affiliated with, endorsed or supported by Line 6.
+Model names are used only to identify the pedal's own models.

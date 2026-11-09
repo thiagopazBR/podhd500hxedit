@@ -1,0 +1,9324 @@
+{
+ "amps": [
+  {
+   "type": 524287,
+   "name": "Amp Disabled",
+   "params": []
+  },
+  {
+   "type": 458752,
+   "name": "PhD Motorway",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458753,
+   "name": "Tweed B-Man Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458754,
+   "name": "Tweed B-Man Bright",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458755,
+   "name": "Blackface ‘Lux Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458756,
+   "name": "Blackface ‘Lux Vibrato",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458757,
+   "name": "Blackface Double Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458758,
+   "name": "Blackface Double Vibrato",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458760,
+   "name": "Hiway 100",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458761,
+   "name": "Brit J-45 Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458762,
+   "name": "Brit J-45 Bright",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458763,
+   "name": "Treadplate",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458764,
+   "name": "Brit P-75 Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458765,
+   "name": "Brit P-75 Bright",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458766,
+   "name": "Super O",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458768,
+   "name": "Class A-15",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458769,
+   "name": "Class A-30 TB",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458770,
+   "name": "Divide 9/15",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458772,
+   "name": "Gibtone 185",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458773,
+   "name": "Brit J-800",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458775,
+   "name": "Bomber Uber",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458777,
+   "name": "Angel F-Ball",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458779,
+   "name": "PhD Motorway Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458780,
+   "name": "Tweed B-Man Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458781,
+   "name": "Tweed B-Man Bright Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458782,
+   "name": "Blackface ‘Lux Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458783,
+   "name": "Blackface ‘Lux Vibrato Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458784,
+   "name": "Blackface Double Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458785,
+   "name": "Blackface Double Vibrato Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458787,
+   "name": "Hiway 100 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458788,
+   "name": "Brit J-45 Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458789,
+   "name": "Brit J-45 Bright Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458790,
+   "name": "Treadplate Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458791,
+   "name": "Brit P-75 Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458792,
+   "name": "Brit P-75 Bright Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458793,
+   "name": "Super O Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458795,
+   "name": "Class A-15 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458796,
+   "name": "Class A-30 TB Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458797,
+   "name": "Divide 9/15 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458799,
+   "name": "Gibtone 185 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458800,
+   "name": "Brit J-800 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458802,
+   "name": "Bomber Uber Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458804,
+   "name": "Angel F-Ball Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458834,
+   "name": "Line 6 Elektrik",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458835,
+   "name": "Line 6 Elektrik Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458837,
+   "name": "Plexi Lead 100 Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458838,
+   "name": "Plexi Lead 100 Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458840,
+   "name": "Plexi Lead 100 Bright",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458841,
+   "name": "Plexi Lead 100 Bright Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458843,
+   "name": "Flip Top",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458844,
+   "name": "Flip Top Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458846,
+   "name": "Solo 100 Clean",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458847,
+   "name": "Solo 100 Clean Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458849,
+   "name": "Solo 100 Crunch",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458850,
+   "name": "Solo 100 Crunch Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458852,
+   "name": "Solo 100 OD",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458853,
+   "name": "Solo 100 OD Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458855,
+   "name": "Line 6 Doom",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458856,
+   "name": "Line 6 Doom Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458858,
+   "name": "Line 6 Epic",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458859,
+   "name": "Line 6 Epic Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458865,
+   "name": "PV Panama",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458866,
+   "name": "PV Panama Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458871,
+   "name": "Mahadeva",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458872,
+   "name": "Mahadeva Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458875,
+   "name": "Brit 2204",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458876,
+   "name": "Brit 2204 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458884,
+   "name": "Octone",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458885,
+   "name": "Insane",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458886,
+   "name": "Big Bottom",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458887,
+   "name": "Variac'ed Plexi",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458888,
+   "name": "Purge",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458889,
+   "name": "Aggro",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458890,
+   "name": "Smash",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458861,
+   "name": "Small Tweed",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458862,
+   "name": "Small Tweed Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458863,
+   "name": "Jazz Rivet",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458864,
+   "name": "Jazz Rivet Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458877,
+   "name": "Mandarin 80",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458878,
+   "name": "Mandarin 80 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458879,
+   "name": "A30 Fawn Bright",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458880,
+   "name": "A30 Fawn Bright Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458881,
+   "name": "A30 Fawn Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458882,
+   "name": "A30 Fawn Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458883,
+   "name": "Black Panel Pete",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458891,
+   "name": "Acoustic",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458867,
+   "name": "SVT Bright",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458868,
+   "name": "SVT Bright Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458869,
+   "name": "SVT Normal",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013194,
+     "name": "Bias X",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013193,
+     "name": "Bias",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458870,
+   "name": "SVT Normal Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458873,
+   "name": "G Cougar 800",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013195,
+     "name": "Master",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 458874,
+   "name": "G Cougar 800 Preamp",
+   "params": [
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013184,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013185,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Presence",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Volume",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013191,
+     "name": "HUM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013192,
+     "name": "SAG",
+     "kind": "percent"
+    }
+   ]
+  }
+ ],
+ "cabs": [
+  {
+   "type": 524287,
+   "name": "No Cab",
+   "hideParams": true,
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235968,
+   "name": "212 PhD Ported",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235969,
+   "name": "6x9 Super O",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235970,
+   "name": "112 Celest 12-H",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235971,
+   "name": "112 BF 'Lux",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235972,
+   "name": "112 Field Coil",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235973,
+   "name": "112 Blue Bell",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235974,
+   "name": "212 Blackface Double",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235976,
+   "name": "212 Silver Bell",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235977,
+   "name": "410 Tweed",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235978,
+   "name": "412 Uber",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235979,
+   "name": "412 XXL V-30",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235980,
+   "name": "412 Hiway",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235982,
+   "name": "412 Greenback 25",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235983,
+   "name": "412 Brit T-75",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235984,
+   "name": "412 Tread V-30",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235985,
+   "name": "412 Greenback 30",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235986,
+   "name": "115 Flip Top",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235987,
+   "name": "1x8 Champ",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235988,
+   "name": "212 Jazz Rivet",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235989,
+   "name": "810 SV Beast",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  },
+  {
+   "type": 17235990,
+   "name": "410 Rhino",
+   "params": [
+    {
+     "id": 4,
+     "name": "E.R.",
+     "kind": "percent"
+    },
+    {
+     "id": 0,
+     "name": "Low Cut",
+     "kind": "freq",
+     "min": 20,
+     "max": 500
+    },
+    {
+     "id": 1,
+     "name": "Res Level",
+     "kind": "percent"
+    },
+    {
+     "id": 2,
+     "name": "Thump",
+     "kind": "percent"
+    },
+    {
+     "id": 3,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 5,
+     "name": "Mic Model",
+     "kind": "list",
+     "options": [
+      "57 On XS",
+      "57 Off XS",
+      "409 Dyn",
+      "421 Dyn",
+      "4038 Rbn",
+      "121 Rbn",
+      "67 Cond",
+      "87 Cond"
+     ],
+     "int": true
+    }
+   ]
+  }
+ ],
+ "pedals": [
+  {
+   "type": 34471935,
+   "name": "None",
+   "group": "None",
+   "params": []
+  },
+  {
+   "type": 33554443,
+   "name": "Red Comp",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Sustain",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Level",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33554444,
+   "name": "Blue Comp",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Sustain",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Level",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33554445,
+   "name": "Blue Comp Treble",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Level",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Sustain",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33554446,
+   "name": "Tube Comp",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Threshold",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Level",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33554447,
+   "name": "Vetta Comp",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Sensitivity",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Level",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33554448,
+   "name": "Vetta Juice",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Amount",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Level",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33554449,
+   "name": "Noise Gate",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Threshold",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Decay",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33554450,
+   "name": "Boost Comp",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Comp",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33554451,
+   "name": "Hard Gate",
+   "group": "Dynamics",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Open Threshold",
+     "kind": "range",
+     "unit": "dB",
+     "min": -96,
+     "max": 0,
+     "step": 1
+    },
+    {
+     "id": 1058013185,
+     "name": "Close Threshold",
+     "kind": "range",
+     "unit": "dB",
+     "min": -96,
+     "max": 0,
+     "step": 1
+    },
+    {
+     "id": 1058013186,
+     "name": "Hold",
+     "kind": "range",
+     "min": 0,
+     "max": 800,
+     "unit": "ms",
+     "maxMs": 800
+    },
+    {
+     "id": 1058013187,
+     "name": "Decay",
+     "kind": "range",
+     "min": 0,
+     "max": 4000,
+     "unit": "ms",
+     "maxMs": 4000
+    }
+   ]
+  },
+  {
+   "type": 33685521,
+   "name": "Digital Delay",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685522,
+   "name": "Digital Delay W/Mod",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "ModSpd",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685523,
+   "name": "Stereo Delay",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "L Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "L-Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "R Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013187,
+     "name": "R-Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685524,
+   "name": "Analog Echo",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685525,
+   "name": "Analog W/Mod",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "ModSpd",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685530,
+   "name": "Multi-Head",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Heads 1-2",
+     "kind": "list",
+     "options": [
+      "1-2 Off",
+      "HD1 On",
+      "1-2 On",
+      "HD2 On"
+     ]
+    },
+    {
+     "id": 1058013187,
+     "name": "Heads 3-4",
+     "kind": "list",
+     "options": [
+      "3-4 Off",
+      "HD3 On",
+      "3-4 On",
+      "HD4 On"
+     ]
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685533,
+   "name": "Low Res Delay",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Res",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685536,
+   "name": "Ping Pong",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Offset",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Spread",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685537,
+   "name": "Reverse",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "ModSpd",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685538,
+   "name": "Dynamic Delay",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Thresh",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Ducking",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685539,
+   "name": "Auto-Volume Echo",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "ModDep",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Swell",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685546,
+   "name": "Tube Echo",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Wow/Flt",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685547,
+   "name": "Tube Echo Dry",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Wow/Flt",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685548,
+   "name": "Tape Echo",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685549,
+   "name": "Tape Echo Dry",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685550,
+   "name": "Sweep Echo",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Swp Spd",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Swp Dep",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685551,
+   "name": "Sweep Echo Dry",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Swp Spd",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Swp Dep",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685552,
+   "name": "Echo Platter",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Wow/Flt",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33685553,
+   "name": "Echo Platter Dry",
+   "group": "Delay",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Time",
+     "kind": "tempo",
+     "min": 20,
+     "max": 2000
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Wow/Flt",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751072,
+   "name": "Opto Tremolo",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Shape",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "VolSens",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751073,
+   "name": "Bias Tremolo",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Shape",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "VolSens",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751074,
+   "name": "Phaser",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Stages",
+     "kind": "list",
+     "options": [
+      "STG 4",
+      "STG 8",
+      "STG 12",
+      "STG 16"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751075,
+   "name": "Dual Phaser",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "LFO Shp",
+     "kind": "list",
+     "options": [
+      "Sine",
+      "Square"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751076,
+   "name": "Panned Phaser",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Pan",
+     "kind": "list",
+     "options": [
+      "Left",
+      "Center",
+      "Right"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "Pan Spd",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751077,
+   "name": "U-Vibe",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "VolSens",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751078,
+   "name": "Rotary Drum",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "list",
+     "options": [
+      "Slow",
+      "Fast"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751079,
+   "name": "Rotary Drum/Hrn",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "list",
+     "options": [
+      "Slow",
+      "Fast"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Horn Dep",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751080,
+   "name": "Analog Flanger",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Manual",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751081,
+   "name": "Jet Flanger",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Manual",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751082,
+   "name": "Analog Chorus",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Ch Vib",
+     "kind": "list",
+     "options": [
+      "Chorus",
+      "Vibrato"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751083,
+   "name": "Dimension",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Sw1",
+     "kind": "list",
+     "options": [
+      "SW1 OFF",
+      "SW1 ON"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013186,
+     "name": "Sw2",
+     "kind": "list",
+     "options": [
+      "SW2 OFF",
+      "SW2 ON"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "Sw3",
+     "kind": "list",
+     "options": [
+      "SW3 OFF",
+      "SW3 ON"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013188,
+     "name": "Sw4",
+     "kind": "list",
+     "options": [
+      "SW4 OFF",
+      "SW4 ON"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751084,
+   "name": "Tri Chorus",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Depth2",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Depth3",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751085,
+   "name": "Pitch Vibrato",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Rise",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "VolSens",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751086,
+   "name": "Ring Modulator",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Shape",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "AM/FM",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Speed",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751087,
+   "name": "Panner",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Shape",
+     "kind": "list",
+     "options": [
+      "Triangle",
+      "Sine",
+      "Square"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "VolSens",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751104,
+   "name": "Barberpole Phaser",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Mode",
+     "kind": "list",
+     "options": [
+      "Up",
+      "Down",
+      "Stereo"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751106,
+   "name": "Frequency Shifter",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "range",
+     "min": 0,
+     "max": 3520,
+     "unit": "Hz"
+    },
+    {
+     "id": 1058013186,
+     "name": "Mode",
+     "kind": "list",
+     "options": [
+      "Up",
+      "Down",
+      "Stereo"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751107,
+   "name": "Pattern Tremolo",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Step 1",
+     "kind": "list",
+     "options": [
+      "Mute",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "Full",
+      "Skip"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013186,
+     "name": "Step 2",
+     "kind": "list",
+     "options": [
+      "Mute",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "Full",
+      "Skip"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "Step 3",
+     "kind": "list",
+     "options": [
+      "Mute",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "Full",
+      "Skip"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013188,
+     "name": "Step 4",
+     "kind": "list",
+     "options": [
+      "Mute",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "Full",
+      "Skip"
+     ],
+     "int": false
+    }
+   ]
+  },
+  {
+   "type": 33751109,
+   "name": "Script Phase",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    }
+   ]
+  },
+  {
+   "type": 33751111,
+   "name": "AC Flanger",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Width",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Regen",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Manual",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33751113,
+   "name": "80A Flanger",
+   "group": "Modulation",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Range",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Enhance",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Manual",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Even Odd",
+     "kind": "list",
+     "options": [
+      "Even",
+      "Odd"
+     ],
+     "int": false
+    }
+   ]
+  },
+  {
+   "type": 33816604,
+   "name": "'63 Spring",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816605,
+   "name": "Spring",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816606,
+   "name": "Plate",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816607,
+   "name": "Room",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816608,
+   "name": "Chamber",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816609,
+   "name": "Hall",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816610,
+   "name": "Ducking",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816611,
+   "name": "Octo",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816612,
+   "name": "Cave",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816613,
+   "name": "Tile",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816614,
+   "name": "Echo",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "PreDelay",
+     "kind": "range",
+     "min": 0,
+     "max": 200,
+     "unit": "ms",
+     "maxMs": 200
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33816615,
+   "name": "Particle Verb",
+   "group": "Reverb",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Dwell",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Condition",
+     "kind": "list",
+     "options": [
+      "Stable",
+      "Critical",
+      "Hazard"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "Gain",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882122,
+   "name": "Jet Fuzz",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Fdbk",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Speed",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882123,
+   "name": "Classic Dist",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Filter",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882124,
+   "name": "Octave Fuzz",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882125,
+   "name": "Tube Drive",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882126,
+   "name": "Screamer",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882127,
+   "name": "Fuzz Pi",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882128,
+   "name": "Overdrive",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882129,
+   "name": "Facial Fuzz",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882130,
+   "name": "Line 6 Distortion",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882131,
+   "name": "Line 6 Drive",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882132,
+   "name": "Sub Octave Fuzz",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Sub",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882133,
+   "name": "Buzz Saw",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882134,
+   "name": "Heavy Dist",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882135,
+   "name": "Jumbo Fuzz",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33882136,
+   "name": "Color Drive",
+   "group": "Distortion",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Drive",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Bass",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Mid",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Treble",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Output",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33947659,
+   "name": "Vetta Wah",
+   "group": "Wah",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Position",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33947660,
+   "name": "Fassel",
+   "group": "Wah",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Position",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33947661,
+   "name": "Weeper",
+   "group": "Wah",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Position",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33947662,
+   "name": "Chrome",
+   "group": "Wah",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Position",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33947663,
+   "name": "Chrome Custom",
+   "group": "Wah",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Position",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33947664,
+   "name": "Throaty",
+   "group": "Wah",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Position",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33947665,
+   "name": "Conductor",
+   "group": "Wah",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Position",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 33947666,
+   "name": "Colorful",
+   "group": "Wah",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Position",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34013188,
+   "name": "Volume",
+   "group": "Volume/Pan",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Volume",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34013189,
+   "name": "Pan",
+   "group": "Volume/Pan",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Pan",
+     "kind": "range",
+     "min": -100,
+     "max": 100
+    }
+   ]
+  },
+  {
+   "type": 34078720,
+   "name": "FX Loop",
+   "group": "FX Loop",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Send",
+     "kind": "range",
+     "min": -80,
+     "max": 0,
+     "unit": "dB",
+     "whole": true
+    },
+    {
+     "id": 1058013186,
+     "name": "Return",
+     "kind": "range",
+     "min": 0,
+     "max": 24,
+     "unit": "dB",
+     "whole": true
+    },
+    {
+     "id": 1058013188,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34144258,
+   "name": "Pitch Glide",
+   "group": "Pitch",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Pitch",
+     "kind": "range",
+     "min": -24,
+     "max": 24
+    },
+    {
+     "id": 1057030145,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34144259,
+   "name": "Smart Harmony",
+   "group": "Pitch",
+   "params": [
+    {
+     "id": 1056970753,
+     "name": "Key",
+     "kind": "list",
+     "options": [
+      "A",
+      "A#",
+      "B",
+      "C",
+      "C#",
+      "D",
+      "D#",
+      "E",
+      "F",
+      "F#",
+      "G",
+      "G#"
+     ],
+     "int": true
+    },
+    {
+     "id": 1056970754,
+     "name": "Shift",
+     "kind": "list",
+     "intMin": -8,
+     "options": [
+      "-9th",
+      "-8th",
+      "-7th",
+      "-6th",
+      "-5th",
+      "-4th",
+      "-3rd",
+      "-2nd",
+      "None",
+      "+2nd",
+      "+3rd",
+      "+4th",
+      "+5th",
+      "+6th",
+      "+7th",
+      "+8th",
+      "+9th"
+     ],
+     "int": true
+    },
+    {
+     "id": 1056970755,
+     "name": "Scale",
+     "kind": "list",
+     "options": [
+      "Major",
+      "Minor",
+      "Maj. Pent.",
+      "Min. Pent",
+      "Harm. Min.",
+      "Mel. Min.",
+      "Whole",
+      "Whole D"
+     ],
+     "int": true
+    },
+    {
+     "id": 1057030145,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34144260,
+   "name": "Bass Octaver",
+   "group": "Pitch",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Tone",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Normal",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Octave",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209807,
+   "name": "Tron Up",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Range",
+     "kind": "list",
+     "options": [
+      "Low",
+      "High"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013188,
+     "name": "Type",
+     "kind": "list",
+     "options": [
+      "LP",
+      "BP",
+      "HP"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209808,
+   "name": "Tron Down",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Range",
+     "kind": "list",
+     "options": [
+      "Low",
+      "High"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013188,
+     "name": "Type",
+     "kind": "list",
+     "options": [
+      "LP",
+      "BP",
+      "HP"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209809,
+   "name": "Seeker",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Steps",
+     "kind": "list",
+     "options": [
+      "2 Steps",
+      "3 Steps",
+      "4 Steps",
+      "5 Steps",
+      "6 Steps",
+      "7 Steps",
+      "8 Steps",
+      "9 Steps"
+     ],
+     "int": false,
+     "listDiv": 8
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209810,
+   "name": "Obi Wah",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Type",
+     "kind": "list",
+     "options": [
+      "LP",
+      "BP",
+      "HP"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209811,
+   "name": "Slow Filter",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Speed",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Mode",
+     "kind": "list",
+     "options": [
+      "Up",
+      "Down"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209812,
+   "name": "Q Filter",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Gain",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Type",
+     "kind": "list",
+     "options": [
+      "LP",
+      "BP",
+      "HP"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209813,
+   "name": "Throbber",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Wave",
+     "kind": "list",
+     "options": [
+      "Ramp Up",
+      "Ramp Down",
+      "Triangle",
+      "Square"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209814,
+   "name": "Spin Cycle",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "VolSens",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209815,
+   "name": "Comet Trails",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Gain",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209816,
+   "name": "Octisynth",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Depth",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209817,
+   "name": "Growler",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Pitch",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209818,
+   "name": "Synth O Matic",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Wave",
+     "kind": "list",
+     "options": [
+      "Wave 1",
+      "Wave 2",
+      "Wave 3",
+      "Wave 4",
+      "Wave 5",
+      "Wave 6",
+      "Wave 7",
+      "Wave 8"
+     ],
+     "int": false,
+     "listDiv": 8
+    },
+    {
+     "id": 1058013188,
+     "name": "Pitch",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209819,
+   "name": "Attack Synth",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Wave",
+     "kind": "list",
+     "options": [
+      "Square",
+      "PWM",
+      "Ramp"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "Speed",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Pitch",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209820,
+   "name": "Synth String",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Attack",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Pitch",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209821,
+   "name": "Voice Box",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013184,
+     "name": "Speed",
+     "kind": "tempo",
+     "min": 0.1,
+     "max": 15
+    },
+    {
+     "id": 1058013185,
+     "name": "Start",
+     "kind": "list",
+     "options": [
+      "A",
+      "E",
+      "I",
+      "O",
+      "U"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013186,
+     "name": "End",
+     "kind": "list",
+     "options": [
+      "A",
+      "E",
+      "I",
+      "O",
+      "U"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "Auto",
+     "kind": "list",
+     "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209822,
+   "name": "V-Tron",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Speed",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Start",
+     "kind": "list",
+     "options": [
+      "A",
+      "E",
+      "I",
+      "O",
+      "U"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013187,
+     "name": "End",
+     "kind": "list",
+     "options": [
+      "A",
+      "E",
+      "I",
+      "O",
+      "U"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013188,
+     "name": "Mode",
+     "kind": "list",
+     "options": [
+      "Up",
+      "Up/Down"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34209830,
+   "name": "Vocoder",
+   "group": "Filter",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Input",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Mic",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Decay",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Mix",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34340873,
+   "name": "Graphic EQ",
+   "group": "Preamp+EQ",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "80Hz",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013186,
+     "name": "220Hz",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013187,
+     "name": "440Hz",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013188,
+     "name": "1.1kHz",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013189,
+     "name": "2.2kHz",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    }
+   ]
+  },
+  {
+   "type": 34340874,
+   "name": "Studio EQ",
+   "group": "Preamp+EQ",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Low Freq",
+     "kind": "list",
+     "options": [
+      "75Hz",
+      "150Hz",
+      "180Hz",
+      "240Hz",
+      "500Hz",
+      "700Hz",
+      "1000Hz",
+      "1400Hz"
+     ],
+     "int": false,
+     "listDiv": 8
+    },
+    {
+     "id": 1058013186,
+     "name": "Low Gain",
+     "kind": "range",
+     "min": -11,
+     "max": 11,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013187,
+     "name": "Hi Freq",
+     "kind": "list",
+     "options": [
+      "200Hz",
+      "300Hz",
+      "400Hz",
+      "800Hz",
+      "1500Hz",
+      "3000Hz",
+      "5000Hz",
+      "8000Hz"
+     ],
+     "int": false,
+     "listDiv": 8
+    },
+    {
+     "id": 1058013188,
+     "name": "Hi Gain",
+     "kind": "range",
+     "min": -11,
+     "max": 11,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013189,
+     "name": "Gain",
+     "kind": "range",
+     "min": -18,
+     "max": 18,
+     "unit": "dB"
+    }
+   ]
+  },
+  {
+   "type": 34340875,
+   "name": "Parametric EQ",
+   "group": "Preamp+EQ",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Lows",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Highs",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Gain",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34340876,
+   "name": "4 Band Shift EQ",
+   "group": "Preamp+EQ",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Low",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013186,
+     "name": "Low Mid",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013187,
+     "name": "Hi Mid",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013188,
+     "name": "Hi",
+     "kind": "range",
+     "min": -12,
+     "max": 12,
+     "unit": "dB"
+    },
+    {
+     "id": 1058013189,
+     "name": "Shift",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34340877,
+   "name": "Mid Focus EQ",
+   "group": "Preamp+EQ",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Hi Pass Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013186,
+     "name": "Hi Pass Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Low Pass Freq",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Low Pass Q",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013189,
+     "name": "Gain",
+     "kind": "percent"
+    }
+   ]
+  },
+  {
+   "type": 34340878,
+   "name": "Vintage Pre",
+   "group": "Preamp+EQ",
+   "params": [
+    {
+     "id": 1058013185,
+     "name": "Phase",
+     "kind": "list",
+     "options": [
+      "0",
+      "180"
+     ],
+     "int": false
+    },
+    {
+     "id": 1058013186,
+     "name": "Gain",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013187,
+     "name": "Output",
+     "kind": "percent"
+    },
+    {
+     "id": 1058013188,
+     "name": "Hi Pass Filter",
+     "kind": "range",
+     "min": 20,
+     "max": 500,
+     "unit": "Hz"
+    },
+    {
+     "id": 1058013189,
+     "name": "Lo Pass Filter",
+     "kind": "range",
+     "min": 5,
+     "max": 20,
+     "unit": "kHz"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>POD HD500 Edit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="layout">
+  <!-- Header (HX Edit style): preset stepper + name, snapshots, undo/redo,
+       app name in the centre, tap tempo + BPM on the right -->
+  <header class="hxh" aria-label="Preset">
+    <!-- show / hide the presets panel (HX Edit: "≡<" / "≡>") -->
+    <button type="button" class="hxh-lptoggle" id="lp-toggle" aria-controls="presets-panel" aria-expanded="true" title="Hide the presets panel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path class="ar" d="M8.5 7.5 4 12l4.5 4.5"/><path d="M11 7h9M11 12h9M11 17h9"/></svg>
+    </button>
+    <div class="hxh-box hxh-preset">
+      <div class="hxh-step">
+        <button type="button" id="preset-prev" disabled title="Previous preset" aria-label="Previous preset"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M2 6.5 6 2.5l4 4"/></svg></button>
+        <button type="button" id="preset-next" disabled title="Next preset" aria-label="Next preset"><svg viewBox="0 0 12 8" aria-hidden="true"><path d="M2 1.5l4 4 4-4"/></svg></button>
+      </div>
+      <span class="hxh-name" id="now-name">—</span>
+      <div class="menu-wrap hxh-pmwrap">
+        <button type="button" class="hxh-more" id="preset-more" disabled aria-haspopup="menu" aria-expanded="false" title="Preset actions" aria-label="Preset actions">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle class="ring" cx="12" cy="12" r="9"/><circle cx="7.6" cy="12" r="1.25"/><circle cx="12" cy="12" r="1.25"/><circle cx="16.4" cy="12" r="1.25"/></svg>
+        </button>
+        <div class="menu hxh-pmenu" id="preset-menu" role="menu" hidden>
+          <button type="button" role="menuitem" data-act="rename">Rename</button>
+          <button type="button" role="menuitem" data-act="copy">Copy</button>
+          <button type="button" role="menuitem" data-act="paste">Paste</button>
+          <hr>
+          <button type="button" role="menuitem" data-act="import">Import...</button>
+          <button type="button" role="menuitem" data-act="export">Export...</button>
+          <hr>
+          <button type="button" role="menuitem" data-act="send">Save to Pedal</button>
+          <button type="button" role="menuitem" data-act="receive">Discard Changes</button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-wrap hxh-snapwrap">
+      <button type="button" class="hxh-box hxh-snap" id="snap-btn" aria-haspopup="menu" aria-expanded="false" title="Snapshots (not available yet)">
+        <span class="snap-num"><svg viewBox="0 0 24 18" aria-hidden="true"><path d="M2.5 4.8h4.6l1.7-2.6h6.4l1.7 2.6h4.6a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-19a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1z"/><circle cx="12" cy="10.8" r="4.9"/></svg><b id="snap-num">1</b></span><span id="snap-label">SNAPSHOT 1</span>
+      </button>
+      <div class="menu hxh-snapmenu" id="snap-menu" role="menu" hidden></div>
+    </div>
+    <div class="hxh-group">
+      <button type="button" class="hxh-box hxh-icon" id="undo-btn" disabled title="Undo (⌘Z)" aria-label="Undo"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M1.8 9.8 10 2.6v14.4z"/><path d="M9 9.8h5.2a5.1 5.1 0 0 1 0 10.2h-3"/></svg></button>
+      <button type="button" class="hxh-box hxh-icon" id="redo-btn" disabled title="Redo (⇧⌘Z)" aria-label="Redo"><svg viewBox="0 0 24 24" aria-hidden="true"><g transform="matrix(-1 0 0 1 24 0)"><path class="f" d="M1.8 9.8 10 2.6v14.4z"/><path d="M9 9.8h5.2a5.1 5.1 0 0 1 0 10.2h-3"/></g></svg></button>
+    </div>
+    <div class="brand hxh-brand">
+      <!-- connection LED: green = pedal connected, red = offline (status in the tooltip) -->
+      <span class="brand-mark" id="conn" data-state="offline" role="img" aria-label="Offline" title="Offline"></span>
+      <span class="brand-name">POD HD500</span>
+      <span class="brand-sub">Edit</span>
+    </div>
+    <div class="hxh-right">
+      <!-- MIDI window (MIDI Assign: what each control sends on MIDI OUT) -->
+      <button type="button" class="hxh-box hxh-icon" id="midi-btn" disabled aria-haspopup="dialog" aria-expanded="false" title="MIDI" aria-label="MIDI"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle class="f" cx="7.6" cy="12" r="1.1"/><circle class="f" cx="16.4" cy="12" r="1.1"/><circle class="f" cx="9" cy="8.3" r="1.1"/><circle class="f" cx="15" cy="8.3" r="1.1"/><circle class="f" cx="12" cy="7" r="1.1"/><path d="M10.5 18.5h3"/></svg></button>
+      <button type="button" class="hxh-box hxh-icon hxh-tuner" id="tuner-btn" disabled title="Tuner" aria-label="Tuner" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><g transform="rotate(45 12 12)"><path class="t" d="M8.5 2.5v7.5a3.5 3.5 0 0 0 7 0V2.5"/><path class="t" d="M12 13.5v8"/></g></svg></button>
+      <!-- Tempo Sync (pedal-wide setting): Per Preset or Global. Per Snapshot
+           exists only in the HX; shown disabled. -->
+      <div class="menu-wrap hxh-tswrap">
+        <button type="button" class="hxh-box hxh-icon" id="tsync-btn" disabled aria-haspopup="menu" aria-expanded="false" title="Tempo Sync" aria-label="Tempo Sync"><span id="tsync-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h2M3 12h2M3 18h2M8 6h13M8 12h13M8 18h13"/></svg></span></button>
+        <div class="menu hxh-tsmenu" id="tsync-menu" role="menu" hidden>
+          <button type="button" role="menuitem" disabled title="Not available on the POD HD500"><svg viewBox="0 0 24 18" aria-hidden="true"><path d="M2.5 4.8h4.6l1.7-2.6h6.4l1.7 2.6h4.6a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-19a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1z"/><circle cx="12" cy="10.8" r="4.9"/></svg>Per Snapshot</button>
+          <button type="button" role="menuitem" data-ts="0" title="Each preset uses its own tempo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h2M3 12h2M3 18h2M8 6h13M8 12h13M8 18h13"/></svg>Per Preset</button>
+          <button type="button" role="menuitem" data-ts="1" title="One tempo for every preset (the pedal's Tempo Sync: Global)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></svg>Global</button>
+        </div>
+      </div>
+      <div class="hxh-tempo">
+        <!-- HX Edit: the BPM box is the Tap Tempo button (click repeatedly);
+             drag up/down or scroll to change it, right-click to type -->
+        <div class="hxh-box bpm-field" title="Tap Tempo: click repeatedly (or the T key) · drag or scroll to change · right-click to type">
+          <input id="bpm" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" disabled aria-label="Tempo (BPM)" value="—">
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Placeholders for the next modules, so the header sits in context -->
+  <!-- Signal Flow: blocks of the loaded preset (edit buffer) -->
+  <section class="panel flow-view" aria-label="Signal Flow">
+    <!-- Tuner (HX Edit layout; the pedal's own tuner: STATUS 0x00 on/off,
+         0x01 Mute/Bypass, 0x02 Reference 425..455 Hz; readings ~5/s) -->
+    <div class="tuner" id="tuner" hidden>
+      <button type="button" class="tuner-mute" id="tuner-mute" aria-pressed="true" title="Output while tuning: Mute or Bypass">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="f" d="M4 9h4l5-4v14l-5-4H4z"/><path class="x" d="m16 9.5 5 5m0-5-5 5"/><path class="w" d="M16 9.5a3.5 3.5 0 0 1 0 5M18.5 7a7 7 0 0 1 0 10"/></svg>
+        <span id="tuner-mute-label">Mute</span>
+      </button>
+      <div class="tuner-stage">
+        <div class="tuner-top">
+          <div class="tuner-cents" id="tuner-cents-box">Cents: <b id="tuner-cents"></b></div>
+          <svg class="tuner-chev l" id="tuner-flat" viewBox="0 0 40 72" aria-hidden="true"><path d="M3 3l34 33L3 69"/></svg>
+          <div class="tuner-note"><span id="tuner-note"></span><sub id="tuner-oct" hidden></sub></div>
+          <svg class="tuner-chev r" id="tuner-sharp" viewBox="0 0 40 72" aria-hidden="true"><path d="M37 3L3 36l34 33"/></svg>
+        </div>
+        <div class="tuner-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><span class="tuner-mark" id="tuner-mark" hidden></span></div>
+      </div>
+      <div class="tuner-foot">
+        <label for="tuner-ref">Reference:</label>
+        <div class="tuner-ref">
+          <input id="tuner-ref" type="text" inputmode="numeric" value="440 Hz" aria-label="Reference (Hz)">
+          <div class="tuner-ref-step">
+            <button type="button" id="tuner-ref-up" aria-label="Higher"><svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1.5 5 5 1.5 8.5 5"/></svg></button>
+            <button type="button" id="tuner-ref-down" aria-label="Lower"><svg viewBox="0 0 10 6" aria-hidden="true"><path d="M1.5 1 5 4.5 8.5 1"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-stage" id="flow-stage" tabindex="0" aria-label="Block chain"></div>
+    <!-- the pedal's "DSP limit reached" warning (Cmd 0x33), as the original editor showed it -->
+    <div class="dsp-alert" id="dsp-alert" role="alert" hidden><b>DSP LIMIT REACHED</b><span>Reduce usage to free up additional DSP resources.</span></div>
+  </section>
+  <!-- Left panel (Helix-style): setlists, 64 presets (01A–16D), pedal SEND/RECEIVE -->
+  <section class="panel presets lp" id="presets-panel" aria-label="Presets">
+    <div class="lp-tabs">
+      <button class="lp-tab" type="button" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+        Presets
+      </button>
+      <!-- pedal transfer, where HX Edit has its IRs / Favorites tabs -->
+      <div class="menu-wrap lp-tabwrap">
+        <button type="button" class="lp-tabbtn lp-send" id="send-btn" disabled aria-haspopup="menu" aria-expanded="false" title="Save changes to the pedal's memory"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V4M7.5 8.5 12 4l4.5 4.5M5 14v5h14v-5"/></svg>
+          Send
+        </button>
+        <div class="menu" id="send-menu" role="menu" hidden>
+          <span class="menu-title">Send</span>
+          <button type="button" role="menuitem" data-kind="send" data-scope="selected">Selected</button>
+          <button type="button" role="menuitem" data-kind="send" data-scope="setlist">Set List</button>
+          <button type="button" role="menuitem" data-kind="send" data-scope="all">All</button>
+        </div>
+      </div>
+      <div class="menu-wrap lp-tabwrap">
+        <button type="button" class="lp-tabbtn" id="receive-btn" disabled aria-haspopup="menu" aria-expanded="false" title="Read again from the pedal (discards changes)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 14v5h14v-5"/></svg>Receive</button>
+        <div class="menu" id="receive-menu" role="menu" hidden>
+          <span class="menu-title">Receive</span>
+          <button type="button" role="menuitem" data-kind="receive" data-scope="selected">Selected</button>
+          <button type="button" role="menuitem" data-kind="receive" data-scope="setlist">Set List</button>
+          <button type="button" role="menuitem" data-kind="receive" data-scope="all">All</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lp-head">
+      <h2 class="lp-title">Setlists</h2>
+      <div class="lp-actions">
+        <button type="button" id="setlist-edit" disabled title="Rename the setlist (pending * until SEND › Set List)">Rename</button>
+        <button type="button" id="setlist-import" disabled title="Import an .h5s into this setlist, or an .h5b (all setlists). Pending (*) until SEND.">Import</button>
+        <div class="menu-wrap">
+          <button type="button" id="file-export" disabled aria-haspopup="menu" aria-expanded="false" title="Export in POD HD500 Edit format">Export</button>
+          <div class="menu" id="export-menu" role="menu" hidden>
+            <button type="button" role="menuitem" data-export="setlist">This setlist <span>.h5s</span></button>
+            <button type="button" role="menuitem" data-export="bundle">All setlists <span>.h5b</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lp-setlist">
+      <select id="setlist" hidden aria-hidden="true" tabindex="-1"></select>
+      <button type="button" class="lp-picker" id="setlist-btn" disabled aria-haspopup="listbox" aria-expanded="false" aria-controls="setlist-list">
+        <svg class="lp-folder" viewBox="0 0 24 24" aria-hidden="true"><path class="fb" d="M4.5 18.5V5.5h5l1.6 1.8h7.4v11.2z"/><path class="ff" d="M2.5 10.5h15.2l2.3 8H4.8z"/></svg>
+        <span class="lp-picker-name" id="setlist-btn-name">—</span>
+        <span class="lp-picker-count" id="setlist-btn-count"></span>
+        <svg class="lp-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <input id="setlist-rename" class="setlist-rename" type="text" maxlength="16" spellcheck="false" autocomplete="off" aria-label="New setlist name" hidden>
+      <ul class="lp-setlists" id="setlist-list" role="listbox" aria-label="Pedal setlists" hidden></ul>
+    </div>
+
+    <div class="lp-head lp-head-presets">
+      <h2 class="lp-title">Presets</h2>
+      <div class="lp-actions">
+        <button type="button" id="preset-copy" disabled title="Copy the selected presets (Cmd+C)">Copy</button>
+        <button type="button" id="preset-paste" disabled title="Paste starting at the selected slot (Cmd+V)">Paste</button>
+        <button type="button" id="file-import" disabled title="Import .h5e starting at the selected slot (you can also drag files from the Finder onto the list). Pending (*) until SEND.">Import</button>
+        <button type="button" id="preset-export" disabled title="Export the selected presets (.h5e)">Export</button>
+      </div>
+    </div>
+    <div class="progress" id="progress" hidden>
+      <div class="progress-bar" id="progress-bar"></div>
+      <span class="progress-text" id="progress-text"></span>
+    </div>
+    <ol class="slots" id="slots" tabindex="0" aria-label="Setlist presets"
+        title="Click: select (Shift/Cmd: multiple) · Double-click or Enter: load to pedal · Right-click: actions · F2: rename · Drag: move · Option+drag: copy · Shift+drag: swap"></ol>
+
+    <input type="file" id="file-input" multiple hidden accept=".h5e,.h5s,.h5b,.5xe,.5xs,.5xb">
+    <div class="menu ctx-menu" id="ctx-menu" role="menu" hidden>
+      <button type="button" role="menuitem" data-act="copy" title="⌘C">Copy</button>
+      <button type="button" role="menuitem" data-act="paste" title="⌘V">Paste</button>
+      <button type="button" role="menuitem" data-act="rename" title="F2">Rename</button>
+      <hr>
+      <button type="button" role="menuitem" data-act="import">Import...</button>
+      <button type="button" role="menuitem" data-act="export">Export...</button>
+      <hr>
+      <button type="button" role="menuitem" data-act="load" title="Enter">Load to Pedal</button>
+      <button type="button" role="menuitem" data-act="send">Save to Pedal</button>
+      <button type="button" role="menuitem" data-act="receive">Discard Changes</button>
+    </div>
+  </section>
+  <!-- Block editor (HX style): categories · models · parameters of the selected block -->
+  <section class="panel editors" aria-label="Block editor">
+    <!-- HX Edit: EDIT | BYPASS/CONTROLLER ASSIGN -->
+    <div class="ed-tabs" role="tablist">
+      <button class="ed-tab cur" type="button" role="tab" aria-selected="true" data-edtab="edit">Edit</button>
+      <button class="ed-tab" type="button" role="tab" aria-selected="false" data-edtab="auto">Bypass/Controller Assign</button>
+    </div>
+    <div class="ed-auto" id="ed-auto" role="tabpanel" aria-label="Bypass/Controller Assign"></div>
+    <div class="menu as-menu" id="as-menu" role="menu" hidden>
+      <button type="button" role="menuitem" data-as-clear="one">Clear Assignment</button>
+      <button type="button" role="menuitem" data-as-clear="all">Clear All Assignments</button>
+    </div>
+    <div class="ed-col ed-cats" id="ed-cats" role="listbox" aria-label="Categories"></div>
+    <div class="ed-col ed-models" id="ed-models" role="listbox" aria-label="Models"></div>
+    <div class="ed-col ed-params" id="flow-detail" aria-live="polite"></div>
+  </section>
+</main>
+<!-- MIDI window (HX Edit Command Center layout) -->
+<div class="mc-overlay" id="midi-modal" hidden>
+  <div class="mc" role="dialog" aria-label="MIDI">
+    <div class="mc-top">
+      <span class="mc-title">MIDI Assign</span>
+      <button type="button" class="mc-snap" disabled title="Snapshots (not on the POD HD500)"><b>1</b>SNAPSHOT 1</button>
+    </div>
+    <div class="mc-body">
+      <div class="mc-grid" id="mc-grid"></div>
+      <div class="mc-insp" id="mc-insp"></div>
+    </div>
+    <div class="mc-foot"><button type="button" class="mc-done" id="mc-done">Done</button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<script src="flow.js"></script>
+<script src="midi.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
