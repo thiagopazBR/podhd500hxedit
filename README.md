@@ -15,7 +15,7 @@ HX Edit–style interface · **built-in tuner** · talks to the pedal directly o
 
 <sub>The interface, shown with sample data.</sub>
 
-[Tuner](#a-tuner-the-original-never-had) · [Features](#features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Status](#status-and-limitations) · [API](docs/API.md)
+[Features](#features) · [Quick start](#quick-start) · [How it works](#how-it-works) · [Tuner](#a-tuner-the-original-never-had) · [Status](#status-and-limitations) · [API](docs/API.md)
 
 </div>
 
@@ -25,20 +25,6 @@ Line 6 no longer maintains the official POD HD500 Edit, and its driver doesn't w
 current macOS / Apple Silicon. This project talks to the pedal directly over USB and runs
 as a small local web app: one Go binary that serves the UI on `http://127.0.0.1:8500/`.
 
-## A tuner the original never had
-
-> [!TIP]
-> **A tuner built into the editor.** The original POD HD500 Edit has none. Click the tuning
-> fork in the header and a full chromatic tuner opens over the signal flow.
-
-<p align="center"><img src="docs/screenshots/tuner.png" alt="The built-in tuner: note, cents and a 10-segment meter" width="760"></p>
-
-- **Note name and cents**, read from the pedal about five times a second
-- **A 10-segment meter** whose marker goes from red to green as you get closer to the note
-- **Reference pitch** from 425 to 455 Hz
-- **Mute or Bypass** the output while you tune
-- Also on the HTTP API (`POST /api/tuner`), see [docs/API.md](docs/API.md)
-
 > [!WARNING]
 > **Work in progress, use at your own risk.** Edits go to the pedal's edit buffer live;
 > *Send / Save to Pedal* writes its memory. **Back up your presets first** (the editor's
@@ -47,7 +33,7 @@ as a small local web app: one Go binary that serves the UI on `http://127.0.0.1:
 
 ## Features
 
-- **Tuner**: chromatic tuner in the editor, with reference pitch and Mute/Bypass (see above)
+- **Tuner**: chromatic tuner in the editor, with reference pitch and Mute/Bypass (see [below](#a-tuner-the-original-never-had))
 - **Signal flow**: drag blocks, amp positions (Pre / paths / Post), dual amps, on/off,
   footswitch and EXP labels, DSP-limit warnings
 - **Every amp, cab and effect** with its parameters, in units that match the pedal's LCD
@@ -120,6 +106,20 @@ and never talks to the pedal. All the logic lives behind the API, so other clien
 | `pkg/editor` | session: state, events, edits |
 | `frontend/` | the new UI (React + TypeScript + Vite), built into the binary |
 | `docs/API.md` | API reference |
+
+## A tuner the original never had
+
+> [!TIP]
+> **A tuner built into the editor.** The original POD HD500 Edit has none. Click the tuning
+> fork in the header and a full chromatic tuner opens over the signal flow.
+
+<p align="center"><img src="docs/screenshots/tuner.png" alt="The built-in tuner: note, cents and a 10-segment meter" width="760"></p>
+
+- **Note name and cents**, read from the pedal about five times a second
+- **A 10-segment meter** whose marker goes from red to green as you get closer to the note
+- **Reference pitch** from 425 to 455 Hz
+- **Mute or Bypass** the output while you tune
+- Also on the HTTP API (`POST /api/tuner`), see [docs/API.md](docs/API.md)
 
 ## Status and limitations
 
