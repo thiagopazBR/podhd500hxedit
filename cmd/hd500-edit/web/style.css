@@ -281,7 +281,6 @@ body.dragging-bpm, body.dragging-bpm * { cursor: ns-resize !important; }
 .power svg { width: 18px; height: 18px; }
 .power path { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
 .power.on { color: #fff; border-color: var(--cat, var(--accent)); background: color-mix(in srgb, var(--cat, var(--accent)) 22%, var(--bg)); }
-.power:hover { border-color: #f2f3f5; }
 /* Amp+Cab block (HX Edit): amp | cab tabs over the parameters */
 .ac-tabs { display: flex; align-items: stretch; gap: 2px; margin-bottom: 10px; }
 .ac-tab { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 8px; height: 30px; padding: 0 10px;
@@ -978,7 +977,7 @@ body.dragging-bpm, body.dragging-bpm * { cursor: ns-resize !important; }
 .power { display: grid; place-items: center; width: 36px; height: 25px; padding: 0; gap: 0; border: 0; border-radius: 0;
   background: #393b3c; color: #707070; cursor: pointer; }            /* → #323435 */
 .power.on { color: #fff; background: #393b3c; border: 0; }
-.power:hover { color: #fff; border: 0; }
+/* no hover colour change: the on/off state must stay readable while the pointer is on the button */
 .power svg { width: 18px; height: 18px; }
 .power path { stroke-width: 2.2; }
 .ac-tabs .power { flex: none; margin-left: 0; }

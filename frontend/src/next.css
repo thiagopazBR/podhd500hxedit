@@ -93,3 +93,7 @@ html { background: #0a0a0a; }
 .hxh-snap:disabled, .hxh-snap:disabled:hover { color: #d1d1d1; opacity: .4; cursor: not-allowed; }
 /* block header: the amp/cab thumbnail (as in the models list), with room above and below */
 .ac-title svg.amp-ico { width: 27px; height: 18px; margin: 3px -2px 3px -4px; }  /* the bar is 25px tall: 3px above and below */
+
+/* Block power button: no hover colour change, so its on/off state stays readable while the pointer is over it. */
+.power:hover { color: #707070; }
+.power.on:hover { color: #fff; }
