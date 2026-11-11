@@ -76,7 +76,7 @@ func VariaxModels() map[string][]string {
 // SetVariax changes a Variax setting of the edit buffer: "model" (index
 // into the model list) or "tone" (0..127).
 func (s *Session) SetVariax(param string, value int) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	var id uint32
@@ -114,7 +114,7 @@ func (s *Session) SetVariaxControl(value uint32) error {
 	if !podhd500.ValidOption(VariaxControlOptions, value) {
 		return fmt.Errorf("invalid value %d for Variax Control", value)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if err := s.send(usb.BuildStatusSet(GlobalVariaxControl, value)); err != nil {

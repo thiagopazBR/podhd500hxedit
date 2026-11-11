@@ -49,6 +49,7 @@ type DirectClient struct {
 	stopCh   chan struct{}
 	wg       sync.WaitGroup
 	stopOnce sync.Once
+	recvOnce sync.Once // closes recvCh when the pedal goes away (readLoop is the only sender)
 }
 
 // DirectOptions configures OpenDirectClient.
@@ -170,6 +171,14 @@ func (c *DirectClient) stopping() bool {
 // ReadRaw: no writes, no blocking channel sends.
 func (c *DirectClient) readLoop() {
 	defer c.wg.Done()
+	// A closed RecvChan tells the session the pedal is gone (power-off, cable,
+	// USB reset); it then closes this client and reconnects. Close() alone
+	// (stopping) does not close it.
+	defer func() {
+		if !c.stopping() {
+			c.recvOnce.Do(func() { close(c.recvCh) })
+		}
+	}()
 	var r Reassembler
 	buf := make([]byte, 4096)
 	failures, aborts := 0, 0
@@ -196,6 +205,11 @@ func (c *DirectClient) readLoop() {
 			}
 			failures++
 			warnf("leitura bulk IN falhou (%d): %v", failures, err)
+			// kIOReturnNotAttached / kIOReturnNoDevice: the device is gone, no point in retrying
+			if strings.HasSuffix(err.Error(), "0xe00002ed") || strings.HasSuffix(err.Error(), "0xe00002c0") {
+				warnf("POD HD500 desconectada (%v)", err)
+				return
+			}
 			if failures > 20 {
 				warnf("leitura abandonada apos %d falhas seguidas; reinicie o programa", failures)
 				return

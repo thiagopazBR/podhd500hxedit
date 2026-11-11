@@ -110,7 +110,7 @@ func (s *Session) loadBuffer() error {
 
 // Preset returns the loaded preset's blocks.
 func (s *Session) Preset() (PresetView, error) {
-	if s.client == nil {
+	if s.cli() == nil {
 		return PresetView{}, ErrOffline
 	}
 	s.bufMu.Lock()
@@ -157,7 +157,7 @@ func (s *Session) SetBlockActive(id int, on bool) error {
 	if id < 0 || id > 11 {
 		return fmt.Errorf("invalid block %d", id)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	s.bufMu.Lock()
@@ -253,7 +253,7 @@ func Models() []ModelGroup {
 	}
 	for _, m := range cat.Cabs {
 		if m.Type&0xFFFF != 0xFFFF {
-			cabs = append(cabs, ModelInfo{Type: m.Type, Name: m.Name, BasedOn: m.BasedOn, Bass: bassCabs[m.Name]})
+			cabs = append(cabs, ModelInfo{Type: m.Type, Name: m.Name, BasedOn: m.BasedOn, Bass: bassCabs[m.Name], Style: podhd500.StyleOf("cab", m.Name)})
 		}
 	}
 	cabs = append(cabs, ModelInfo{Type: NoCabType, Name: "No Cab", None: true}) // last, as the user asked
@@ -293,7 +293,7 @@ func (s *Session) SetBlockModel(id int, modelType uint32) error {
 	if id < 0 || id > 11 {
 		return fmt.Errorf("invalid block %d", id)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	kind := podhd500.ItemKind(id)
@@ -379,7 +379,7 @@ func (s *Session) SetParam(id int, paramID uint32, value float32) error {
 	if id < 0 || id > 11 {
 		return fmt.Errorf("invalid block %d", id)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if math.IsNaN(float64(value)) {
@@ -450,7 +450,7 @@ func (s *Session) SetTempoSync(id, slot, note int) error {
 	if !podhd500.ValidSyncNote(note) {
 		return fmt.Errorf("invalid note %d", note)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	cmd := usb.CmdTempoParam1
@@ -504,7 +504,7 @@ func (s *Session) SetCab(cab int, param string, value float32) error {
 	if !ok || cab < 0 || cab > 1 {
 		return fmt.Errorf("invalid cab parameter %q", param)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	id := ids[cab]
@@ -648,7 +648,7 @@ func (s *Session) SetMixer(param string, value float32) error {
 	if !ok {
 		return fmt.Errorf("invalid mixer parameter %q", param)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if math.IsNaN(float64(value)) {

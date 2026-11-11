@@ -20,7 +20,7 @@ const (
 
 // SetMIDIChannel writes the pedal's MIDI channel and reads it back.
 func (s *Session) SetMIDIChannel(ch uint32) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if ch < MinMIDIChannel || ch > MaxMIDIChannel {

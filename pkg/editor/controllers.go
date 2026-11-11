@@ -13,7 +13,7 @@ import (
 // sends the whole buffer to the pedal (PRESET_SET), like the front panel's
 // own edits that rewrite the preset. The LCD shows "SYNC IN PROGRESS" once.
 func (s *Session) rewriteBuffer(what string, f func(p *podhd500.Preset) (bool, error)) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if err := s.loadBuffer(); err != nil {
@@ -105,7 +105,7 @@ func (s *Session) SetController(id, k int, ctl uint32) error {
 // block id, 0..1 normalized like the value. Sent as the pedal reports its
 // own heel/toe edits (Cmd 0x2E / 0x2F), no buffer rewrite.
 func (s *Session) SetParamRange(id, k int, toe bool, v float32) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if err := checkBlock(id); err != nil {

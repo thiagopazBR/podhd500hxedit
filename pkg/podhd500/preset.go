@@ -533,9 +533,18 @@ type GearStyle struct {
 	Grille string `json:"grille,omitempty"` // amps
 	Panel  string `json:"panel,omitempty"`  // amps
 	Trim   string `json:"trim,omitempty"`   // amps
-	Layout string `json:"layout,omitempty"` // amps: combo | head
+	Layout string `json:"layout,omitempty"` // amps: combo | head; cabs: 1x8 | 6x9 | 1x12 | 2x12 | 4x10 | 4x12 | 1x15 | 8x10
 	// amps: tweed | silver | diamond | diamond-plate | basket | none (heads)
 	GrilleType string `json:"grilleType,omitempty"`
+	// amps: speakers showing through the cloth (1, 2 or 4), as the HX thumbnails
+	Speakers int `json:"speakers,omitempty"`
+	// amps: where the controls are: front (default) or top (on top of the
+	// cabinet, not seen from the front: Vox, tweed Fenders, Supro, Gibson)
+	Controls string `json:"controls,omitempty"`
+	// amps, cabs: the picture's file name (no extension), from the family key:
+	// "amp-tweed-b-man", "cab-412-uber". The UI shows that image when it has
+	// one and its own drawing otherwise.
+	Art string `json:"art,omitempty"`
 }
 
 var (
@@ -543,18 +552,47 @@ var (
 	styles     struct {
 		Pedals map[string]*GearStyle `json:"pedals"`
 		Amps   map[string]*GearStyle `json:"amps"`
+		Cabs   map[string]*GearStyle `json:"cabs"`
 	}
 )
+
+// artSlug("amp", "Blackface ‘Lux") = "amp-blackface-lux": lower case, runs of
+// anything but letters and digits become one "-".
+func artSlug(kind, key string) string {
+	var b strings.Builder
+	b.WriteString(kind)
+	dash := true
+	for _, r := range strings.ToLower(key) {
+		if (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') {
+			if dash {
+				b.WriteByte('-')
+			}
+			b.WriteRune(r)
+			dash = false
+		} else {
+			dash = true
+		}
+	}
+	return b.String()
+}
 
 func lookupStyle(kind, model string) *GearStyle {
 	stylesOnce.Do(func() {
 		if b, err := EmbeddedData.ReadFile("data/gear-styles.json"); err == nil {
 			_ = json.Unmarshal(b, &styles)
 		}
+		for k, st := range styles.Amps {
+			st.Art = artSlug("amp", k)
+		}
+		for k, st := range styles.Cabs {
+			st.Art = artSlug("cab", k)
+		}
 	})
 	switch kind {
 	case "fx":
 		return styles.Pedals[model]
+	case "cab": // layout = the speaker arrangement (1x8, 6x9, 1x12, 2x12, 4x10, 4x12, 1x15, 8x10)
+		return styles.Cabs[model]
 	case "amp": // keys are amp families: "Tweed B-Man" for "Tweed B-Man Normal"
 		if s, ok := styles.Amps[model]; ok {
 			return s

@@ -9,8 +9,9 @@
 
 const midiUI = { open: false, sel: 0, ddOpen: "" };
 // grid of the pedal's MIDI ASSIGN screen: [control, column, row, span]
-const MIDI_GRID = [[0, 0, 0], [1, 1, 0], [2, 2, 0], [3, 3, 0], [8, 4, 0], [10, 5, 0, 2],
-  [4, 0, 1], [5, 1, 1], [6, 2, 1], [7, 3, 1], [9, 4, 1], [11, 5, 1], [12, 6, 1]];
+// (control ids follow the pedal's storage order = this screen read row by row)
+const MIDI_GRID = [[0, 0, 0], [1, 1, 0], [2, 2, 0], [3, 3, 0], [4, 4, 0], [5, 5, 0, 2],
+  [6, 0, 1], [7, 1, 1], [8, 2, 1], [9, 3, 1], [10, 4, 1], [11, 5, 1], [12, 6, 1]];
 const MIDI_SW_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="7" rx="6" ry="2.6"/><path d="M6 7v4c0 1.4 2.7 2.6 6 2.6s6-1.2 6-2.6V7M8 13.2v4.2c0 1 1.8 1.9 4 1.9s4-.9 4-1.9v-4.2"/></svg>';
 // EXP 1 / EXP 2: a tall treadle, as large as HX Edit's Command Center pedals
 const MIDI_PEDAL_SVG = '<svg class="mc-pedal" viewBox="0 0 28 52" aria-hidden="true"><rect x="3" y="2" width="22" height="48" rx="2.5"/><path d="M7 7h14M7 11h14M7 15h14"/><rect x="9" y="40" width="10" height="5" rx="1"/></svg>';
@@ -20,7 +21,7 @@ const MIDI_TOE_SVG = '<svg class="mc-toe" viewBox="0 0 24 40" aria-hidden="true"
 const MIDI_TAP_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7.5"/><path d="M12 7.5V12l3 2"/></svg>';
 const MIDI_LOOP_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12a7 7 0 0 1 12-4.9M19 12a7 7 0 0 1-12 4.9"/><path d="M17 3.5V7.5h-4M7 20.5v-4h4"/></svg>';
 
-const midiIcon = (a) => (a.pedal ? MIDI_PEDAL_SVG : a.control === 10 ? MIDI_TOE_SVG : a.control === 9 ? MIDI_TAP_SVG : a.control === 8 ? MIDI_LOOP_SVG : MIDI_SW_SVG);
+const midiIcon = (a) => (a.pedal ? MIDI_PEDAL_SVG : a.control === 5 ? MIDI_TOE_SVG : a.control === 10 ? MIDI_TAP_SVG : a.control === 4 ? MIDI_LOOP_SVG : MIDI_SW_SVG);
 
 function midiDD(field, opts, cur) {
   const c = opts.find((o) => o.value === cur) || { label: "—" };
@@ -42,7 +43,7 @@ function renderMidi() {
     const on = a.channel !== 16; // None = sends nothing
     return `<button type="button" class="mc-cell${c === midiUI.sel ? " sel" : ""}${on ? " on" : ""}${span ? " wide" : ""}" data-mc="${c}"
       ${a.pedal ? ' data-pedal="1"' : ""} style="grid-column:${col + 1}${span ? ` / span ${span}` : ""};grid-row:${row + 1}" title="${esc(a.name)}">
-      <i class="mc-tri"></i>${midiIcon(a)}<span>${esc(a.name)}</span>${c === 10 ? '<i class="mc-stem"></i><i class="mc-fork"></i>' : ""}</button>`;
+      <i class="mc-tri"></i>${midiIcon(a)}<span>${esc(a.name)}</span>${c === 5 ? '<i class="mc-stem"></i><i class="mc-fork"></i>' : ""}</button>`;
   }).join("");
   const a = list[midiUI.sel];
   const chans = (meta && meta.midiChannels) || [];

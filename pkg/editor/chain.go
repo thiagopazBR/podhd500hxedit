@@ -160,7 +160,7 @@ func moveFX(p *podhd500.Preset, id, lane, before int) error {
 // Like the front panel's MOVE, the whole edit buffer is rewritten
 // (PRESET_SET to the buffer); the LCD shows "SYNC IN PROGRESS" once.
 func (s *Session) MoveBlock(id, lane, before int) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if err := s.loadBuffer(); err != nil {
@@ -248,7 +248,7 @@ func setAmpPos(p *podhd500.Preset, pos string) (bool, error) {
 // or "post" (start of the post section). The whole edit buffer is rewritten,
 // like MoveBlock.
 func (s *Session) MoveAmp(pos string) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if err := s.loadBuffer(); err != nil {

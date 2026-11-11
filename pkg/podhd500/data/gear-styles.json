@@ -569,44 +569,48 @@
  },
  "amps": {
   "Tweed B-Man": {
-   "tolex": "#d9c394",
-   "grille": "#c9a96a",
+   "tolex": "#c9a464",
+   "grille": "#6e5232",
    "panel": "#3a2a1a",
    "trim": "#8c6a3a",
    "layout": "combo",
    "grilleType": "tweed",
-   "knob": "cream"
+   "knob": "cream",
+   "speakers": 4,
+   "controls": "top"
   },
   "Blackface ‘Lux": {
    "tolex": "#1c1d21",
-   "grille": "#cfd2d6",
+   "grille": "#b9bdb2",
    "panel": "#aeb2b8",
    "trim": "#8a8e95",
    "layout": "combo",
    "grilleType": "silver",
-   "knob": "black"
+   "knob": "black",
+   "speakers": 1
   },
   "Blackface Double": {
    "tolex": "#1a1b1f",
-   "grille": "#cfd2d6",
+   "grille": "#d6d8d4",
    "panel": "#aeb2b8",
    "trim": "#8a8e95",
    "layout": "combo",
    "grilleType": "silver",
-   "knob": "black"
+   "knob": "black",
+   "speakers": 2
   },
   "Hiway 100": {
-   "tolex": "#202226",
-   "grille": "#2a2b30",
-   "panel": "#e6e1d2",
-   "trim": "#c9a14a",
+   "tolex": "#26282e",
+   "grille": "#33363d",
+   "panel": "#9a9ca2",
+   "trim": "#5a5d63",
    "layout": "head",
    "grilleType": "none",
    "knob": "chrome"
   },
   "Brit J-45": {
    "tolex": "#1b1c20",
-   "grille": "#d8c58a",
+   "grille": "#3a3326",
    "panel": "#c9a14a",
    "trim": "#e9e4d6",
    "layout": "head",
@@ -623,17 +627,17 @@
    "knob": "black"
   },
   "Brit P-75": {
-   "tolex": "#2a2018",
-   "grille": "#d8c58a",
-   "panel": "#b8a37a",
-   "trim": "#c9a14a",
+   "tolex": "#56548e",
+   "grille": "#6a68a2",
+   "panel": "#c8c8d2",
+   "trim": "#3a3866",
    "layout": "head",
    "grilleType": "none",
    "knob": "cream"
   },
   "Plexi Lead 100": {
-   "tolex": "#17181b",
-   "grille": "#d8c58a",
+   "tolex": "#1d1f2a",
+   "grille": "#2a2d3a",
    "panel": "#d1ad55",
    "trim": "#f1e7c9",
    "layout": "head",
@@ -641,58 +645,64 @@
    "knob": "chrome"
   },
   "Treadplate": {
-   "tolex": "#202226",
-   "grille": "#16171a",
-   "panel": "#9ea3ab",
+   "tolex": "#1d1e21",
+   "grille": "#9ea3ab",
+   "panel": "#26282c",
    "trim": "#c9ced6",
-   "layout": "combo",
+   "layout": "head",
    "grilleType": "diamond-plate",
-   "knob": "chrome"
+   "knob": "black"
   },
   "Class A-15": {
-   "tolex": "#7a4a2a",
-   "grille": "#c9ad7a",
-   "panel": "#2a1c12",
-   "trim": "#c9ad7a",
+   "tolex": "#1d1c1a",
+   "grille": "#8a5a3e",
+   "panel": "#5a4630",
+   "trim": "#3a3632",
    "layout": "combo",
    "grilleType": "diamond",
-   "knob": "cream"
+   "knob": "cream",
+   "controls": "top"
   },
   "Class A-30 TB": {
-   "tolex": "#6a3f23",
-   "grille": "#d1b988",
-   "panel": "#241810",
-   "trim": "#d1b988",
+   "tolex": "#1c1c1a",
+   "grille": "#2f3024",
+   "panel": "#9a8a5a",
+   "trim": "#3a3a30",
    "layout": "combo",
    "grilleType": "diamond",
-   "knob": "cream"
+   "knob": "cream",
+   "speakers": 2,
+   "controls": "top"
   },
   "Super O": {
-   "tolex": "#b6482e",
-   "grille": "#d9cfa8",
-   "panel": "#2a1c12",
-   "trim": "#d9cfa8",
+   "tolex": "#8f8f8a",
+   "grille": "#b8b7af",
+   "panel": "#a6a6a0",
+   "trim": "#6e6e69",
    "layout": "combo",
-   "grilleType": "diamond",
-   "knob": "cream"
+   "grilleType": "silver",
+   "knob": "cream",
+   "controls": "top"
   },
   "Divide 9/15": {
-   "tolex": "#3b2f26",
-   "grille": "#cdbb94",
-   "panel": "#c9b88a",
-   "trim": "#8c7550",
-   "layout": "combo",
-   "grilleType": "tweed",
-   "knob": "cream"
+   "tolex": "#4f8a8f",
+   "grille": "#5d9a9e",
+   "panel": "#e6dcbc",
+   "trim": "#33585b",
+   "layout": "head",
+   "grilleType": "none",
+   "knob": "black"
   },
   "Gibtone 185": {
-   "tolex": "#5a3b27",
-   "grille": "#cdbb94",
-   "panel": "#b79a6a",
-   "trim": "#8c7550",
+   "tolex": "#d6a648",
+   "grille": "#d6a648",
+   "panel": "#c8963c",
+   "trim": "#8c6420",
    "layout": "combo",
-   "grilleType": "tweed",
-   "knob": "cream"
+   "grilleType": "none",
+   "knob": "black",
+   "speakers": 1,
+   "controls": "top"
   },
   "Flip Top": {
    "tolex": "#202226",
@@ -715,7 +725,7 @@
   "Bomber Uber": {
    "tolex": "#17181b",
    "grille": "#1f2023",
-   "panel": "#2c2f35",
+   "panel": "#5a5d63",
    "trim": "#c0c4cc",
    "layout": "head",
    "grilleType": "none",
@@ -741,9 +751,9 @@
   },
   "Line 6 Elektrik": {
    "tolex": "#202226",
-   "grille": "#2a2c31",
-   "panel": "#e8e6df",
-   "trim": "#d9482b",
+   "grille": "#26292f",
+   "panel": "#3f78c8",
+   "trim": "#4a4e57",
    "layout": "head",
    "grilleType": "none",
    "knob": "black"
@@ -751,46 +761,46 @@
   "Line 6 Doom": {
    "tolex": "#141416",
    "grille": "#1c1d20",
-   "panel": "#3a3d44",
-   "trim": "#d9482b",
+   "panel": "#9a9da3",
+   "trim": "#5a5d63",
    "layout": "head",
    "grilleType": "none",
    "knob": "black"
   },
   "Line 6 Epic": {
-   "tolex": "#17181b",
-   "grille": "#1f2023",
-   "panel": "#e8e6df",
-   "trim": "#3b78d8",
+   "tolex": "#b9bcc2",
+   "grille": "#d7d9dd",
+   "panel": "#1d1e21",
+   "trim": "#8a8d93",
    "layout": "head",
    "grilleType": "none",
    "knob": "black"
   },
   "Mandarin 80": {
    "tolex": "#e8731f",
-   "grille": "#1b1b1e",
-   "panel": "#17171a",
+   "grille": "#e8731f",
+   "panel": "#ece6d6",
    "trim": "#f4d9a8",
    "layout": "head",
    "grilleType": "none",
-   "knob": "chrome"
+   "knob": "black"
   },
   "PV Panama": {
-   "tolex": "#17181b",
-   "grille": "#26272b",
-   "panel": "#ecebe6",
-   "trim": "#d8332f",
+   "tolex": "#d6d6d4",
+   "grille": "#e4e4e2",
+   "panel": "#c41e2a",
+   "trim": "#9a9a98",
    "layout": "head",
    "grilleType": "none",
    "knob": "black"
   },
   "Mahadeva": {
-   "tolex": "#1d1e22",
-   "grille": "#7a6a46",
-   "panel": "#8c9099",
+   "tolex": "#1c1a18",
+   "grille": "#b39a5a",
+   "panel": "#d8b0a0",
    "trim": "#c9ced6",
-   "layout": "combo",
-   "grilleType": "basket",
+   "layout": "head",
+   "grilleType": "none",
    "knob": "chrome"
   },
   "Brit 2204": {
@@ -866,31 +876,34 @@
    "knob": "chrome"
   },
   "Small Tweed": {
-   "tolex": "#d9c394",
-   "grille": "#c9a96a",
+   "tolex": "#ddc896",
+   "grille": "#4a3a26",
    "panel": "#3a2a1a",
    "trim": "#8c6a3a",
    "layout": "combo",
    "grilleType": "tweed",
-   "knob": "cream"
+   "knob": "cream",
+   "controls": "top"
   },
   "Jazz Rivet": {
-   "tolex": "#d9dadd",
-   "grille": "#2a2c31",
-   "panel": "#17181b",
-   "trim": "#8a8e95",
+   "tolex": "#55585e",
+   "grille": "#3c3e43",
+   "panel": "#9a9da3",
+   "trim": "#8a8d93",
    "layout": "combo",
    "grilleType": "basket",
    "knob": "chrome"
   },
   "A30 Fawn": {
-   "tolex": "#b79a6a",
-   "grille": "#cdb98a",
-   "panel": "#2a1c12",
-   "trim": "#d1b988",
+   "tolex": "#e2c3a6",
+   "grille": "#8a2a24",
+   "panel": "#d9b898",
+   "trim": "#a8876a",
    "layout": "combo",
    "grilleType": "diamond",
-   "knob": "cream"
+   "knob": "cream",
+   "speakers": 2,
+   "controls": "top"
   },
   "Black Panel Pete": {
    "tolex": "#18191c",
@@ -927,6 +940,173 @@
    "layout": "head",
    "grilleType": "none",
    "knob": "black"
+  }
+ },
+ "cabs": {
+  "212 PhD Ported": {
+   "layout": "2x12",
+   "tolex": "#232529",
+   "grille": "#2c2e33",
+   "grilleType": "basket",
+   "trim": "#5a5d63",
+   "speakers": 2,
+   "panel": "#c8ccd2"
+  },
+  "6x9 Super O": {
+   "layout": "6x9",
+   "tolex": "#4d5f74",
+   "grille": "#5b6d82",
+   "grilleType": "silver",
+   "trim": "#33404f"
+  },
+  "112 Celest 12-H": {
+   "layout": "1x12",
+   "tolex": "#2f6f73",
+   "grille": "#e6dfc8",
+   "grilleType": "none",
+   "trim": "#24585b",
+   "panel": "#2f6f73"
+  },
+  "112 BF 'Lux": {
+   "layout": "1x12",
+   "tolex": "#1c1d21",
+   "grille": "#c6cabf",
+   "grilleType": "silver",
+   "trim": "#8a8e95"
+  },
+  "112 Field Coil": {
+   "layout": "1x12",
+   "tolex": "#d6a648",
+   "grille": "#d6a648",
+   "grilleType": "none",
+   "trim": "#8c6420",
+   "speakers": 1
+  },
+  "112 Blue Bell": {
+   "layout": "1x12",
+   "tolex": "#6e4a32",
+   "grille": "#5a3a28",
+   "grilleType": "diamond",
+   "trim": "#3e2a1c",
+   "panel": "#3a4f8a"
+  },
+  "212 Blackface Double": {
+   "layout": "2x12",
+   "tolex": "#1a1b1f",
+   "grille": "#d6d8d4",
+   "grilleType": "silver",
+   "trim": "#8a8e95"
+  },
+  "212 Silver Bell": {
+   "layout": "2x12",
+   "tolex": "#1c1d1a",
+   "grille": "#2c3324",
+   "grilleType": "diamond",
+   "trim": "#a8925a",
+   "speakers": 2,
+   "panel": "#2c2e2a"
+  },
+  "410 Tweed": {
+   "layout": "4x10",
+   "tolex": "#c9a464",
+   "grille": "#6e5232",
+   "grilleType": "tweed",
+   "trim": "#8c6a3a"
+  },
+  "412 Uber": {
+   "layout": "4x12",
+   "tolex": "#17181b",
+   "grille": "#1d1e21",
+   "grilleType": "basket",
+   "trim": "#3a3c41",
+   "speakers": 4
+  },
+  "412 XXL V-30": {
+   "layout": "4x12",
+   "tolex": "#17181b",
+   "grille": "#222428",
+   "grilleType": "basket",
+   "trim": "#4a4d53",
+   "speakers": 4
+  },
+  "412 Hiway": {
+   "layout": "4x12",
+   "tolex": "#1d1e21",
+   "grille": "#8d9096",
+   "grilleType": "basket",
+   "trim": "#3a3c41",
+   "panel": "#d8d8d8"
+  },
+  "412 Greenback 25": {
+   "layout": "4x12",
+   "tolex": "#1b1c1f",
+   "grille": "#cdbb94",
+   "grilleType": "basket",
+   "trim": "#3a3c41",
+   "speakers": 4
+  },
+  "412 Brit T-75": {
+   "layout": "4x12",
+   "tolex": "#1b1c1f",
+   "grille": "#2a2b2e",
+   "grilleType": "basket",
+   "trim": "#3a3c41",
+   "speakers": 4
+  },
+  "412 Tread V-30": {
+   "layout": "4x12",
+   "tolex": "#17181b",
+   "grille": "#1b1c1f",
+   "grilleType": "basket",
+   "trim": "#3a3c41",
+   "panel": "#26282c"
+  },
+  "412 Greenback 30": {
+   "layout": "4x12",
+   "tolex": "#1b1c1f",
+   "grille": "#b39a6e",
+   "grilleType": "basket",
+   "trim": "#3a3c41",
+   "speakers": 4
+  },
+  "115 Flip Top": {
+   "layout": "1x15",
+   "tolex": "#26282e",
+   "grille": "#9a9d9f",
+   "grilleType": "basket",
+   "trim": "#b0b4ba"
+  },
+  "1x8 Champ": {
+   "layout": "1x8",
+   "tolex": "#ddc896",
+   "grille": "#4a3a26",
+   "grilleType": "tweed",
+   "trim": "#8c6a3a"
+  },
+  "212 Jazz Rivet": {
+   "layout": "2x12",
+   "tolex": "#26282c",
+   "grille": "#3a3c41",
+   "grilleType": "basket",
+   "trim": "#8a8d93",
+   "speakers": 2,
+   "panel": "#9a9da3"
+  },
+  "810 SV Beast": {
+   "layout": "8x10",
+   "tolex": "#1b1c1f",
+   "grille": "#2a2b2e",
+   "grilleType": "basket",
+   "trim": "#6a6d73",
+   "panel": "#c8ccd2"
+  },
+  "410 Rhino": {
+   "layout": "4x10",
+   "tolex": "#1b1c1f",
+   "grille": "#26272b",
+   "grilleType": "basket",
+   "trim": "#5a5d63",
+   "speakers": 4
   }
  }
 }

@@ -19,7 +19,7 @@ const CmdDSPOver uint8 = 0x33
 
 // SendMIDIAssignRaw sends one control's six MIDI Assign bytes (debugging).
 func (s *Session) SendMIDIAssignRaw(control int, f [6]byte) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if control < 0 || control > 12 {
@@ -37,7 +37,7 @@ type MIDIAssignChange struct {
 // as the pedal reports its own edits (Cmd 0x34 with all six bytes),
 // LCD-verified 2026-11-08.
 func (s *Session) SetMIDIAssign(control int, c MIDIAssignChange) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if control < 0 || control >= podhd500.MIDIAssignCount {

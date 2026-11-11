@@ -1,0 +1,95 @@
+/* Styles of the new UI only (the rest comes from the classic style.css). */
+#root { height: 100%; }
+.next-todo { padding: 16px; color: #8a8f99; font-size: 12px; }
+.next-todo a { color: #c9ccd1; }
+.editors:has(> .next-todo) { display: block; }
+
+/* ---- Signal flow, HX Edit proportions (compared side by side with Helix Native) */
+/* Panel frame & outer spacing measured on Helix Native (1x): #1b1b1b surround
+   with 10px left/right margins and 8px top/bottom gaps around the 248px #0f0f0f
+   Signal Flow panel, 5px rounded corners, aligned flush with header and editor. */
+.layout { padding: 0 10px 10px 0; column-gap: 10px; row-gap: 8px; grid-template-rows: auto auto 1fr; }
+.layout.lp-collapsed { padding-left: 10px; }
+.hxh, .layout.lp-collapsed .hxh { height: 29px; margin: 8px 0 0; padding: 0; background: transparent; }
+.flow-view { background: #0f0f0f; border: 0; border-radius: 5px; box-shadow: none; }
+/* the chain is centred in the panel, horizontally and vertically (SignalFlow.tsx sets its margins) */
+.flow-stage { min-height: 248px; place-items: start start; padding: 0; border-radius: 5px; }
+.flow-stage { position: relative; }
+.flow-stage > svg.chain { position: absolute; } /* placed by left/top, so the panel's height never depends on the chain */
+.flow-stage.dragging { overflow: visible; } /* the extra path-B drop row may leave the panel while a block is dragged */
+.flow-stage .chain { width: auto; }
+.tuner { background: #0f0f0f; }
+.chain .blk.on .blk-box, .chain .io circle, .chain .slot-empty rect:not(.blk-sel), .chain .amp-empty-box { fill: #0f0f0f; }
+/* block labels: regular weight, no letter spacing, ~11 px on screen */
+.chain .blk-fs.blk-ac { font-weight: 400; font-size: 9.2px; letter-spacing: 0; }
+.chain .amp-plus { font-weight: 400; }
+.chain .io-label { font-weight: 400; font-size: 9.2px; letter-spacing: 0; font-family: var(--font); }
+
+/* ---- Header: the app name is centred only when it fits (Header.tsx measures) */
+.hxh-snap { background: #323232; }
+.hxh-brand.brand-free { position: static; transform: none; margin: 0 auto; }
+.hxh-brand.brand-led { position: static; transform: none; margin: 0 auto; }
+.hxh-brand.brand-led .brand-name, .hxh-brand.brand-led .brand-sub { display: none; }
+
+/* dev icon gallery (/next/#icons) */
+.icon-gallery { padding: 16px; background: #0c0c0c; min-height: 100%; overflow: auto; }
+.icon-gallery h2 { color: #888; font: 600 11px/1 var(--font); margin: 16px 0 6px; }
+.icon-gallery svg.chain { width: auto; display: block; }
+.ig-amps { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
+.ig-amp { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; color: #bbb; font: 11px var(--font); }
+.ig-amp-big { width: 132px; height: 92px; }
+.ig-amp-small { width: 30px; height: 20px; }
+.ig-small svg { width: 30px; height: 20px; }
+
+/* ---- Header, right side: measured on Helix Native (1x) */
+.hxh-right { gap: 4px; }
+.hxh-right .hxh-box { height: 29px; background: #323232; border-radius: 4px; }
+.hxh-right #tuner-btn { width: 29px; }
+.hxh-right #midi-btn { width: 29px; }
+/* Tempo Sync + BPM: one rounded block split by a 1px line (the header colour) */
+.hxh-right .hxh-tswrap { margin-right: -3px; }
+.hxh-right #tsync-btn { width: 39px; border-radius: 4px 0 0 4px; }
+.hxh-right .hxh-tempo .bpm-field { width: 50px; border-radius: 0 4px 4px 0; }
+.hxh .hxh-right .bpm-field input { font: 400 17px/29px var(--lp-list); height: 29px; padding: 1px 0 0; color: #cfcfcf; }
+.hxh-right .hxh-box:hover:not(:disabled), .hxh .hxh-right .bpm-field:hover:not(:has(input:disabled)) { background: #3c3c3c; }
+.hxh-right .hxh-tuner.on { background: #4a4a4a; }
+.hxh-right #tuner-btn svg circle { fill: currentColor; stroke: none; }
+/* menu: #242425, 25px rows, the current mode highlighted (no tick) */
+.hxh .menu.hxh-tsmenu { right: 0; min-width: 135px; background: #242425; box-shadow: 0 4px 12px rgba(0,0,0,.5); }
+.hxh-tsmenu button { height: 25px; gap: 8px; padding: 0 8px 0 5px; color: #cacaca; font: 400 13px/1 var(--lp-list); }
+.hxh-tsmenu button svg { width: 16px; height: 16px; }
+.hxh-tsmenu button.cur { background: #3e3e3e; color: #e6e6e6; font-weight: 400; }
+.hxh-tsmenu button.cur::after { content: none; }
+.hxh-tsmenu button:hover:not(:disabled) { background: #3e3e3e; }
+.hxh-right #tuner-btn { color: #bdbdbd; }
+.hxh-right #tuner-btn:hover:not(:disabled), .hxh-right .hxh-tuner.on { color: #fff; }
+.hxh-right #tsync-btn svg { width: 20px; height: 20px; }
+.hxh-right #tsync-btn svg path, .hxh-right #tsync-btn svg circle { stroke-width: 2; }
+.hxh-right #tsync-btn { color: #c8c8c8; }
+.hxh .hxh-right .bpm-field input { font-size: 16px; }
+.hxh:has(.brand-free) .hxh-right, .hxh:has(.brand-led) .hxh-right { margin-left: 0; }
+
+/* Amp B while an amp is dragged: a grey, dimmed placeholder for the second path (not a drop target). */
+.chain .amp-hint { pointer-events: none; opacity: .45; }
+.chain .amp-hint > rect { fill: none; stroke: #6f6f6f; stroke-width: 1.5; stroke-dasharray: 4 3; }
+.chain .amp-hint .dz-label { fill: #8a8a8a; font-size: 8.5px; font-weight: 700; letter-spacing: .06em; text-anchor: middle; }
+.chain .wires path.wire-hint { stroke-dasharray: 2 5; stroke-linecap: round; opacity: .5; }
+/* Two paths: labels get a halo in the panel colour where a path wire runs behind them (the mixer's). */
+.chain.two-paths .blk-fs { paint-order: stroke; stroke: #101115; stroke-width: 4px; stroke-linejoin: round; }
+.chain .wires path.wire-faint { opacity: .14; }  /* last stretch of amp B's wire: behind the mixer label, so the word stays readable */
+
+/* Parameter sliders: the normal arrow cursor (no resize arrows) and no focus ring while dragging. */
+.prm .prm-bar, .prm .prm-bar b { cursor: default; }
+.prm .prm-bar:focus, .prm .prm-bar:focus-visible { outline: none; box-shadow: none; }
+.params-pending .prm .prm-bar { cursor: not-allowed; }
+.chain .blk.amp-empty .blk-fs.blk-ac { fill: #6a6f79; }  /* the disabled amp slot's label (it rendered black) */
+
+/* App size limit. The original POD HD500 Edit is a fixed 938 x 677 px window; this UI is denser, so
+   it is capped at 1.5x that (1407 x 1016) and centred, instead of stretching over the whole screen
+   (where the faders' values end up far from their names). Smaller windows use all the room. */
+html { background: #0a0a0a; }
+#root { max-width: 1407px; max-height: 1016px; margin: 0 auto; }
+.layout { height: 100%; }
+.hxh-snap:disabled, .hxh-snap:disabled:hover { color: #d1d1d1; opacity: .4; cursor: not-allowed; }
+/* block header: the amp/cab thumbnail (as in the models list), with room above and below */
+.ac-title svg.amp-ico { width: 27px; height: 18px; margin: 3px -2px 3px -4px; }  /* the bar is 25px tall: 3px above and below */

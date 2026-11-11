@@ -107,7 +107,7 @@ func (s *Session) setlistNames(stored bool) ([]string, error) {
 
 // Export builds a file; it returns the content and a suggested file name.
 func (s *Session) Export(req ExportRequest) ([]byte, string, error) {
-	if s.client == nil {
+	if s.cli() == nil {
 		return nil, "", ErrOffline
 	}
 	switch req.Kind {
@@ -196,7 +196,7 @@ type BackupResult struct {
 // editor are kept but not included: the backup is what the pedal holds.
 func (s *Session) Backup() (BackupResult, error) {
 	var res BackupResult
-	if s.client == nil {
+	if s.cli() == nil {
 		return res, ErrOffline
 	}
 	if !s.opMu.TryLock() {
@@ -262,7 +262,7 @@ type ImportResult struct {
 //   - a bundle (.h5b): all 8 setlists (To is ignored).
 func (s *Session) Import(files [][]byte, to SlotPos) (ImportResult, error) {
 	var res ImportResult
-	if s.client == nil {
+	if s.cli() == nil {
 		return res, ErrOffline
 	}
 	if len(files) == 0 {

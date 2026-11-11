@@ -10,6 +10,12 @@ GO="$ROOT/.tools/go/bin/go"
 export CGO_ENABLED=0
 
 cd "$ROOT"
+# The new UI (frontend/, React + TypeScript + Vite) builds into
+# cmd/hd500-edit/web/next, embedded in the binary and served at /next/.
+NODE_BIN="$ROOT/.tools/node-v22.12.0-darwin-arm64/bin"
+if [[ -d frontend/node_modules && -x "$NODE_BIN/node" ]]; then
+  (cd frontend && PATH="$NODE_BIN:$PATH" npm run --silent build >/dev/null) && echo "OK: frontend → web/next"
+fi
 "$GO" vet ./pkg/... ./cmd/... 2>&1 | grep -v "possible misuse of unsafe.Pointer" | grep -v "^#" || true
 "$GO" test ./pkg/...
 mkdir -p bin

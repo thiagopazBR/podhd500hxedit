@@ -23,7 +23,7 @@ func (s *Session) RenameSetlist(set int, name string) error {
 	if err != nil {
 		return err
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if _, err := s.Setlists(); err != nil { // the pedal's names

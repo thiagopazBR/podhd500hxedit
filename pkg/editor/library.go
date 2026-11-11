@@ -95,7 +95,7 @@ func (s *Session) Setlist(set int) (SetlistView, error) {
 	if set < 0 || set >= NumSetlists {
 		return SetlistView{}, fmt.Errorf("invalid setlist %d", set+1)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return SetlistView{}, ErrOffline
 	}
 	s.lib.mu.Lock()
@@ -218,7 +218,7 @@ func (s *Session) Select(set, slot int) error {
 	if set < 0 || set >= NumSetlists || slot < 0 || slot >= SlotsPerSetlst {
 		return fmt.Errorf("invalid position: setlist %d slot %d", set+1, slot)
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if s.State().Setlist != set {

@@ -76,7 +76,7 @@ func (s *Session) Arrange(req ArrangeRequest) error {
 			return errors.New("invalid source")
 		}
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 

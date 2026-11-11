@@ -1,0 +1,1435 @@
+:root {
+  --bg: #0e0f12;
+  --bg-2: #14161a;
+  --panel: #191b20;
+  --panel-2: #1f2228;
+  --line: #2a2e36;
+  --line-soft: #23262d;
+  --text: #e8e9ec;
+  --muted: #8b909a;
+  --faint: #5d626c;
+  --accent: #f5a524;
+  --accent-soft: rgba(245, 165, 36, 0.14);
+  --ok: #3ddc84;
+  --bad: #ff5a5f;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 20% -10%, #1b1e25 0%, transparent 60%),
+    var(--bg);
+  color: var(--text);
+  font: 14px/1.4 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- app bar ---------- */
+.appbar {
+  display: flex; align-items: center; gap: 24px;
+  height: 56px; padding: 0 20px;
+  border-bottom: 1px solid var(--line-soft);
+  background: rgba(14, 15, 18, 0.85);
+  backdrop-filter: blur(8px);
+  position: sticky; top: 0; z-index: 5;
+}
+.brand { display: flex; align-items: baseline; gap: 8px; }
+.brand-mark {
+  width: 10px; height: 10px; border-radius: 3px; align-self: center;
+  background: var(--accent); box-shadow: 0 0 12px var(--accent);
+}
+/* the brand LED is the connection light: green online, red offline */
+.brand-mark[data-state="offline"] { background: var(--bad); box-shadow: 0 0 10px var(--bad); }
+.brand-mark[data-state="online"] { background: var(--ok); box-shadow: 0 0 10px var(--ok); }
+.brand-name { font-weight: 700; letter-spacing: 0.06em; }
+.brand-sub { color: var(--muted); font-weight: 500; }
+
+.now { display: flex; align-items: baseline; gap: 10px; margin: 0 auto; min-width: 0; }
+.now-slot {
+  font: 600 12px/1 ui-monospace, "SF Mono", Menlo, monospace;
+  color: var(--accent); background: var(--accent-soft);
+  padding: 4px 7px; border-radius: 6px;
+}
+.now-name { font-size: 16px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.now-set { color: var(--muted); white-space: nowrap; }
+
+.conn {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--muted); font-size: 12px;
+}
+.conn .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--bad); }
+.conn[data-state="online"] { color: var(--text); }
+.conn[data-state="online"] .dot { background: var(--ok); box-shadow: 0 0 8px var(--ok); }
+
+/* ---------- layout ---------- */
+.layout {
+  display: grid; gap: 16px; padding: 16px 20px 24px;
+  grid-template-columns: minmax(340px, 400px) 1fr;
+  grid-template-rows: auto auto 1fr;
+  grid-template-areas:
+    "tempo flow"
+    "presets flow"
+    "presets editors";
+  height: calc(100vh - 56px);
+}
+.io { grid-area: io; }
+.tempo { grid-area: tempo; }
+.flow-view { grid-area: flow; }
+.presets { grid-area: presets; }
+.editors { grid-area: editors; }
+
+.panel {
+  background: linear-gradient(180deg, var(--panel-2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+.ghost {
+  display: grid; place-items: center; min-height: 180px;
+  background: transparent; box-shadow: none;
+  border: 1px dashed var(--line-soft); color: var(--faint);
+  font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+}
+
+.label {
+  margin: 0; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- SEND / RECEIVE ---------- */
+.io { padding: 18px; display: flex; flex-direction: column; gap: 18px; }
+.sync {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 14px;
+}
+.sync-group { display: flex; flex-direction: column; gap: 6px; }
+.sync-group .label { margin-bottom: 2px; }
+.sync-group:last-child .label { text-align: right; }
+
+.btn {
+  height: 30px; border-radius: var(--radius-sm);
+  border: 1px solid var(--line); background: var(--bg-2);
+  color: var(--text); font: 600 11px/1 var(--font); letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; transition: border-color .15s, background .15s, color .15s;
+}
+.btn:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.btn:disabled { color: var(--faint); cursor: not-allowed; }
+
+.sync-device { display: flex; align-items: center; gap: 6px; padding-top: 18px; }
+.pod { width: 92px; height: auto; }
+.pod-body { fill: #24272e; stroke: #3a3f49; stroke-width: 1.2; }
+.pod-lcd { fill: #2f3d33; }
+.pod-knobs circle { fill: #4b505b; }
+.pod-fs circle { fill: #5a606c; }
+.pod-exp { fill: #30343c; stroke: #3a3f49; }
+body.online .pod-lcd { fill: #3b5c45; }
+.flow { width: 18px; height: 2px; background: var(--line); position: relative; border-radius: 2px; }
+.flow::after {
+  content: ""; position: absolute; right: -1px; top: -3px;
+  border: 4px solid transparent; border-left: 6px solid var(--line); border-right: 0;
+}
+body.online .flow { background: var(--accent); }
+body.online .flow::after { border-left-color: var(--accent); }
+
+/* ---------- INPUTS ---------- */
+.inputs {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px 14px;
+  padding-top: 16px; border-top: 1px solid var(--line-soft);
+}
+.section-title { grid-column: 1 / -1; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field label { font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+
+select {
+  appearance: none; -webkit-appearance: none;
+  height: 34px; padding: 0 30px 0 10px; border-radius: var(--radius-sm);
+  border: 1px solid var(--line); color: var(--text); font: 500 13px/1 var(--font);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%238b909a' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 11px center,
+    var(--bg-2);
+  cursor: pointer; transition: border-color .15s, box-shadow .15s;
+}
+select:hover:not(:disabled) { border-color: #3b404b; }
+select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+select:disabled { color: var(--faint); cursor: not-allowed; }
+select.flash { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+
+/* ---------- TAP TEMPO ---------- */
+.tempo {
+  display: flex; align-items: center; gap: 14px;
+  padding: 12px 18px;
+}
+.tempo .label { margin-right: auto; }
+
+.tap {
+  --beat: 0.5s;
+  width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center;
+  border: 1px solid var(--line); background: var(--bg-2);
+  cursor: pointer; transition: border-color .15s, transform .06s;
+}
+.tap:hover:not(:disabled) { border-color: var(--accent); }
+.tap:active:not(:disabled), .tap.hit { transform: scale(0.92); border-color: var(--accent); }
+.tap:disabled { cursor: not-allowed; }
+.tap-led {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #3a3220;
+}
+body.online .tap-led { animation: beat var(--beat) linear infinite; }
+@keyframes beat {
+  0%, 18% { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+  19%, 100% { background: #3a3220; box-shadow: none; }
+}
+
+.bpm { display: flex; align-items: center; gap: 8px; }
+.bpm-field {
+  height: 34px; padding: 0 10px; border-radius: var(--radius-sm);
+  border: 1px solid var(--line); background: var(--bg-2);
+  transition: border-color .15s, box-shadow .15s, background .15s;
+}
+.bpm-field:hover { border-color: #3b404b; }
+.bpm-field:focus-within,
+.bpm-field.flash,
+.bpm-field.dragging { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+.bpm-field.dragging { background: var(--accent-soft); }
+.bpm input {
+  width: 56px; height: 32px; border: 0; padding: 0; background: transparent; outline: none;
+  color: var(--text); text-align: right;
+  font: 600 16px/32px ui-monospace, "SF Mono", Menlo, monospace;
+  cursor: ns-resize; user-select: none; touch-action: none;
+}
+.bpm input:focus { cursor: text; user-select: text; }
+.bpm input:disabled { color: var(--faint); cursor: not-allowed; }
+.bpm-unit { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: var(--muted); }
+body.dragging-bpm, body.dragging-bpm * { cursor: ns-resize !important; }
+
+/* ---------- SIGNAL FLOW ---------- */
+.flow-view { display: flex; flex-direction: column; min-width: 0; min-height: 0; padding: 14px 16px 12px; gap: 10px; }
+.flow-head { display: flex; align-items: baseline; gap: 12px; min-width: 0; }
+.flow-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.flow-name.dirty { color: var(--accent); font-style: italic; }
+.flow-hint { margin-left: auto; font-size: 11px; color: var(--faint); white-space: nowrap; }
+.flow-stage {
+  display: grid; place-items: center; min-height: 150px; padding: 12px 8px;
+  overflow-x: auto; outline: none; border-radius: var(--radius-sm);
+  background: #101115; border: 1px solid var(--line-soft);
+}
+.flow-stage:focus-visible { box-shadow: 0 0 0 2px var(--accent-soft); }
+.flow-empty { color: var(--faint); font-size: 13px; }
+.chain { width: 100%; height: auto; overflow: visible; user-select: none; }
+.chain .wires path { fill: none; stroke: #6f7480; stroke-width: 2; stroke-linejoin: round; }
+.chain .io circle { fill: #101115; stroke: #9aa0aa; stroke-width: 2; }
+.chain .io path { fill: none; stroke: #c9ced6; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.chain .slot-empty rect:not(.blk-sel) { fill: #101115; stroke: #3d414a; stroke-width: 1.5; stroke-dasharray: 3 3; }
+.chain .amp-empty-box { fill: #101115; stroke: #5b606a; stroke-width: 1.5; stroke-dasharray: 3 3; }
+.chain .amp-empty .blk-icon path { stroke: #4a4e57; }
+.chain .blk { cursor: pointer; }
+.chain .blk-sel { fill: none; stroke: transparent; stroke-width: 2; }
+.chain .blk.sel .blk-sel { stroke: #f2f3f5; }
+.chain .blk:hover:not(.sel) .blk-sel { stroke: #4a4f59; }
+.chain .blk-box { fill: #16181d; stroke: #5b606a; stroke-width: 1.5; }
+.chain .blk-icon path { fill: none; stroke: #6b7079; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.chain .blk.on .blk-box { stroke: var(--cat); fill: color-mix(in srgb, var(--cat) 12%, #16181d); }
+.chain .blk.on .blk-icon path { stroke: var(--cat); }
+.chain .blk-led { fill: #2b2e35; stroke: #101115; stroke-width: 2; cursor: pointer; }
+.chain .blk.on .blk-led { fill: #ff4d3d; }
+.chain .blk-led:hover { stroke: #f2f3f5; }
+.chain .blk-fs { fill: var(--muted); font: 700 8.5px/1 var(--font); text-anchor: middle; letter-spacing: .04em; }
+/* block editor: categories · models · parameters */
+.editors { display: grid; grid-template-columns: 170px 210px 1fr; min-height: 0; padding: 0; overflow: hidden; }
+.ed-col { min-height: 0; overflow-y: auto; padding: 8px 0; }
+.ed-cats { border-right: 1px solid var(--line-soft); }
+.ed-models { border-right: 1px solid var(--line-soft); background: rgba(0,0,0,.12); }
+.ed-params { padding: 14px 18px; font-size: 12px; }
+.ed-hint { display: block; padding: 10px 14px; color: var(--faint); font-size: 12px; }
+.ed-item {
+  display: flex; align-items: center; gap: 9px; width: 100%; height: 28px; padding: 0 12px;
+  border: 0; background: none; color: var(--text); font: 13px/1 var(--font); text-align: left; cursor: pointer;
+}
+.ed-item:hover { background: rgba(255,255,255,.05); }
+.ed-item.cur { background: rgba(255,255,255,.09); font-weight: 600; }
+.ed-item.cur::after { content: "›"; margin-left: auto; color: var(--muted); }
+.ed-cats .ed-item { color: var(--cat, var(--text)); }
+.ed-item svg { flex: none; width: 16px; height: 16px; }
+.ed-item svg path { fill: none; stroke: var(--cat, var(--muted)); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ed-models .ed-item { color: #c3c7cf; }
+.ed-models .ed-item.cur { color: #fff; }
+.ed-models .ed-item.cur::after { content: ""; }
+.ed-models .ed-item .dot { flex: none; width: 8px; height: 8px; border-radius: 2px; background: #3a3e46; }
+.ed-models .ed-item.cur .dot { background: var(--cat, var(--accent)); }
+.ed-models .ed-item span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ed-sep { margin: 6px 12px; border-top: 1px solid var(--line-soft); }
+.ed-busy { opacity: .5; pointer-events: none; }
+.dt-head { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.dt-icon { flex: none; width: 22px; height: 22px; }
+.dt-icon path { fill: none; stroke: var(--cat); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.dt-model { font-size: 15px; font-weight: 700; white-space: nowrap; }
+.dt-meta { color: var(--muted); line-height: 1.35; }
+.dt-sub { display: flex; align-items: center; gap: 8px; margin: 14px 0 10px; font-weight: 600; }
+.dt-sub .dt-icon { width: 18px; height: 18px; }
+.power {
+  margin-left: auto; flex: none; display: inline-flex; align-items: center; gap: 6px;
+  height: 30px; padding: 0 12px 0 8px; border-radius: 15px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--bg); color: var(--muted); font: 600 12px/1 var(--font);
+}
+.power svg { width: 18px; height: 18px; }
+.power path { fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.power.on { color: #fff; border-color: var(--cat, var(--accent)); background: color-mix(in srgb, var(--cat, var(--accent)) 22%, var(--bg)); }
+.power:hover { border-color: #f2f3f5; }
+/* Amp+Cab block (HX Edit): amp | cab tabs over the parameters */
+.ac-tabs { display: flex; align-items: stretch; gap: 2px; margin-bottom: 10px; }
+.ac-tab { flex: 1; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 8px; height: 30px; padding: 0 10px;
+  border: 0; border-radius: 3px; background: #1b1d22; color: #9a9ea6; font: 500 13px/1 var(--lp-list); cursor: pointer; }
+.ac-tab span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ac-tab svg { flex: none; width: 18px; height: 18px; }
+.ac-tab svg path { fill: none; stroke: var(--cat); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ac-tab:hover { color: #d6d8dc; }
+.ac-tab.cur { background: #2c2f36; color: #fff; }
+.ac-tabs .power { flex: none; margin-left: 6px; }
+.ac-note { margin: 0 0 10px; font-size: 12px; }
+.chain .blk-ac { fill: var(--cat, var(--muted)); }
+.chain .amp-empty .blk-ac { fill: #5b606a; }
+.params { display: flex; flex-direction: column; gap: 12px; max-width: 520px; }
+.prm { display: grid; grid-template-columns: 1fr auto; gap: 5px 8px; align-items: baseline; }
+.prm-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prm-val { font: 600 12px/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--text); }
+.prm-bar { position: relative; grid-column: 1 / -1; height: 10px; border-radius: 2px; background: #262a31; cursor: ew-resize; touch-action: none; outline: none; }
+.prm-bar:focus-visible { box-shadow: 0 0 0 2px var(--accent-soft); }
+.prm.ro .prm-bar { cursor: default; }
+.prm-bar i { position: absolute; inset: 0 auto 0 0; border-radius: 2px; background: color-mix(in srgb, var(--cat, var(--accent)) 55%, #262a31); }
+.prm-bar b { position: absolute; top: -2px; width: 10px; height: 14px; margin-left: -4px; border-radius: 2px; background: var(--cat, var(--accent)); }
+.prm-ctl { color: var(--accent); font-size: 10px; }
+
+/* ---------- PRESETS ---------- */
+.presets {
+  display: flex; flex-direction: column; min-height: 0;
+  padding: 12px 10px 10px;
+}
+.presets-head { display: flex; flex-direction: column; gap: 8px; padding: 0 4px 10px; }
+.presets-head select { width: 100%; font-weight: 600; }
+.setlist-row { display: grid; grid-template-columns: 1fr 30px; gap: 6px; }
+.btn-icon { width: 30px; padding: 0; font-size: 14px; letter-spacing: 0; text-transform: none; }
+.setlist-rename {
+  width: 100%; height: 30px; padding: 0 8px; border-radius: var(--radius-sm);
+  border: 1px solid var(--accent); outline: none; background: var(--bg);
+  color: var(--text); font: 600 14px/28px var(--font); box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.setlist-rename[hidden] { display: none; }
+
+.files { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+.btn-sm { height: 26px; font-size: 10px; padding: 0 6px; width: 100%; }
+.menu-wrap { position: relative; }
+.menu {
+  position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; min-width: 230px;
+  display: flex; flex-direction: column; padding: 4px;
+  background: var(--panel-2); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+.menu[hidden] { display: none; }
+.menu button {
+  display: flex; justify-content: space-between; gap: 12px; align-items: center;
+  padding: 7px 10px; border: 0; border-radius: 6px; background: none;
+  color: var(--text); font: 13px/1.2 var(--font); text-align: left; cursor: pointer;
+}
+.menu button span { color: var(--muted); font: 500 11px/1 ui-monospace, "SF Mono", Menlo, monospace; }
+.menu button:hover:not(:disabled) { background: var(--accent-soft); }
+.menu button:disabled { color: var(--faint); cursor: not-allowed; }
+.slots.file-over { box-shadow: inset 0 0 0 2px var(--accent); border-radius: 6px; }
+
+.progress {
+  position: relative; height: 18px; border-radius: 6px; overflow: hidden;
+  background: var(--bg-2); border: 1px solid var(--line-soft);
+}
+.progress-bar {
+  position: absolute; inset: 0 auto 0 0; width: 0;
+  background: linear-gradient(90deg, rgba(245,165,36,.25), rgba(245,165,36,.45));
+  transition: width .2s;
+}
+.progress-text {
+  position: relative; display: block; text-align: center;
+  font-size: 11px; line-height: 16px; color: var(--text); letter-spacing: 0.04em;
+}
+
+.slots {
+  list-style: none; margin: 0; padding: 0;
+  overflow-y: auto; min-height: 0; flex: 1;
+  border-top: 1px solid var(--line-soft);
+  outline: none;
+}
+.slots:focus-visible { box-shadow: inset 0 0 0 2px var(--accent-soft); border-radius: 6px; }
+.slot {
+  display: grid; grid-template-columns: 16px 34px 1fr 14px; align-items: center; gap: 6px;
+  height: 26px; padding: 0 8px 0 4px; border-radius: 6px;
+  font-size: 13px; color: var(--text); cursor: default; user-select: none;
+}
+.slot:nth-child(8n+5), .slot:nth-child(8n+6), .slot:nth-child(8n+7), .slot:nth-child(8n+8) {
+  background: rgba(255, 255, 255, 0.025); /* alternate banks, like the original */
+}
+.slot:nth-child(4n+1):not(:first-child) { margin-top: 3px; }
+.slot:hover { background: rgba(255, 255, 255, 0.06); }
+.slot .mark { color: var(--accent); font-size: 10px; text-align: center; }
+.slot .num { font: 500 11px/1 ui-monospace, "SF Mono", Menlo, monospace; color: var(--muted); }
+.slot .name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.slot .edited { color: var(--accent); text-align: right; font-weight: 700; }
+.slot.empty .name { color: var(--faint); }
+.slot.selected { background: rgba(245, 165, 36, 0.16); }
+.slot.current .num { color: var(--accent); }
+.slot.current .name { font-weight: 600; }
+.slot.dirty .name { color: var(--accent); font-style: italic; }
+.slot { position: relative; }
+.slot.dragging { opacity: 0.4; }
+.slot.drop-target { box-shadow: inset 0 0 0 1px var(--accent); background: var(--accent-soft); }
+.slot.drop-target::after {
+  content: attr(data-label);
+  position: absolute; right: 22px; top: 50%; transform: translateY(-50%);
+  padding: 1px 6px; border-radius: 4px;
+  background: var(--accent); color: #1a1205;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  pointer-events: none;
+}
+.slot .name input.rename {
+  width: 100%; height: 22px; margin-left: -4px; padding: 0 4px;
+  border: 1px solid var(--accent); border-radius: 5px; outline: none;
+  background: var(--bg); color: var(--text); font: 600 13px/20px var(--font); font-style: normal;
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ---------- toast ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%);
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 10px 14px; border-radius: 10px;
+  background: #2a1a1b; border: 1px solid #5a2b2e; color: #ffd7d8; font-size: 13px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+.toast.ok { background: #16261c; border-color: #2c5a3b; color: #d3f5df; }
+.toast { display: flex; align-items: center; gap: 12px; }
+.toast[hidden] { display: none; }
+.toast-action {
+  flex: none; padding: 4px 10px; border-radius: 6px; border: 1px solid currentColor;
+  background: none; color: inherit; font: 600 12px/1.2 var(--font); cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .layout { height: auto; grid-template-columns: 1fr; grid-template-rows: none; grid-template-areas: "io" "tempo" "presets" "flow" "editors"; }
+  .presets { height: 70vh; }
+  .now-set { display: none; }
+}
+.presets-head select.dirty { color: var(--accent); font-style: italic; }
+.flow-stage { flex: 1; }
+/* chain drag & drop */
+.flow-stage.dragging, .flow-stage.dragging * { cursor: grabbing !important; }
+.chain .blk.drag-src { opacity: .9; pointer-events: none; } /* follows the pointer (flow.js followPointer) */
+.chain .blk.drag-src .blk-box { stroke: #fff; }
+.chain .drop-zone rect { fill: rgba(245,165,36,.06); stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 4 3; }
+.chain .drop-zone path { stroke: var(--accent); stroke-width: 1.5; fill: none; }
+.chain .drop-zone.drop-hover rect { fill: var(--accent-soft); stroke-dasharray: none; }
+.chain .blk.drop-hover .blk-sel { stroke: var(--accent); stroke-dasharray: 4 3; }
+/* no text selection or tap highlight over the chain (drag) */
+.flow-stage, .flow-stage * { -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+.flow-stage.dragging { outline: none; box-shadow: none; }
+
+/* ---------- LEFT PANEL (Helix style): setlists, presets, pedal ---------- */
+.lp {
+  --lp-bg: #111214; --lp-bar: #16171a; --lp-line: #26282d; --lp-gold: #d9b54a;
+  --lp-cond: "Roboto Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+  position: relative; padding: 0; overflow: hidden; background: var(--lp-bg);
+}
+.lp-tabs { display: flex; flex: none; height: 38px; border-bottom: 1px solid var(--lp-line); }
+.lp-tab {
+  flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+  border: 0; border-bottom: 2px solid var(--accent); background: #1b1c20; color: #f2f3f5;
+  font: 700 14px/1 var(--lp-cond); letter-spacing: .02em; cursor: default;
+}
+.lp-tab svg, .lp-btn svg, .lp-picker svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.lp-head {
+  display: flex; align-items: center; justify-content: space-between; flex: none;
+  height: 30px; padding: 0 8px 0 12px; background: var(--lp-bar);
+}
+.lp-head-presets { border-top: 1px solid var(--lp-line); border-bottom: 1px solid var(--lp-line); }
+.lp-title { margin: 0; font: 700 12px/1 var(--lp-cond); letter-spacing: .08em; text-transform: uppercase; color: var(--lp-gold); }
+.lp-actions { display: flex; align-items: center; }
+.lp-actions button {
+  border: 0; background: none; padding: 5px 5px; border-radius: 3px; cursor: pointer;
+  font: 500 11px/1 var(--lp-cond); letter-spacing: .06em; text-transform: uppercase; color: #b3b7bf;
+}
+.lp-actions button:hover:not(:disabled) { color: #fff; background: rgba(255,255,255,.06); }
+.lp-actions button:disabled { color: #565a62; cursor: default; }
+.lp-actions .menu { left: auto; right: 0; min-width: 210px; }
+
+.lp-setlist { position: relative; flex: none; padding: 4px 10px 8px; background: var(--lp-bar); }
+.lp-picker {
+  width: 100%; height: 36px; display: flex; align-items: center; gap: 10px; padding: 0 10px;
+  border: 1px solid #2e3036; border-radius: 4px; background: #0d0e10; color: #f2f3f5; cursor: pointer;
+}
+.lp-picker[aria-expanded="true"] { border-color: var(--accent); }
+.lp-picker:disabled { cursor: default; opacity: .6; }
+.lp-picker .lp-folder { width: 18px; height: 18px; stroke: var(--lp-gold); stroke-width: 1.8; }
+.lp-picker-name { flex: 1; min-width: 0; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  font: 700 14px/1 var(--lp-cond); letter-spacing: .04em; text-transform: uppercase; }
+.lp-picker.dirty .lp-picker-name { color: var(--accent); font-style: italic; }
+.lp-picker-count { font-size: 11px; color: #9a9fa8; }
+.lp-picker .lp-chevron { width: 14px; height: 14px; color: #b3b7bf; transition: transform .15s; }
+.lp-picker[aria-expanded="true"] .lp-chevron { transform: rotate(180deg); color: var(--accent); }
+.lp-setlist .setlist-rename { height: 36px; font-family: var(--lp-cond); text-transform: uppercase; letter-spacing: .04em; }
+.lp-setlists {
+  position: absolute; z-index: 30; top: 44px; left: 0; right: 0; margin: 0; padding: 2px 0; list-style: none;
+  background: #1a1b1e; border-top: 1px solid #2e3036; border-bottom: 1px solid #2e3036;
+  box-shadow: 0 18px 36px rgba(0,0,0,.55); max-height: 320px; overflow-y: auto;
+}
+.lp-setlists[hidden] { display: none; }
+.lp-setlist-item {
+  width: 100%; height: 28px; display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; align-items: center; gap: 10px;
+  padding: 0 12px 0 14px; border: 0; background: none; text-align: left; cursor: pointer; color: var(--lp-gold);
+}
+.lp-setlist-item svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; }
+.lp-setlist-item .nm { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font: 500 14px/1 var(--lp-cond); letter-spacing: .03em; text-transform: uppercase; }
+.lp-setlist-item .st { font-size: 10.5px; color: #9a9fa8; white-space: nowrap; }
+.lp-setlist-item:hover, .lp-setlist-item:focus-visible { background: rgba(255,255,255,.06); outline: none; }
+.lp-setlist-item.cur { background: #3a3c42; color: #fff; }
+.lp-setlist-item.dirty { color: var(--accent); }
+.lp-setlist-item.dirty .nm { font-style: italic; }
+
+.lp .progress { margin: 6px 10px; flex: none; }
+.lp .slots { border-top: 0; padding: 0 4px 0 0; }
+.lp .slot { height: 23px; border-radius: 0; padding: 0 8px 0 4px; grid-template-columns: 14px 34px 1fr 14px; }
+.lp .slot:nth-child(8n+1), .lp .slot:nth-child(8n+2), .lp .slot:nth-child(8n+3), .lp .slot:nth-child(8n+4) { background: #121315; }
+.lp .slot:nth-child(8n+5), .lp .slot:nth-child(8n+6), .lp .slot:nth-child(8n+7), .lp .slot:nth-child(8n+8) { background: #17181b; }
+.lp .slot:nth-child(4n+1):not(:first-child) { margin-top: 0; border-top: 1px solid #222428; }
+.lp .slot:hover { background: #202227; }
+.lp .slot.selected { background: #24272e; box-shadow: inset 2px 0 0 #8a8f99; }
+.lp .slot.current, .lp .slot.current.selected { background: #2a2416; }
+.lp .slot .num { font-size: 11px; color: #9a9fa8; }
+.lp .slot.current .num { color: var(--accent); }
+.lp .slot .name { font-size: 13px; }
+.lp .slot.current .name { color: var(--accent); font-weight: 600; }
+
+.lp-foot { flex: none; display: flex; flex-direction: column; gap: 8px; padding: 10px 10px 12px; background: var(--lp-bar); border-top: 1px solid var(--lp-line); }
+.lp-foot-head { display: flex; align-items: center; justify-content: space-between; }
+.lp-pending { font-size: 11px; color: var(--accent); }
+.lp-pedal { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+.lp-pedal .menu-wrap { display: flex; }
+.lp-btn {
+  width: 100%; height: 40px; display: flex; align-items: center; justify-content: center; gap: 6px;
+  border: 1px solid #34363c; border-radius: 4px; background: #1d1e22; color: #e6e7ea; cursor: pointer;
+  font: 700 12px/1 var(--lp-cond); letter-spacing: .06em; text-transform: uppercase;
+}
+.lp-btn svg { width: 12px; height: 12px; stroke-width: 2.4; }
+.lp-btn:hover:not(:disabled) { border-color: #5a5e66; }
+.lp-btn:disabled { color: #565a62; cursor: default; }
+.lp-send:not(:disabled) { border-color: var(--accent); background: #2a2416; color: #f8d58a; }
+.lp-send:hover:not(:disabled) { background: #3a3220; }
+.menu.menu-up { top: auto; bottom: calc(100% + 6px); left: 0; min-width: 210px; }
+.menu-title { padding: 6px 10px 4px; font: 700 11px/1 var(--lp-cond); letter-spacing: .08em; text-transform: uppercase; color: var(--lp-gold); }
+.menu button span[data-count] { font-size: 11px; color: #9a9fa8; }
+.ctx-menu { position: absolute; z-index: 40; top: 0; left: 0; min-width: 200px; }
+.ctx-menu hr { width: auto; margin: 4px 8px; border: 0; border-top: 1px solid #383b42; }
+.lp .menu { background: #23252a; border-color: #383b42; }
+.lp .menu button { font-size: 12.5px; }
+.io .inputs:first-child { border-top: 0; padding-top: 0; }
+
+/* ---------- input block (chain) and its editor ---------- */
+.chain .io-in { cursor: pointer; }
+.chain .io-in .io-ring { fill: none; stroke: transparent; stroke-width: 2; }
+.chain .io-in:hover .io-ring { stroke: #4a4f59; }
+.chain .io-in.sel .io-ring { stroke: #f2f3f5; }
+.chain .io-in .io-icon path { fill: none; stroke: #e6e7ea; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.chain .io-label { fill: #d7d9de; font: 700 9px/1 "Roboto Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif; text-anchor: middle; letter-spacing: .02em; }
+.chain .io-tag { fill: #9a9fa8; font: 500 8px/1 "Roboto Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif; text-anchor: middle; letter-spacing: .08em; }
+.ed-head { display: flex; align-items: center; gap: 9px; height: 36px; padding: 0 8px 0 12px; margin: -8px 0 6px; border-bottom: 1px solid var(--line-soft); background: #17181c; color: #f2f3f5; font: 700 13px/1 "Roboto Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif; }
+.ed-head svg { width: 16px; height: 16px; flex: none; }
+.ed-head > svg path, .ed-item svg path { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ed-head-label { color: #d9b54a; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.ed-grid { margin-left: auto; width: 28px; height: 28px; display: grid; place-items: center; border: 0; border-radius: 4px; background: none; color: #c9cbd0; cursor: pointer; }
+.ed-grid:hover { background: rgba(255,255,255,.06); }
+.ed-grid svg rect { fill: currentColor; }
+.in-note { margin: 0 0 14px; font-size: 12.5px; line-height: 1.45; color: #b3b7bf; }
+.in-setup { display: flex; align-items: center; justify-content: space-between; max-width: 520px; margin-top: 20px; font-weight: 600; }
+.seg { display: flex; gap: 2px; padding: 2px; border-radius: 4px; background: #1c1d20; }
+.seg button { width: 76px; height: 26px; border: 0; border-radius: 3px; background: #26272b; color: #9a9fa8; font-size: 12.5px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: #5b5d63; color: #fff; font-weight: 600; }
+.seg button:hover:not([aria-pressed="true"]) { color: #e6e7ea; }
+.chain .io-label2 { fill: #9a9fa8; font: 500 8px/1 "Roboto Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif; text-anchor: middle; letter-spacing: .02em; }
+/* room for descenders (g, p, y) in clipped item labels */
+.ed-item span { line-height: 1.35; padding-bottom: 1px; }
+/* value + up/down steppers of a slider (HX style) */
+.prm-valbox { display: inline-flex; align-items: center; gap: 4px; }
+.prm-step { display: inline-flex; flex-direction: column; }
+.prm-step button { width: 16px; height: 11px; padding: 0; border: 0; background: none; color: #9a9fa8; cursor: pointer; display: grid; place-items: center; }
+.prm-step button:hover { color: #f2f3f5; }
+.prm-step svg { width: 9px; height: 7px; }
+.prm-step path { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.prm { align-items: center; }
+/* Input | Variax tabs of the input editor (HX style) */
+.in-tabs { display: grid; grid-template-columns: 1fr 1fr; max-width: 520px; margin: -4px 0 16px; border-bottom: 1px solid #2a2c31; }
+.in-tabs button { height: 32px; border: 0; background: none; color: #9a9fa8; font: 600 13px/1 var(--font); cursor: pointer; border-bottom: 2px solid transparent; }
+.in-tabs button[aria-selected="true"] { color: #fff; border-bottom-color: #c9cbd0; background: #1c1d21; }
+.in-tabs button:hover:not([aria-selected="true"]) { color: #e6e7ea; }
+.in-vdi { margin: 0 0 18px; }
+.seg-wide button { width: auto; padding: 0 12px; }
+/* Tyler Variax options not wired to the pedal yet */
+.in-pending { margin: 20px 0 10px; color: #9a9fa8; font-size: 12px; }
+.params-pending { opacity: .55; }
+.params-pending .prm-bar { cursor: default; }
+.params-gap { margin-top: 16px; }
+/* Variax options that don't work yet (Tyler, Acoustic 700…): explicitly disabled */
+.params-pending { opacity: .4; filter: grayscale(1); cursor: not-allowed; }
+.params-pending .prm-bar { cursor: not-allowed; background: repeating-linear-gradient(45deg, #26282d 0 4px, #1e2024 4px 8px); }
+.params-pending .prm-bar i { background: #3a3d44; }
+.params-pending .prm-bar b { display: none; }
+.off-tag { display: inline-block; margin-right: 6px; padding: 1px 6px; border-radius: 3px; background: #3a2020; color: #ff9a9a; font: 700 10px/1.4 var(--font); letter-spacing: .06em; text-transform: uppercase; vertical-align: 1px; }
+
+/* ---------- LEFT PANEL, matched to HX Edit (colours measured on the user's
+   screenshot; fonts found in Helix Native: Avenir Next Condensed + Roboto) --- */
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/Roboto-latin.woff2") format("woff2"); /* variable 100–900, OFL */
+  font-weight: 100 900;
+  font-display: swap;
+}
+.lp {
+  --lp-gold: #bda760;    /* SETLISTS, its actions, the setlist name */
+  --lp-text: #c8c8c8;    /* PRESETS, its actions, the list */
+  --lp-off: #414141;     /* disabled actions */
+  --lp-setbg: #080602;   /* SETLISTS section */
+  --lp-row1: #121212;
+  --lp-row2: #242424;
+  --lp-cond: "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", sans-serif;
+  --lp-list: "Roboto", system-ui, sans-serif;
+}
+/* tab */
+.lp-tabs { background: #242424; }
+.lp-tab { background: #343432; color: #fff; font: 600 14px/1 var(--lp-cond); }
+/* SETLISTS: everything in gold on the near-black section */
+.lp-head:not(.lp-head-presets), .lp-setlist { background: var(--lp-setbg); }
+.lp .lp-title { font: 600 13px/1 var(--lp-cond); letter-spacing: .02em; }
+.lp-head:not(.lp-head-presets) .lp-title { color: var(--lp-gold); }
+.lp-actions { gap: 0; }
+.lp-actions button { font: 600 11px/1 var(--lp-cond); letter-spacing: .02em; padding: 4px 3px; }
+.lp-head:not(.lp-head-presets) .lp-actions button:not(:disabled) { color: var(--lp-gold); }
+.lp-head:not(.lp-head-presets) .lp-actions button:hover:not(:disabled) { color: #e3cd86; }
+/* "|" between the actions, as in HX Edit */
+.lp-actions > * + *::before { content: "|"; padding: 0 2px; font: 600 11px/1 var(--lp-cond); }
+.lp-head:not(.lp-head-presets) .lp-actions > * + *::before { color: var(--lp-gold); }
+.lp-head-presets .lp-actions > * + *::before { color: var(--lp-text); }
+.lp-actions > .menu-wrap { display: flex; align-items: center; }
+.lp-actions button::before { pointer-events: none; }
+/* setlist picker */
+.lp-picker { background: var(--lp-setbg); border-color: #2a2620; }
+.lp-picker .lp-folder { stroke: var(--lp-gold); }
+.lp-picker-name { color: var(--lp-gold); font: 500 15px/1 var(--lp-cond); letter-spacing: .02em; }
+.lp-picker .lp-chevron { color: var(--lp-gold); }
+.lp-picker-count { color: #8a7c4a; }
+.lp-setlist-item { color: var(--lp-gold); }
+.lp-setlist-item .nm { font: 500 15px/1.35 var(--lp-cond); }
+/* PRESETS: light grey, like HX Edit */
+.lp-head-presets { background: var(--lp-row1); border-color: #1e1e1e; }
+.lp-head-presets .lp-title { color: var(--lp-text); }
+.lp-head-presets .lp-actions button:not(:disabled) { color: var(--lp-text); }
+.lp-head-presets .lp-actions button:hover:not(:disabled) { color: #fff; }
+.lp .lp-actions button:disabled { color: var(--lp-off); }
+/* list */
+.lp .slot { font-family: var(--lp-list); font-weight: 500; }
+.lp .slot .num { font: 500 13px/1 var(--lp-list); }
+.lp .slot:not(.current) .num, .lp .slot:not(.current):not(.dirty) .name { color: var(--lp-text); }
+.lp .slot .name { font-size: 13.5px; }
+.lp .slot:nth-child(8n+1), .lp .slot:nth-child(8n+2), .lp .slot:nth-child(8n+3), .lp .slot:nth-child(8n+4) { background: var(--lp-row1); }
+.lp .slot:nth-child(8n+5), .lp .slot:nth-child(8n+6), .lp .slot:nth-child(8n+7), .lp .slot:nth-child(8n+8) { background: var(--lp-row2); }
+.lp .slot:hover { background: #2e2e2e; }
+.lp .slot.selected { background: #343432; }
+.lp .slot.current, .lp .slot.current.selected { background: #2a2416; }
+/* even spacing around "|" (HX Edit: "IMPORT | EXPORT") */
+.lp-actions button { padding: 4px 0; }
+.lp-actions > * + *::before { padding: 0 5px; }
+.lp-actions > .menu-wrap::before { padding: 0 5px; }
+/* tab bar: "Presets" tab on the left, no gold underline (HX Edit) */
+.lp-tabs { justify-content: flex-start; border-bottom: 1px solid #1a1a1a; }
+.lp-tab { flex: 0 0 34%; border-bottom: 0; }
+/* folders: gold outline, dark olive fill, open folder for the current setlist */
+.lp-picker .lp-folder, .lp-setlist-item svg { width: 20px; height: 20px; }
+.lp-folder path, .lp-setlist-item svg path { stroke: var(--lp-gold); stroke-width: 1.5; stroke-linejoin: round; }
+.lp-folder .fb, .lp-setlist-item svg .fb { fill: #3b3422; }
+.lp-folder .ff, .lp-setlist-item svg .ff { fill: #4d4329; }
+.lp-setlist-item.cur svg path { stroke: #fff; }
+/* no "7/8" position next to the setlist name */
+.lp-picker-count { display: none; }
+/* HX Edit frame (measured on the Helix screenshot): the panel is #323232, every
+   section sits inside it with a 3px side margin and 2px between sections */
+.lp { background: #323232; }
+.lp-tabs { background: #1b1b1b; border-bottom: 0; }
+.lp-tab { background: #323232; }
+.lp-head, .lp-setlist, .lp .slots, .lp .progress { margin-left: 3px; margin-right: 3px; }
+.lp-head:not(.lp-head-presets) { margin-top: 3px; }
+.lp-setlist { margin-top: 2px; padding: 0; }
+.lp-picker { height: 32px; padding: 0 10px 0 12px; border: 0; border-radius: 0; background: var(--lp-setbg); }
+.lp-picker[aria-expanded="true"] { border: 0; }
+.lp-head-presets { margin-top: 3px; margin-bottom: 2px; border: 0; background: #0f0f0f; }
+.lp .slots { padding-right: 0; }
+/* Preset list as HX Edit (measured on the Helix screenshot): 21px rows, text #bcbcbc,
+   banks of 4 alternating #0f0f0f / #141414 with no divider, loaded preset = #3e3e3e
+   row with a 2px white bar on the left, thin grey scrollbar */
+.lp-head-presets { margin-bottom: 1px; }
+.lp .slots { background: #0f0f0f; }
+.lp .slot { height: 21px; padding: 0 6px 0 8px; grid-template-columns: 31px 1fr 12px; gap: 0; }
+.lp .slot .mark { display: none; }
+.lp .slot .num, .lp .slot .name { font: 400 12.5px/1 var(--lp-list); }
+.lp .slot:not(.current) .num, .lp .slot:not(.current):not(.dirty) .name, .lp .slot.current .num, .lp .slot.current .name { color: #bcbcbc; font-weight: 400; }
+.lp .slot:nth-child(8n+1), .lp .slot:nth-child(8n+2), .lp .slot:nth-child(8n+3), .lp .slot:nth-child(8n+4) { background: #0f0f0f; }
+.lp .slot:nth-child(8n+5), .lp .slot:nth-child(8n+6), .lp .slot:nth-child(8n+7), .lp .slot:nth-child(8n+8) { background: #141414; }
+.lp .slot:nth-child(4n+1):not(:first-child) { border-top: 0; }
+.lp .slot:hover { background: #262626; }
+.lp .slot.selected { background: #2c2c2c; box-shadow: none; }
+.lp .slot.current, .lp .slot.current.selected { background: #3e3e3e; box-shadow: inset 2px 0 0 #fff; }
+.lp .slot.current .name { font-style: normal; }
+.lp .slot.dirty .name { font-style: italic; }
+.lp .slots::-webkit-scrollbar { width: 8px; }
+.lp .slots::-webkit-scrollbar-track { background: #191919; }
+.lp .slots::-webkit-scrollbar-thumb { background: #757575; background-clip: padding-box; border: 1px solid transparent; border-radius: 4px; }
+.lp .slots::-webkit-scrollbar-button { display: none; height: 0; }
+/* Display-calibrated values: Safari colour-manages CSS (sRGB → display profile),
+   Helix Native draws device colours. Measured on this Mac's display 1 (2026-11-06)
+   so the rendered pixels equal the Helix ones: CSS value → rendered value. */
+.lp {
+  --lp-gold: #c1b162;    /* → #bda760 */
+  --lp-text: #cfcfcf;    /* → #c8c8c8 */
+  --lp-off: #4a4a4a;     /* → #414141 */
+  --lp-setbg: #050300;   /* → #090702 */
+  background: #393939;   /* → #323232 frame */
+}
+.lp-tabs { background: #1d1d1d; }                    /* → #1b1b1b */
+.lp-tab { background: #393939; }                     /* → #323232 */
+.lp-head-presets, .lp .slots { background: #0c0c0c; } /* → #0f0f0f */
+.lp .slot { padding-left: 7px; }
+.lp .slot:not(.current) .num, .lp .slot:not(.current):not(.dirty) .name, .lp .slot.current .num, .lp .slot.current .name { color: #c4c4c4; } /* → #bcbcbc */
+.lp .slot:nth-child(8n+1), .lp .slot:nth-child(8n+2), .lp .slot:nth-child(8n+3), .lp .slot:nth-child(8n+4) { background: #0c0c0c; } /* → #0f0f0f */
+.lp .slot:nth-child(8n+5), .lp .slot:nth-child(8n+6), .lp .slot:nth-child(8n+7), .lp .slot:nth-child(8n+8) { background: #131313; } /* → #141414 */
+.lp .slot.current, .lp .slot.current.selected { background: #474747; } /* → #3e3e3e */
+.lp .slots::-webkit-scrollbar-track { background: #1a1a1a; }  /* → #191919 */
+.lp .slots::-webkit-scrollbar-thumb { background-color: #808080; } /* → #757575 */
+/* metrics matched to HX Edit glyph by glyph */
+.lp-head { padding-left: 8px; padding-right: 6px; }
+.lp .lp-title { font-size: 12.5px; letter-spacing: 0; }
+.lp .slot { padding-left: 8px; }
+.lp .slot .num, .lp .slot .name { font-weight: 500; }
+.lp .slot:not(.current) .num, .lp .slot:not(.current):not(.dirty) .name, .lp .slot.current .num, .lp .slot.current .name { font-weight: 500; }
+.lp .slot { padding-left: 9px; grid-template-columns: 29px 1fr 12px; }
+/* Preset context menu as HX Edit: flat #242425 panel, 22px items, Roboto 12.5px
+   #cacaca, hover #3e3e3e + white, disabled #5b5b5c (display-calibrated values) */
+.lp .ctx-menu { min-width: 130px; padding: 0; border: 0; border-radius: 0; background: #282829; box-shadow: 0 4px 14px rgba(0,0,0,.55); }
+.lp .ctx-menu button { display: block; width: 100%; height: 22px; padding: 0 16px 0 10px; border-radius: 0; text-align: left;
+  font: 400 12.5px/22px var(--lp-list); color: #d1d1d1; background: none; }
+.lp .ctx-menu button:hover:not(:disabled), .lp .ctx-menu button:focus-visible:not(:disabled) { background: #474747; color: #fff; outline: none; }
+.lp .ctx-menu button:disabled { color: #656566; cursor: default; }
+.lp .ctx-menu hr { margin: 3px 0; border-top: 1px solid #3a3a3b; }
+.lp .ctx-menu hr { margin: 0; border-top: 1px solid #656566; } /* → #5b5b5c, like HX */
+/* selection/hover must beat the bank colours (same specificity, declared later) */
+.lp .slots .slot:hover { background: #1f1f1f; }                 /* → ~#1b1b1b */
+.lp .slots .slot.selected { background: #333333; box-shadow: none; } /* → ~#2c2c2c */
+.lp .slots .slot.current, .lp .slots .slot.current.selected { background: #474747; box-shadow: inset 2px 0 0 #fff; } /* → #3e3e3e */
+/* Tab bar as HX Edit: 8px top gap, 23px tabs separated by 2px; "Presets" (active)
+   72px #323232, SEND / RECEIVE / BACKUP take the IRs / Favorites place as
+   inactive-looking tabs #272726 with #aaaaaa text (display-calibrated values) */
+.layout { grid-template-columns: 222px 1fr; }
+.lp { border: 0; border-radius: 0; }
+.lp-tabs { height: 31px; padding-top: 8px; gap: 2px; align-items: stretch; background: #1d1d1d; border: 0; }
+.lp-tab { flex: 0 0 72px; padding: 0; gap: 6px; font: 600 13.5px/1 var(--lp-cond); }
+.lp-tabwrap { display: flex; flex: 1 1 0; min-width: 0; }
+.lp-tabbtn { flex: 1 1 0; min-width: 0; display: flex; align-items: center; justify-content: center; gap: 3px;
+  margin-bottom: 0; padding: 0 2px; border: 0; border-radius: 0; background: #2c2c2b; color: #b4b4b4;
+  font: 600 13px/1 var(--lp-cond); cursor: pointer; white-space: nowrap; }
+.lp-tabs > .lp-tabbtn { flex: 1 1 0; }
+.lp-tabbtn:hover:not(:disabled), .lp-tabbtn[aria-expanded="true"] { background: #363636; color: #fff; }
+.lp-tabbtn:disabled { color: #4a4a4a; cursor: default; }
+.lp-tabbtn.lp-send:not(:disabled) { border: 0; background: #2c2c2b; color: #b4b4b4; }
+.lp-tabbtn.lp-send:hover:not(:disabled), .lp-tabbtn.lp-send[aria-expanded="true"] { background: #363636; color: #fff; }
+.lp-pending { font: 600 10px/1 var(--lp-list); color: var(--accent); }
+.lp-pending:empty { display: none; }
+.lp-tabwrap .menu { top: calc(100% + 2px); left: auto; right: 0; min-width: 190px; }
+/* Tap Tempo fitted to the 222px HX-wide column */
+.tempo { gap: 8px; padding: 10px 10px; }
+.tempo .label { white-space: nowrap; font-size: 10px; letter-spacing: .08em; }
+.tap { width: 28px; height: 28px; flex: none; }
+.bpm { gap: 4px; }
+.bpm-field { height: 30px; padding: 0 6px; }
+.bpm input { width: 50px; height: 28px; }
+.bpm-unit { font-size: 10px; }
+/* SEND / RECEIVE menus: full panel width under the tab bar (they were cut by the
+   panel edge), same HX look as the preset context menu */
+.lp-tabs { position: relative; }
+.lp-tabwrap { position: static; }
+.lp-tabwrap .menu { top: 100%; left: 3px; right: 3px; min-width: 0; }
+.lp .menu { padding: 0; border: 0; border-radius: 0; background: #282829; box-shadow: 0 4px 14px rgba(0,0,0,.55); }
+.lp .menu .menu-title { display: block; height: 22px; padding: 0 10px; font: 600 11.5px/22px var(--lp-cond); letter-spacing: .04em; color: var(--lp-gold); }
+.lp .menu button { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; height: 22px;
+  padding: 0 10px; border-radius: 0; text-align: left; font: 400 12.5px/22px var(--lp-list); color: #d1d1d1; background: none; }
+.lp .menu button span, .lp .menu button span[data-count] { font: 400 11px/1 var(--lp-list); color: #8a8a8a; }
+.lp .menu button:hover:not(:disabled), .lp .menu button:focus-visible:not(:disabled) { background: #474747; color: #fff; outline: none; }
+.lp .menu button:hover:not(:disabled) span { color: #d1d1d1; }
+.lp .menu button:disabled { color: #656566; cursor: default; }
+/* SEND / RECEIVE options named as in the official POD HD500 Edit */
+.lp-tabwrap .menu button { font: 600 12.5px/22px var(--lp-cond); letter-spacing: .04em; text-transform: uppercase; }
+/* Send / Receive tab icons (send = up to the pedal, receive = down from it), sized like the Presets tab icon */
+.lp-tabbtn { gap: 5px; }
+.lp-tabbtn svg { width: 14px; height: 14px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Header (HX Edit, measured): 44px #1b1b1b bar, 29px #323232 boxes;
+   preset box 231px, snapshot 144px, undo/redo 34px, tap + BPM on the right.
+   Colours are display-calibrated (see the block above). ---------- */
+.layout {
+  height: 100vh; padding: 0 12px 12px 0; column-gap: 10px; row-gap: 10px;
+  grid-template-columns: 222px 1fr; grid-template-rows: 44px auto 1fr;
+  grid-template-areas: "presets head" "presets flow" "presets editors";
+}
+.lp { grid-area: presets; }
+.hxh { grid-area: head; position: relative; display: flex; align-items: center; gap: 8px; min-width: 0;
+  height: 44px; margin-right: -12px; padding: 0 8px 0 0; background: #1d1d1d; }
+.hxh-box { height: 29px; border: 0; border-radius: 0; background: #393939; color: #d1d1d1; }
+.hxh-preset { flex: none; width: 231px; display: flex; align-items: center; gap: 6px; padding: 0 8px 0 3px; }
+.hxh-step { display: flex; flex-direction: column; gap: 1px; }
+.hxh-step button { width: 16px; height: 12px; padding: 0; border: 0; background: none; color: #d1d1d1; cursor: pointer; display: grid; place-items: center; }
+.hxh-step button:hover:not(:disabled) { color: #fff; }
+.hxh-step button:disabled { color: #5a5a5a; cursor: default; }
+.hxh-step svg { width: 12px; height: 8px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.hxh-name { flex: 1; min-width: 0; font: 400 16px/1 var(--lp-list); color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: default; user-select: none; }
+.hxh-name.dirty { color: var(--accent); font-style: italic; }
+.hxh-snapwrap { flex: none; }
+.hxh-snap { width: 144px; display: flex; align-items: center; gap: 8px; padding: 0 6px; font: 400 13px/1 var(--lp-list); cursor: pointer; }
+.hxh-snap:hover, .hxh-snap[aria-expanded="true"] { color: #fff; }
+.snap-num { flex: none; display: grid; place-items: center; width: 15px; height: 17px; border: 1.5px solid currentColor; border-radius: 3px;
+  font: 400 11px/1 var(--lp-list); }
+.hxh .menu.hxh-snapmenu { top: 100%; left: 0; min-width: 144px; padding: 0; border: 0; border-radius: 0; background: #282829; box-shadow: 0 4px 14px rgba(0,0,0,.55); }
+.hxh-snapmenu button { display: flex; align-items: center; justify-content: flex-start; gap: 8px; height: 26px; padding: 0 6px; border-radius: 0;
+  font: 400 13px/1 var(--lp-list); color: #d1d1d1; }
+.hxh-snapmenu button.cur { color: #fff; font-weight: 500; }
+.hxh-snapmenu button:hover { background: #474747; color: #fff; }
+.hxh-snapmenu .snap-num { color: #9a9a9a; }
+.hxh-icon { width: 34px; display: grid; place-items: center; padding: 0; cursor: pointer; }
+.hxh-icon svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.hxh-icon:hover:not(:disabled) { color: #fff; }
+.hxh-icon:disabled { color: #5a5a5a; cursor: default; }
+.hxh-brand { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none; }
+.hxh-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.hxh .conn { padding: 3px 8px; font-size: 11px; }
+.hxh-tempo { display: flex; gap: 1px; }
+.hxh .tap { width: 40px; height: 29px; border: 0; border-radius: 0; background: #393939; display: grid; place-items: center; }
+.hxh .tap:hover:not(:disabled) { background: #474747; }
+.hxh .tap-led { width: 12px; height: 12px; }
+.hxh .bpm-field { width: 50px; height: 29px; padding: 0; border: 0; border-radius: 0; background: #393939; display: flex; align-items: center; box-shadow: none; }
+.hxh .bpm-field.flash, .hxh .bpm-field.dragging, .hxh .bpm-field:focus-within { box-shadow: inset 0 0 0 1px var(--accent); }
+.hxh .bpm-field input { width: 100%; height: 29px; font: 400 15px/29px var(--lp-list); color: #d1d1d1; text-align: center; }
+/* HX fonts available everywhere (the header uses them too) */
+:root { --lp-list: "Roboto", system-ui, sans-serif; --lp-cond: "Avenir Next Condensed", "Roboto Condensed", "Arial Narrow", sans-serif; }
+.hxh .bpm-field input { padding: 0; min-width: 0; letter-spacing: 0; }
+/* header fixes: name always white like HX; snapshot number inside a camera icon;
+   BPM input without the browser's default border; "Connected" right after the app name */
+.hxh-name, .hxh-name.dirty { color: #fff; font-style: normal; }
+.snap-num { position: relative; width: 20px; height: 17px; border: 0; border-radius: 0; }
+.snap-num svg { position: absolute; inset: 0; width: 20px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linejoin: round; }
+.snap-num b { position: relative; top: 1px; font: 400 10px/1 var(--lp-list); }
+.hxh .bpm-field input { border: 0; outline: none; background: transparent; box-shadow: none; -webkit-appearance: none; appearance: none;
+  cursor: ns-resize; user-select: none; touch-action: none; }
+.hxh .bpm-field input:focus { cursor: text; user-select: text; }
+.hxh .bpm-field input:disabled { color: #5a5a5a; cursor: default; }
+.hxh-brand { align-items: center; gap: 8px; pointer-events: auto; }
+.hxh-brand .conn { margin-left: 8px; }
+/* header round 3: gold name with * when unsaved; HX camera (body + lens with the
+   number); solid HX-like undo/redo arrows; BPM in Roboto Medium like HX */
+/* unsaved edits: header name stays white, only italic (the * is in the list) */
+.hxh-name.dirty { color: #fff; font-style: italic; }
+.snap-num { width: 24px; height: 18px; }
+.snap-num svg { width: 24px; height: 18px; stroke-width: 1.3; }
+.snap-num b { top: 1.6px; font: 500 8.5px/1 var(--lp-list); }
+.hxh-icon svg { width: 20px; height: 20px; }
+.hxh-icon svg path { fill: none; stroke: currentColor; stroke-width: 3.3; stroke-linecap: butt; stroke-linejoin: miter; }
+.hxh-icon svg path.f { fill: currentColor; stroke: none; }
+.hxh-icon:disabled { color: #6a6a6a; }
+.hxh .bpm-field input { font: 500 15px/29px var(--lp-list); color: #d1d1d1; }
+.hxh-icon svg { width: 23px; height: 23px; }
+.hxh-icon svg path { stroke-width: 3.9; }
+.hxh .bpm-field input { box-sizing: border-box; height: 29px; padding: 2px 0 0; font: 600 15px/27px var(--lp-list); }
+.hxh .bpm-field input { padding-top: 3px; line-height: 26px; }
+/* Tuner button (HX tuning fork) and overlay over the Signal Flow */
+.hxh-tuner.on { background: #474747; color: #fff; }
+.flow-view { position: relative; }
+.tuner { position: absolute; inset: 0; z-index: 30; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+  background: rgba(12, 12, 12, .94); border-radius: inherit; }
+.tuner[hidden] { display: none; }
+.tuner-note { font: 500 64px/1 var(--lp-list); color: #f0f0f0; }
+.tuner-note sub { font-size: 22px; color: #9a9a9a; margin-left: 2px; }
+.tuner.in-tune .tuner-note { color: #4cd07d; }
+.tuner-meter { position: relative; width: min(520px, 80%); height: 34px; }
+.tuner-scale { position: absolute; inset: 12px 0; border-top: 2px solid #3a3a3a;
+  background: repeating-linear-gradient(90deg, #5a5a5a 0 1px, transparent 1px 10%) top/100% 10px no-repeat; }
+.tuner-scale::after { content: ""; position: absolute; left: 50%; top: -14px; width: 2px; height: 26px; margin-left: -1px; background: #4cd07d; }
+.tuner-needle { position: absolute; top: 0; width: 4px; height: 34px; margin-left: -2px; border-radius: 2px; background: var(--accent); transition: left .15s; }
+.tuner.in-tune .tuner-needle { background: #4cd07d; }
+.tuner-needle[hidden] { display: none; }
+.tuner-cents { font: 500 13px/1 var(--lp-list); color: #b0b0b0; }
+.tuner-close { margin-top: 4px; padding: 6px 16px; border: 0; border-radius: 0; background: #393939; color: #d1d1d1; font: 600 12px/1 var(--lp-cond); letter-spacing: .06em; text-transform: uppercase; cursor: pointer; }
+.tuner-close:hover { background: #474747; color: #fff; }
+.hxh-icon svg path.t { stroke-width: 2.2; stroke-linecap: round; }
+
+/* ---------- Tuner, HX Edit layout (measured; display-calibrated colours):
+   #0f0f0f panel, Mute button top-left, thin chevrons, 10 bars 54×102 / 6px gap
+   shaded #2d…#75…#2d, #535353 rule, "Reference: [440 Hz ▲▼]" ---------- */
+.tuner { display: grid; grid-template-rows: auto 1fr auto auto auto; justify-items: center; align-content: stretch; gap: 0;
+  padding: 10px 10px 8px; background: #0c0c0c; border-radius: inherit; }
+.tuner-mute { justify-self: start; display: flex; align-items: center; gap: 8px; height: 26px; padding: 0 12px 0 8px; border: 0; border-radius: 3px;
+  background: #292929; color: #d1d1d1; font: 400 12.5px/1 var(--lp-list); cursor: pointer; }
+.tuner-mute:hover { background: #333; color: #fff; }
+.tuner-mute svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tuner-mute svg .f { fill: currentColor; stroke: none; }
+.tuner-mute svg .x { display: none; }
+.tuner-mute.on svg .x { display: inline; }
+.tuner-mute.on svg .w { display: none; }
+.tuner-top { display: flex; align-items: center; justify-content: center; gap: 0; height: 70px; margin-top: -14px; }
+.tuner-chev { width: 36px; height: 70px; fill: none; stroke: #464646; stroke-width: 2.2; }
+.tuner-chev.lit { stroke: #f0f0f0; }
+.tuner.in-tune .tuner-chev { stroke: #4cd07d; }
+.tuner-note { width: 184px; text-align: center; font: 500 54px/1 var(--lp-list); color: #f0f0f0; }
+.tuner-note sub { font-size: 18px; color: #9a9a9a; margin-left: 2px; vertical-align: baseline; }
+.tuner.in-tune .tuner-note { color: #4cd07d; }
+.tuner-bars { display: flex; gap: 6px; height: 102px; margin-top: 26px; }
+.tuner-bars i { width: 54px; height: 102px; background: #333333; transition: background .12s; }
+.tuner-bars i:nth-child(2), .tuner-bars i:nth-child(9) { background: #464646; }
+.tuner-bars i:nth-child(3), .tuner-bars i:nth-child(8) { background: #5a5a5a; }
+.tuner-bars i:nth-child(4), .tuner-bars i:nth-child(7) { background: #6c6c6c; }
+.tuner-bars i:nth-child(5), .tuner-bars i:nth-child(6) { background: #808080; }
+.tuner.signal .tuner-bars i { background: #262626; }
+.tuner.signal .tuner-bars i.hot { background: #f0f0f0; }
+.tuner.in-tune .tuner-bars i:nth-child(5), .tuner.in-tune .tuner-bars i:nth-child(6) { background: #4cd07d; }
+.tuner-cents { height: 16px; margin-top: 6px; font: 400 12px/16px var(--lp-list); color: #9a9a9a; }
+.tuner-foot { justify-self: stretch; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; padding-top: 6px;
+  border-top: 1px solid #5d5d5d; font: 400 13px/1 var(--lp-list); color: #d1d1d1; }
+.tuner-ref { display: flex; align-items: center; height: 24px; padding: 0 2px 0 6px; border-radius: 3px; background: #292929; }
+.tuner-ref input { width: 46px; border: 0; outline: none; background: transparent; color: #d1d1d1; font: 400 13px/24px var(--lp-list); }
+.tuner-ref-step { display: flex; flex-direction: column; }
+.tuner-ref-step button { width: 14px; height: 10px; padding: 0; border: 0; background: none; color: #d1d1d1; cursor: pointer; display: grid; place-items: center; }
+.tuner-ref-step button:hover { color: #fff; }
+.tuner-ref-step svg { width: 9px; height: 6px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.tuner { grid-template-columns: 1fr; padding: 8px 10px 6px; overflow: hidden; }
+.tuner-top { margin-top: -18px; height: 64px; }
+.tuner-chev { height: 64px; }
+.tuner-bars { margin-top: 12px; }
+.tuner-cents { margin-top: 4px; }
+.tuner-foot { margin-top: 2px; padding-top: 5px; }
+/* Tuner reading as HX Edit: still bars, a sliding 24px marker, thin note,
+   "Cents: n" at the left in the marker's colour, white chevrons when lit */
+.tuner-stage { position: relative; width: 594px; max-width: 100%; }
+.tuner-top { position: relative; height: 72px; margin-top: -18px; justify-content: center; }
+.tuner-chev { width: 40px; height: 72px; stroke: #4a4a4a; stroke-width: 3; }
+.tuner-chev.lit { stroke: #ffffff; }
+.tuner-note { width: 170px; font: 300 92px/72px var(--lp-list); color: #ffffff; }
+.tuner-flat-sign { display: inline-block; vertical-align: top; margin: 2px 0 0 6px; }
+.tuner-flat-sign svg { display: block; width: 19px; height: 42px; fill: none; stroke: currentColor; stroke-width: 2.6; }
+.tuner-cents { position: absolute; left: 0; bottom: 4px; height: auto; margin: 0; font: 400 15px/1 var(--lp-list); color: #c0c0c0; }
+.tuner-cents[hidden] { display: none; }
+.tuner-cents b { margin-left: 8px; font-weight: 500; font-size: 16px; }
+.tuner-bars { position: relative; justify-content: space-between; margin-top: 26px; }
+.tuner-mark { position: absolute; top: 0; width: 24px; height: 102px; margin-left: -12px; transition: left .12s linear, background .12s; }
+.tuner-mark[hidden] { display: none; }
+/* The tuner overlays the Signal Flow panel, which is only as tall as the
+   chain: grow it while the tuner is open so the Reference row isn't clipped
+   (Mute 26 + chevrons 54 + bars 128 + foot 32 + padding 14). */
+.flow-view:has(> .tuner:not([hidden])) { min-height: 256px; }
+
+/* ---- Block editor as HX Edit (measured on Helix Native, 2026-11-07) ----
+   Lists: 24px rows, Roboto Medium 12.5px; categories at ~72% of their colour,
+   the selected one full colour on #282828 with "›". Params: 25px tabs (#323232
+   active, #191919 inactive) + square power button (#323435); per parameter a
+   label and value in the category colour, a 12px track painted only up to the
+   12px handle (fill = colour at 36% → #51000c for #e1001b), tiny triangles.
+   CSS values compensated for this display's colour management (see the
+   Display-calibrated block above): comments give the rendered target. */
+.editors { background: #0c0c0c; }                                   /* → #0f0f0f */
+.flow-view { box-shadow: none; } /* its drop shadow darkened the top of the editor (tabs, headers); HX has none */
+.ed-col { padding: 0; }
+.ed-cats, .ed-models { border-right: 0; background: #0c0c0c; }
+.ed-models { border-right: 1px solid #1a1a1a; }                      /* → #191919 */
+.ed-col::-webkit-scrollbar { width: 8px; }
+.ed-col::-webkit-scrollbar-track { background: #1a1a1a; }            /* → #191919 */
+.ed-col::-webkit-scrollbar-thumb { background-color: #808080; background-clip: padding-box; border: 1px solid transparent; border-radius: 4px; } /* → #757575 */
+.ed-col::-webkit-scrollbar-button { display: none; height: 0; }
+.ed-item { height: 24px; gap: 10px; padding: 0 10px 0 8px; font: 500 12.5px/1 var(--lp-list); }
+.ed-item span { line-height: 1; padding-bottom: 0; }
+.ed-item:hover { background: #1a1a1a; }
+.ed-item.cur { background: #2d2d2d; font-weight: 500; }              /* → #282828 */
+.ed-cats .ed-item { color: color-mix(in srgb, var(--cat, #c0c0c0) 72%, #000); }
+.ed-cats .ed-item.cur { color: var(--cat, #fff); background: #2d2d2d; } /* → #282828 */
+.ed-cats .ed-item.cur::after { content: "›"; margin-left: auto; color: #fff; font-size: 16px; font-weight: 400; }
+.ed-cats .ed-item svg path { stroke: currentColor; }
+.ed-models .ed-item { color: #cfcfcf; }                              /* → #c8c8c8 */
+.ed-models .ed-item.cur { color: #fff; }
+.ed-params { padding: 0; font: 500 12.5px/1 var(--lp-list); }
+.ed-params > .dt-head, .ed-params > .dt-meta, .ed-params > .dt-sub { margin-left: 24px; margin-right: 20px; }
+.ed-params > .dt-head { margin-top: 12px; }
+.ac-tabs { gap: 1px; height: 25px; margin: 2px 0 0; }
+.ac-tab { height: 25px; border-radius: 0; background: #1a1a1a; color: #fff; font: 500 12.5px/1 var(--lp-list); } /* → #191919 */
+.ac-tab:hover { color: #fff; background: #262626; }
+.ac-tab.cur { background: #393939; }                                 /* → #323232 */
+.ac-tab svg { width: 16px; height: 16px; }
+.power { display: grid; place-items: center; width: 36px; height: 25px; padding: 0; gap: 0; border: 0; border-radius: 0;
+  background: #393b3c; color: #707070; cursor: pointer; }            /* → #323435 */
+.power.on { color: #fff; background: #393b3c; border: 0; }
+.power:hover { color: #fff; border: 0; }
+.power svg { width: 18px; height: 18px; }
+.power path { stroke-width: 2.2; }
+.ac-tabs .power { flex: none; margin-left: 0; }
+.ac-note { margin: 0; padding: 10px 24px 0; font: 400 12px/1.3 var(--lp-list); }
+.params { max-width: none; gap: 0; padding: 12px 20px 16px 24px; }
+.prm { grid-template-columns: 1fr auto; gap: 2px 8px; align-items: center; height: 37px; align-content: start; }
+.prm-name { color: var(--cat); font: 500 12.5px/13px var(--lp-list); }
+.prm-valbox { gap: 9px; }
+.prm-val { color: var(--cat); font: 500 12.5px/13px var(--lp-list); }
+/* typing a value (HX Edit): no box, the text selected on a red highlight */
+.prm-input { width: 3ch; height: 18px; margin: -3px 0; padding: 0; border: 0; border-radius: 0; outline: none; caret-color: #fff;
+  background: transparent; color: var(--cat); font: 500 12.5px/18px var(--lp-list); text-align: right; }
+.prm-input::selection { background: var(--cat); color: #0f0f0f; }
+/* steppers as HX: 7×4 triangles, 6px apart (14px tall); each button hits a
+   ~19×12px area through an invisible ::after */
+.prm-step { display: inline-flex; flex-direction: column; height: 14px; }
+.prm-step button { position: relative; display: flex; justify-content: center; width: 7px; height: 7px; padding: 0; color: var(--cat); }
+.prm-step button:first-child { align-items: flex-start; }
+.prm-step button:last-child { align-items: flex-end; }
+.prm-step button::after { content: ""; position: absolute; left: -6px; right: -6px; top: -5px; bottom: 0; }
+.prm-step button:last-child::after { top: 0; bottom: -5px; }
+.prm-step button:hover { color: #fff; }
+.prm-step svg { width: 7px; height: 4px; }
+.prm-step path { fill: currentColor; stroke: none; }
+.prm-bar { height: 12px; border-radius: 0; background: transparent; }
+.prm-bar i { inset: 0 auto 0 0; width: calc((100% - 12px) * var(--v, 0)); border-radius: 0; background: var(--cat-fill, color-mix(in srgb, var(--cat) 36%, #000)); }
+.prm-bar b { top: 0; left: calc((100% - 12px) * var(--v, 0)); width: 12px; height: 12px; margin-left: 0; border-radius: 2px; background: var(--cat); }
+.prm-ctl { color: var(--cat); opacity: .8; }
+/* list headers + Guitar/Bass dropdown as HX Edit (25px rows; header #191919,
+   text #cacaca; menu: current #3e3e3e white with "•", others #242425) */
+.ed-cats, .ed-models { padding-top: 2px; scroll-padding-top: 27px; }
+.ed-colhead { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 10px; height: 25px; padding: 0 10px 0 8px;
+  background: #1a1a1a; color: #d0d0d0; font: 500 12.5px/1 var(--lp-list); }      /* → #191919 / #cacaca */
+.ed-colhead svg { flex: none; width: 16px; height: 16px; }
+.ed-cathead { color: var(--cat); }
+.ed-cathead svg path { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ed-subhead { padding: 0; }
+.ed-subbtn { display: flex; align-items: center; justify-content: space-between; width: 100%; height: 25px; padding: 0 12px 0 8px;
+  border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
+.ed-subbtn svg { width: 11px; height: 7px; }
+.ed-subbtn svg path { fill: none; stroke: #dadada; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.ed-submenu { position: absolute; left: 0; right: 0; top: 25px; z-index: 3; box-shadow: 0 6px 14px rgba(0,0,0,.5); }
+.ed-subopt { position: relative; display: flex; align-items: center; width: 100%; height: 25px; padding: 0 10px 0 14px; border: 0;
+  background: #2b2b2c; color: #d2d2d2; font: 500 12.5px/1 var(--lp-list); text-align: left; cursor: pointer; }  /* → #242425 */
+.ed-subopt:hover:not(.cur) { background: #343435; }
+.ed-subopt.cur { background: #4a4a4a; color: #fff; }                                                          /* → #3e3e3e */
+.ed-subopt.cur::before { content: ""; position: absolute; left: 5px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; border-radius: 50%; background: #fff; }
+/* "None" as HX Edit: "× (empty block)" entry (highlighted when the block is
+   empty); the empty block's panel is just the blank tab bar */
+.ed-colhead-blank { background: transparent; }  /* None: no models header (HX) */
+.ed-item.ed-empty, .ed-item.ed-empty.cur, .ed-item.ed-empty:hover { background: none; color: #9a9a9a; } /* → #929292 */
+.ed-item.ed-empty.cur { background: #2d2d2d; color: #fff; cursor: default; } /* → #282828 */
+.ed-item.ed-empty svg path { stroke: #a2a2a2; stroke-width: 1.8; } /* → #9a9b9b */
+.ac-blank { flex: 1; background: #393b3c; } /* → #323435 */
+/* EDIT | AUTOMATION/CONTROLLER ASSIGN as HX Edit: on the #1b1b1b frame, two
+   halves 2px apart; active #323232 25px tall merging into a 3px #323232
+   band, inactive #272726 23px; condensed caps #cacaca / #aaaaaa */
+.editors { grid-template-rows: auto 1fr; background: #1d1d1d; }                 /* frame → #1b1b1b */
+.ed-tabs { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; align-items: start; height: 33px;
+  padding-top: 5px; border-bottom: 3px solid #393939; background: #1d1d1d; }      /* band → #323232 */
+.ed-tab { height: 23px; padding: 0; border: 0; border-radius: 0; background: #2c2c2b; color: #b2b2b2;    /* → #272726 / #aaaaaa */
+  font: 600 12.5px/1 var(--lp-cond); letter-spacing: .02em; text-transform: uppercase; cursor: pointer; }
+.ed-tab.cur { height: 25px; background: #393939; color: #d0d0d0; cursor: default; }                     /* → #323232 / #cacaca */
+.ed-cats, .ed-models, .ed-params { background: #0c0c0c; }                        /* → #0f0f0f */
+.ed-auto { display: none; grid-column: 1 / -1; background: #0c0c0c; }
+.editors.auto .ed-col { display: none; }
+.editors.auto .ed-auto { display: block; }
+/* block header as HX Edit: one bar, icon + model name on the left, power on
+   the right (amp, cab — no power — and FX blocks) */
+.ac-title { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; padding: 0 10px; background: #393939;  /* → #323232 */
+  color: #fff; font: 500 12.5px/1 var(--lp-list); }
+.ac-title span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ac-title svg { flex: none; width: 16px; height: 16px; }
+.ac-title svg path { fill: none; stroke: var(--cat); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ac-tabs + .params { padding-top: 12px; }
+/* a cab set to None stays in the chain, dimmed (disabled) */
+.chain .blk:not(.on) .blk-ac { fill: #5b606a; }
+/* tempo sync clock (HX Edit): after the steppers; grey = free time/speed,
+   white = following the tap tempo as a note value */
+.prm-sync { display: grid; place-items: center; width: 16px; height: 16px; margin-left: 2px; padding: 0; border: 0; background: none; color: #7e7d7e; cursor: pointer; } /* → #737172 */
+.prm-sync svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; }
+.prm-sync:hover { color: #fff; }
+.prm-sync.on { color: #fff; } /* HX: white when synced, never the block colour */
+/* a block with tempo clocks (HX Edit): all rows end at the same x, the
+   clocks sit in their own column to the right */
+.params.has-sync { padding-right: 48px; }
+.params.has-sync .prm { position: relative; }
+.params.has-sync .prm-sync { position: absolute; right: -30px; top: -1px; margin: 0; }
+/* amp thumbnails in the model list (in place of the dot) */
+.ed-models .ed-item .amp-ico { flex: none; width: 30px; height: 20px; }
+/* two-option switch (HX Edit, e.g. Dimension SW1–SW4): label left, a 20px
+   two-button switch right; 1px black frame, ~48px halves; chosen = block
+   colour with dark text, the other #1d1d1d with text in the block colour */
+.prm.prm-switch { height: 37px; align-content: center; }
+.prm-switch .seg { display: inline-flex; padding: 1px; gap: 1px; border-radius: 4px; background: #000; }
+.prm-switch .seg button { flex: none; width: 47px; min-width: 0; height: 18px; padding: 0; border: 0; border-radius: 3px; background: #1f1f1f;   /* → #1d1d1d */
+  color: var(--cat); font: 500 11px/18px var(--lp-list); letter-spacing: 0; white-space: nowrap; overflow: hidden; cursor: pointer; }
+.prm-switch .seg button:hover:not(.cur) { background: #2a2a2a; color: var(--cat); }
+.prm-switch .seg button.cur { background: var(--cat); color: #000; cursor: default; }
+/* HX-style category glyphs (32×32, drawn in currentColor): the category
+   colour; dimmed with the row in the category list; grey on blocks that are off */
+.ic32 { color: var(--cat); }
+.ed-cats .ed-item .ic32 { color: inherit; }
+.chain .blk .blk-icon.ic32 { color: #6b7079; }
+.chain .blk.on .blk-icon.ic32 { color: var(--cat); }
+.chain .amp-empty .blk-icon.ic32 { color: #4a4e57; }
+/* HX glyph size: measured ~20% larger than our first 16px (Helix ≈ 12–14px
+   of ink in lists) */
+.ed-item svg.ic32, .ed-colhead svg.ic32, .ac-title svg.ic32 { width: 19px; height: 19px; margin: 0 -1.5px; }
+/* chain blocks as HX Edit: no coloured box — a thin 1px frame, light grey
+   (#757575) when the block is on, dark (#242425) when off; the box keeps the
+   stage colour (it hides the wire behind it); colour only in the icon */
+.chain .blk-box { fill: #101115; stroke: #28292b; stroke-width: 1; vector-effect: non-scaling-stroke; }   /* → #242425 */
+.chain .blk.on .blk-box { fill: #101115; stroke: #808080; }                                               /* → #757575 */
+/* selection as HX Edit: no extra outer ring — the block's own 1px frame turns
+   white (no background change: user preference) */
+.chain .blk.sel .blk-sel, .flow-stage:not(.dragging) .chain .blk:hover:not(.sel) .blk-sel { stroke: transparent; } /* the drop target ring stays while dragging */
+.chain .blk.sel .blk-box { stroke: #fff; stroke-width: 2; } /* only the frame (2px to stand out); the box keeps the stage colour */
+.chain .blk:hover:not(.sel) .blk-box { stroke: #b0b0b0; }
+.chain .slot-empty.sel rect:not(.blk-sel), .chain .amp-empty.sel .amp-empty-box { stroke: #fff; stroke-width: 2; }
+.chain .slot-empty:hover:not(.sel) rect:not(.blk-sel), .chain .amp-empty:hover:not(.sel) .amp-empty-box { stroke: #b0b0b0; }
+/* hover controls above a block (HX Edit): power and ×, white, shown only
+   while the mouse is over the block (replaces the old red LED) */
+.chain .blk-hover { opacity: 0; transition: opacity .12s; }
+.chain .blk:hover .blk-hover { opacity: 1; }
+.flow-stage.dragging .chain .blk-hover { opacity: 0; }
+.chain .blk-hover-hit { fill: transparent; stroke: none; }
+.chain .blk-ctl { cursor: pointer; }
+.chain .blk-ctl rect { fill: transparent; stroke: none; }
+.chain .blk-ctl path { fill: none; stroke: #e6e6e6; stroke-width: 1.5; stroke-linecap: round; }
+.chain .blk-ctl:hover path { stroke: #fff; stroke-width: 1.8; }
+.flow-stage.dragging svg.chain { overflow: visible; } /* the dragged block can leave the chain's box */
+/* faded copy left at the dragged block's place (flow.js followPointer) */
+.chain .blk.blk-ghost { opacity: .3; pointer-events: none; }
+/* amp drop zones: how many paths the preset will have there */
+.chain .drop-zone .dz-label { fill: var(--accent); font-size: 8.5px; font-weight: 700; letter-spacing: .06em; text-anchor: middle; pointer-events: none; opacity: .75; }
+.chain .drop-zone.drop-hover .dz-label { opacity: 1; fill: #fff; }
+.chain .drop-zone .dz-icon { color: var(--accent); pointer-events: none; }
+/* "+" between the Amp and Cab labels: red like the amp-cab link, grey when not linked */
+.chain .amp-plus { fill: #6f7480; font: 700 10px/1 var(--font); text-anchor: middle; pointer-events: none; }
+.chain .amp-plus.on { fill: #dc0012; }
+/* footswitch assignment under a block: smaller than the block names */
+.chain .blk-fs.blk-fsw { font-size: 7px; font-weight: 600; letter-spacing: .05em; }
+
+/* Tempo Sync menu (clock button left of tap tempo), like the HX's */
+.hxh-tswrap { flex: none; }
+.hxh-icon#tsync-btn[aria-expanded="true"] { color: #fff; }
+.hxh .menu.hxh-tsmenu { top: 100%; left: auto; right: 0; min-width: 150px; padding: 0; border: 0; border-radius: 0; background: #282829; box-shadow: 0 4px 14px rgba(0,0,0,.55); }
+.hxh-tsmenu button { justify-content: flex-start; gap: 8px; height: 26px; padding: 0 8px; border-radius: 0; color: #c8c8c8; font: 400 13px/1 var(--lp-list); }
+.hxh-tsmenu button svg { width: 15px; height: 15px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.hxh-tsmenu button.cur { color: #fff; font-weight: 500; }
+.hxh-tsmenu button:hover:not(:disabled) { background: #474747; color: #fff; }
+.hxh-tsmenu button:disabled { color: #5a5a5a; }
+/* the Tempo Sync in use: a check mark on the right */
+.hxh-tsmenu button.cur::after { content: ""; margin-left: auto; width: 9px; height: 5px; border: solid #fff; border-width: 0 0 2px 2px; transform: translateY(-2px) rotate(-45deg); }
+.hxh-tsmenu button.cur { background: #353536; }
+
+/* ---------- Header and Signal Flow, HX Edit 2026-11-07 ---------- */
+/* show / hide the presets panel: "<≡" while shown, "≡>" while hidden */
+.hxh-lptoggle { flex: none; width: 30px; height: 29px; margin-left: 2px; display: grid; place-items: center; padding: 0; border: 0; background: none; color: #d1d1d1; cursor: pointer; }
+.hxh-lptoggle:hover { color: #fff; }
+.hxh-lptoggle svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.hxh-lptoggle[aria-expanded="false"] svg { transform: scaleX(-1); }
+.layout.lp-collapsed { grid-template-columns: 0 1fr; column-gap: 0; padding-left: 12px; }
+.layout.lp-collapsed .lp { display: none; }
+.layout.lp-collapsed .hxh { margin-left: -12px; }
+
+/* "…" of the preset box (preset actions) */
+.hxh-pmwrap { flex: none; position: relative; }
+.hxh-more { width: 22px; height: 22px; display: grid; place-items: center; padding: 0; border: 0; background: none; color: #c8c8c8; cursor: pointer; }
+.hxh-more:hover:not(:disabled), .hxh-more[aria-expanded="true"] { color: #fff; }
+.hxh-more:disabled { color: #5a5a5a; cursor: default; }
+.hxh-more svg { width: 19px; height: 19px; }
+.hxh-more .ring { fill: none; stroke: currentColor; stroke-width: 1.5; }
+.hxh-more circle:not(.ring) { fill: currentColor; }
+.hxh .menu.hxh-pmenu { top: calc(100% + 4px); left: auto; right: -8px; min-width: 170px; padding: 0; border: 0; border-radius: 0; background: #282829; box-shadow: 0 4px 14px rgba(0,0,0,.55); }
+.hxh-pmenu button { height: 26px; padding: 0 10px; border-radius: 0; color: #d1d1d1; font: 400 13px/1 var(--lp-list); }
+.hxh-pmenu button:hover:not(:disabled) { background: #474747; color: #fff; }
+.hxh-pmenu button:disabled { color: #5a5a5a; }
+.hxh-pmenu hr { width: auto; margin: 0; border: 0; border-top: 1px solid #3a3a3b; }
+
+/* Signal Flow: one dark panel holding the chain (no title row), as HX Edit */
+.flow-view { padding: 0; gap: 0; background: #101115; border: 0; border-radius: 3px; }
+.flow-stage { min-height: 236px; padding: 18px 12px; border: 0; border-radius: 3px; background: transparent; }
+/* HX Edit: panels sit on a #1b1b1b background (the flow #0f0f0f stands out
+   from it); square-ish corners, no outlines */
+.layout { background: #1d1d1d; }                                     /* → #1b1b1b */
+.flow-view { background: #0c0c0c; border-radius: 2px; }             /* → #0f0f0f */
+.editors { border: 0; border-radius: 0; }
+/* Input editor: column header like the others; the grid button fits the 25px row */
+.ed-inhead .ed-grid { width: 22px; height: 22px; margin-right: -4px; }
+.ed-inhead > svg path { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+/* "Input 1" header on the column's own dark (HX: #0f0f0f), so the Input |
+   Variax tabs next to it stand out (inactive #191919, active #323232) */
+.ed-colhead.ed-colhead-dark { background: #0c0c0c; }                 /* → #0f0f0f */
+
+/* Tap tempo as HX Edit: no blinking LED; the BPM box is the button */
+.hxh .bpm-field { width: 56px; cursor: pointer; }
+.hxh .bpm-field:hover:not(:has(input:disabled)) { background: #474747; }
+.hxh .bpm-field.hit { background: #5a5a5a; }
+.hxh .bpm-field input:not(:focus) { cursor: pointer; }
+#tsync-icon { display: grid; place-items: center; }
+
+/* ---------- BYPASS/CONTROLLER ASSIGN (HX Edit) ---------- */
+.editors.auto .ed-auto { display: block; min-height: 0; overflow: hidden; }
+.as-wrap { display: grid; grid-template-columns: 380px 1fr; height: 100%; min-height: 0; }
+.as-list { overflow-y: auto; border-right: 2px solid #1d1d1d; font: 400 12.5px/1 var(--lp-list); }
+.as-cols, .as-row { display: grid; grid-template-columns: 1.25fr 1fr 1fr; align-items: center; gap: 6px; padding: 0 10px; text-align: left; }
+.as-cols { position: sticky; top: 0; height: 25px; background: #1a1a1a; color: #d0d0d0; font-weight: 500; }  /* → #191919 */
+.as-cols span:not(:first-child), .as-row span:not(:first-child) { text-align: center; }
+.as-row { width: 100%; height: 26px; border: 0; background: none; color: #c8c8c8; font: inherit; cursor: pointer; }
+.as-row span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.as-row .as-blk { color: var(--cat); }
+.as-row:hover { background: #1f1f1f; }
+.as-row.cur { background: #393939; color: #fff; }                    /* → #323232 */
+.as-none { margin: 14px 12px; color: #757575; }
+.as-detail { min-width: 0; overflow-y: auto; }
+.as-assign { flex: 1; min-width: 0; display: flex; background: #393939; }
+.as-assign .as-select { flex: 1; height: 25px; background-color: transparent; color: var(--cat); }
+.as-select { min-width: 150px; height: 24px; padding: 0 26px 0 8px; border: 0; border-radius: 0; background: #393939 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1.5 1.5 6 6l4.5-4.5' fill='none' stroke='%23cfcfcf' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 8px center / 10px 7px;
+  color: #e6e6e6; font: 400 12.5px/1 var(--lp-list); -webkit-appearance: none; appearance: none; cursor: pointer; }
+.as-select:focus { outline: none; box-shadow: inset 0 0 0 1px #808080; }
+.as-note { margin: 6px 24px 14px; color: #757575; font: 400 12px/1.4 var(--lp-list); }
+
+/* assignment rows: the whole row in the block's category colour (HX) */
+.as-row span { color: var(--cat); }
+.as-row.cur { color: var(--cat); }
+/* its right-click menu */
+.editors { position: relative; }
+.menu.as-menu { position: absolute; z-index: 30; min-width: 170px; padding: 0; border: 0; border-radius: 0; background: #282829; box-shadow: 0 4px 14px rgba(0,0,0,.55); }
+.as-menu button { height: 26px; padding: 0 12px; border-radius: 0; color: #d1d1d1; font: 400 13px/1 var(--lp-list); }
+.as-menu button:hover { background: #474747; color: #fff; }
+
+/* HX-style dropdowns of the assign page */
+.as-dd { position: relative; min-width: 160px; }
+.as-assign .as-dd { flex: 1; }
+.as-dd-btn { width: 100%; height: 25px; display: flex; align-items: center; gap: 8px; padding: 0 10px; border: 0; background: #393939;  /* → #323232 */
+  color: #e6e6e6; font: 400 12.5px/1 var(--lp-list); text-align: left; cursor: pointer; }
+.as-assign .as-dd-btn { background: transparent; color: var(--cat); font-weight: 500; }
+.as-dd-btn span { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.as-dd-btn svg { flex: none; width: 11px; height: 8px; fill: none; stroke: #cfcfcf; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.as-dd-list { position: absolute; z-index: 25; top: 100%; left: 0; right: 0; max-height: 300px; overflow-y: auto; padding: 0; background: #282828;
+  box-shadow: 0 6px 16px rgba(0,0,0,.6); }
+.as-dd-list[hidden] { display: none; }
+.as-dd-list button { position: relative; display: block; width: 100%; height: 24px; padding: 0 10px 0 22px; border: 0; background: none;
+  color: #d0d0d0; font: 400 12.5px/24px var(--lp-list); text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; }
+.as-dd-list button:hover { background: #3a3a3a; color: #fff; }
+.as-dd-list button.cur { background: #393939; color: #fff; font-weight: 500; }
+.as-dd-list button.cur::before { content: ""; position: absolute; left: 9px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; border-radius: 50%; background: #fff; }
+.as-dd-list button.on { color: var(--cat); }
+.as-dd-list::-webkit-scrollbar { width: 8px; }
+.as-dd-list::-webkit-scrollbar-thumb { background: #808080; border-radius: 4px; }
+.prm-switch .as-dd { width: 170px; }
+.as-detail { overflow: visible; } /* the open dropdown list must not be clipped */
+/* assignment rows of the block selected in the chain: tinted with its colour (HX) */
+.as-row.mine { background: color-mix(in srgb, var(--cat) 22%, #0f0f0f); }
+.as-row.mine:hover { background: color-mix(in srgb, var(--cat) 30%, #0f0f0f); }
+.as-row.mine.cur { background: color-mix(in srgb, var(--cat) 40%, #0f0f0f); }
+.as-row.mine span { color: color-mix(in srgb, var(--cat) 60%, #fff); }
+/* measured on HX Edit: the selected block's rows #1b0103 (its colour ~12% on
+   black, not grey), text in the plain category colour */
+.as-row.mine { background: color-mix(in srgb, var(--cat) 12%, #000); }
+.as-row.mine:hover { background: color-mix(in srgb, var(--cat) 17%, #000); }
+.as-row.mine.cur { background: color-mix(in srgb, var(--cat) 22%, #000); }
+.as-row.mine span { color: var(--cat); }
+/* assignment table grid, measured on HX Edit: three equal columns, 1px
+   #242425 lines between cells and rows, a black line under the header,
+   25px rows; the open assignment ends with a ">" */
+.as-cols, .as-row { grid-template-columns: 1fr 1fr 1fr; gap: 0; padding: 0; }
+.as-cols { border-bottom: 1px solid #000; }
+.as-row { height: 25px; border-bottom: 1px solid #2a2a2b; }          /* → #242425 */
+.as-cols span, .as-row span { height: 100%; display: flex; align-items: center; justify-content: center; padding: 0 8px; border-right: 1px solid #2a2a2b; min-width: 0; }
+.as-cols span:last-child, .as-row span:last-child { border-right: 0; }
+.as-row span { display: block; line-height: 24px; text-align: center; }
+.as-row.cur span:last-child { position: relative; padding-right: 18px; }
+.as-row.cur span:last-child::after { content: "›"; position: absolute; right: 7px; top: 0; color: #fff; font-size: 17px; line-height: 23px; }
+.as-row:not(.mine):not(.cur) { background: #0c0c0c; }                /* → #0f0f0f */
+/* the open assignment: grey #424445 (HX), text keeps the block's colour */
+.as-row.cur, .as-row.mine.cur { background: #4a4c4d; }               /* → #424445 */
+
+/* header: the sort column #191919, white, with the sort arrow; the others black, grey (HX) */
+.as-cols { background: #000; }
+.as-cols button { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; gap: 0; padding: 0 8px; border: 0;
+  border-right: 1px solid #000; background: #000; color: #a8a8a8; font: 500 12.5px/1 var(--lp-list); cursor: pointer; }
+.as-cols button:last-child { border-right: 0; }
+.as-cols button:hover { color: #e0e0e0; }
+.as-cols button.on { background: #1a1a1a; color: #fff; font-weight: 600; }   /* → #191919 */
+.as-cols button svg { position: absolute; right: 10px; top: 50%; width: 11px; height: 8px; margin-top: -4px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* assign header panel, measured on HX Edit: #171717 panel, two 22px rows
+   12px apart; dropdowns #252525 to the right edge; "Controller" in a small
+   #252525 box; the block name bare at the left */
+.as-head { margin: 2px 1px 0; padding: 2px 10px 0 10px; background: #181818; }                 /* → #171717 */
+.as-hrow { display: flex; align-items: center; gap: 1px; height: 22px; }
+.as-hrow + .as-hrow { margin-top: 12px; }
+.as-head { padding-bottom: 0; height: 58px; box-sizing: border-box; }
+.as-blk-title { flex: none; display: flex; align-items: center; gap: 7px; padding-right: 12px; color: #d0d0d0; font: 500 12.5px/1 var(--lp-list); }
+.as-blk-title svg { width: 18px; height: 18px; color: var(--cat); }
+.as-blk-title svg path { fill: none; stroke: var(--cat); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.as-blk-title svg.ic32 { width: 19px; height: 19px; }
+.as-head .as-assign { flex: 1; min-width: 0; background: none; }
+.as-head .as-dd { flex: 1; min-width: 0; }
+.as-head .as-dd-btn { height: 22px; background: #2a2a2a; color: #d0d0d0; font-weight: 400; }   /* → #252525 */
+.as-head .as-assign .as-dd-btn { color: var(--cat); font-weight: 600; }
+.as-hlabel { flex: none; width: 60px; height: 22px; display: flex; align-items: center; justify-content: center; background: #2a2a2a;
+  color: #8e8e8e; font: 400 11px/1 var(--lp-list); }
+.as-head + .params, .as-head + .as-note { margin-top: 10px; }
+/* rows of the assign header, measured on HX Edit: each on its own #171717
+   band; a 1px #0f0f0f line between them, a 1px #3b3b3b line under the second */
+.as-head { height: auto; padding: 0; background: none; }
+.as-hrow { height: auto; padding: 2px 10px; background: #181818; }             /* → #171717 */
+.as-hrow + .as-hrow { margin-top: 0; padding: 9px 10px 8px; }
+.as-hrow:first-child { border-bottom: 1px solid #0c0c0c; }                     /* → #0f0f0f */
+.as-hrow:last-child { border-bottom: 1px solid #424242; }                      /* → #3b3b3b */
+/* HX Edit: the assignment list on #0f0f0f, the detail side on #171717 */
+.as-list { background: #0c0c0c; border-right: 0; }                   /* → #0f0f0f */
+.as-detail { background: #181818; }                                   /* → #171717 */
+
+/* MIDI In: fixed on the HD500, shown read-only in the block's colour (HX) */
+.as-midi .prm-name { color: var(--cat); }
+.as-midi .prm.ro { cursor: default; }
+.as-midi .prm.ro .prm-bar { opacity: .55; }
+
+.as-midi .prm-step button:disabled { cursor: default; }
+/* arrows keep their colour on hover (HX Edit): value steppers, the preset
+   stepper in the header and the tuner's Reference */
+.prm-step button:hover, .prm-step button:disabled { color: var(--cat); }
+.hxh-step button:hover:not(:disabled) { color: #d1d1d1; }
+.tuner-ref-step button:hover { color: #d1d1d1; }
+/* BPM box while typing: no golden outline (HX: just the selected text) */
+.hxh .bpm-field:focus-within, .hxh .bpm-field.dragging, .hxh .bpm-field.flash { box-shadow: none; border-color: transparent; }
+/* header right, measured on HX Edit: tuner 29px, 4px, tempo menu 39px, 1px,
+   BPM; the BPM's right edge lines up with the Signal Flow panel below */
+.hxh { padding-right: 12px; }
+.hxh-right { gap: 4px; }
+.hxh-right #tuner-btn { width: 29px; }
+.hxh-right #tsync-btn { width: 39px; }
+.hxh-tswrap { margin-right: -3px; }
+/* signal flow: icons without their halo and with lighter lines (at that
+   size the halo and full strokes read as bold) */
+.chain .blk-icon .ic-halo { display: none; }
+.chain .blk-icon .ic-main { stroke-width: 1.5px !important; }
+.chain .blk-icon .ic-thin { stroke-width: 1px !important; }
+/* the Wah icon in the signal flow: a little fainter */
+.chain .blk-icon .ic-main, .chain .blk-icon .ic-thin { opacity: .78; }
+/* the Modulation icon in the signal flow: fainter and a bit taller
+   (stretched around the middle; lines keep their width) */
+.chain .blk-icon .ic-mod { opacity: .8; transform: scaleY(1.18); transform-origin: 16px 16px; vector-effect: non-scaling-stroke; }
+/* a block that is off is see-through (HX Edit): the signal line shows
+   passing behind it */
+.chain .blk:not(.on) .blk-box { fill: none; }
+.chain .blk.blk-ghost .blk-box { fill: none; }
+/* still clickable / draggable inside the frame without a fill */
+.chain .blk:not(.drag-src):not(.blk-ghost) .blk-box { pointer-events: all; }
+/* a block that is off keeps its colour, faint (HX Edit: Dyn #e5cc3a shows
+   ~#9e8b31): icon and its labels in the category colour at low strength */
+.chain .blk:not(.on) .blk-icon.ic32 { color: color-mix(in srgb, var(--cat) 55%, #0f0f0f); }
+.chain .blk:not(.on) .blk-icon path { stroke: color-mix(in srgb, var(--cat) 55%, #0f0f0f); }
+.chain .blk:not(.on) .blk-ac { fill: color-mix(in srgb, var(--cat) 55%, #0f0f0f); }
+.chain .amp-empty .blk-icon.ic32 { color: #4a4e57; }
+.chain .amp-empty .blk-ac { fill: #5b606a; }
+/* the dropdown list in plain colours (HX): only the bar shows the block's */
+.as-dd-list button.on { color: #d0d0d0; }
+.as-dd-list button.on:hover, .as-dd-list button.cur { color: #fff; }
+.as-midi + .params, .params + .as-midi { margin-top: 10px; }
+/* the open row's ">" sits over the cell's right padding: the Source text
+   stays centred where it is in the other rows */
+.as-row.cur span:last-child { padding-right: 8px; }
+/* any assignment row under the mouse gets its block's colour behind (HX) */
+.as-row:not(.cur):not(.mine):hover { background: color-mix(in srgb, var(--cat) 12%, #000); }
+
+/* ---------- MIDI window (HX Edit Command Center layout) ---------- */
+#midi-btn svg circle.f { fill: currentColor; stroke: none; }
+#midi-btn svg { stroke-width: 1.6; }
+.mc-overlay { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; background: rgba(0,0,0,.6); }
+.mc-overlay[hidden] { display: none; }
+.mc { width: min(980px, calc(100vw - 32px)); display: flex; flex-direction: column; background: #1d1d1d; box-shadow: 0 12px 40px rgba(0,0,0,.7); }
+.mc-top { position: relative; height: 40px; display: flex; align-items: center; justify-content: center; }
+.mc-title { position: absolute; left: 14px; color: #cacaca; font: 600 12.5px/1 var(--lp-cond); letter-spacing: .04em; text-transform: uppercase; }
+.mc-snap { height: 24px; display: flex; align-items: center; gap: 8px; padding: 0 12px 0 4px; border: 0; background: #393939; color: #5a5a5a; font: 400 12.5px/1 var(--lp-list); }
+.mc-snap b { display: grid; place-items: center; width: 16px; height: 16px; background: #555; color: #1d1d1d; font-size: 11px; }
+.mc-body { display: grid; grid-template-columns: 1fr 320px; gap: 2px; min-height: 330px; }
+.mc-grid { display: grid; grid-template-columns: repeat(7, 1fr); grid-template-rows: repeat(2, 1fr); gap: 2px; padding: 2px; background: #0c0c0c; }
+.mc-cell { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; border: 0; background: #1a1a1a; color: #8e8e8e; cursor: pointer; font: 500 12px/1 var(--lp-list); }
+.mc-cell svg { width: 30px; height: 30px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.mc-cell:hover { background: #222; color: #cfcfcf; }
+.mc-cell.on { color: #d0d0d0; }
+.mc-cell.sel { background: #393939; color: #fff; }
+.mc-cell .mc-tri { position: absolute; top: 10px; width: 0; height: 0; border: 6px solid transparent; border-top: 0; border-bottom: 8px solid #2fbf71; opacity: 0; }
+.mc-cell.on .mc-tri { opacity: 1; }
+.mc-insp { background: #181818; overflow-y: auto; }
+.mc-ihead { display: flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; background: #252525; color: #e6e6e6; font: 500 13px/1 var(--lp-list); }
+.mc-ihead svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.mc-insp .params { padding-top: 10px; --cat: #2fbf71; }
+.mc-insp .prm-switch .as-dd { width: 160px; }
+.mc-foot { display: flex; justify-content: flex-end; padding: 8px 10px; }
+.mc-done { height: 26px; padding: 0 22px; border: 0; background: #393939; color: #e6e6e6; font: 500 12.5px/1 var(--lp-cond); text-transform: uppercase; cursor: pointer; }
+.mc-done:hover { background: #474747; }
+.mc-empty { margin: auto; color: #757575; }
+
+/* EXP Toe: switch symbol + a fork that reaches down to EXP 1 / EXP 2 */
+.mc-cell.wide svg { width: 44px; height: 33px; }
+.mc-cell .mc-fork { position: absolute; left: 25%; right: 25%; bottom: -3px; height: 12px; border: 1.5px solid currentColor; border-bottom: 0; opacity: .55; pointer-events: none; z-index: 1; }
+.mc-cell .mc-fork::after { content: ""; position: absolute; left: 50%; top: -9px; height: 9px; border-left: 1.5px solid currentColor; }
+.mc-cell.wide .mc-tri { left: auto; }
+/* EXP 1 / EXP 2: big treadles */
+.mc-cell[data-pedal] svg.mc-pedal { width: 44px; height: 82px; stroke-width: 1.3; }
+.mc-cell[data-pedal] { gap: 6px; padding-top: 14px; }
+.mc-body { min-height: 380px; }
+
+/* EXP Toe (wide cell): toggle switch at the top, its name at the top left,
+   a line from the pins down to EXP 1 / EXP 2 (through the cells' gap) */
+.mc-cell.wide { justify-content: flex-start; padding-top: 12px; }
+.mc-cell.wide > span { position: absolute; left: 10px; top: 10px; }
+.mc-cell.wide svg.mc-toe { width: 30px; height: 50px; }
+.mc-toe .lever { stroke-width: 2.6; }
+.mc-cell .mc-stem { position: absolute; left: 50%; top: 61px; bottom: 34%; border-left: 1.5px solid currentColor; opacity: .6; pointer-events: none; }
+.mc-cell .mc-fork { top: 66%; bottom: -3px; height: auto; opacity: .6; }
+.mc-cell .mc-fork::after { display: none; }
+.mc-cell.wide svg.mc-toe { width: 36px; height: 60px; }
+.mc-cell .mc-stem { top: 71px; }
+/* shorter MIDI window: less empty space around the controls */
+.mc-body { min-height: 0; height: 268px; }
+.mc-cell[data-pedal] svg.mc-pedal { width: 38px; height: 70px; }
+.mc-cell[data-pedal] { padding-top: 10px; }
+.mc-cell .mc-tri { top: 8px; }
+.mc-cell.wide { padding-top: 8px; }
+.mc-cell.wide svg.mc-toe { width: 32px; height: 52px; }
+.mc-cell .mc-stem { top: 59px; bottom: 30%; }
+.mc-cell .mc-fork { top: 70%; }
+
+/* DSP limit reached */
+.dsp-alert { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 6; display: flex; flex-direction: column; align-items: center; gap: 14px;
+  padding: 18px 28px; background: #000; border: 2px solid #dc0012; color: #dc0012; text-align: center; cursor: pointer; }
+.dsp-alert[hidden] { display: none; }
+.dsp-alert b { font: 700 15px/1 var(--lp-list); letter-spacing: .02em; }
+.dsp-alert span { font: 400 12.5px/1.3 var(--lp-list); }
+.chain .blk.dsp-over .blk-ac { fill: #dc0012 !important; font-size: 7.5px; }
+.chain .blk.dsp-over .blk-box { stroke: #dc0012; stroke-dasharray: 3 2; }
+.dsp-note { display: flex; flex-direction: column; gap: 6px; margin: 16px 24px; color: #dc0012; font: 400 12.5px/1.4 var(--lp-list); }
+.dsp-note b { font-weight: 700; }
+
+/* connection LED: amber when the pedal stopped taking data */
+.brand-mark[data-state="stalled"] { background: #f5a524; box-shadow: 0 0 10px #f5a524; }
+/* any connection problem shows red (user, 2026-11-08), stalled included */
+.brand-mark[data-state="stalled"] { background: var(--bad); box-shadow: 0 0 10px var(--bad); }
+
+/* list parameter values open a dropdown (HX Edit) */
+.prm-val.prm-dd { cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
+.prm-val.prm-dd svg { width: 7px; height: 5px; fill: currentColor; }
+.as-dd-list.prm-ddmenu { position: fixed; z-index: 60; left: 0; right: auto; top: 0; min-width: 140px; color: var(--cat, #d0d0d0); }
+.prm-ddmenu button { color: var(--cat, #d0d0d0); }
+.prm-ddmenu button:hover { color: #fff; }
+.prm-ddmenu button.cur { color: var(--cat, #fff); }
+.prm-ddmenu button.cur::before { background: var(--cat, #fff); }

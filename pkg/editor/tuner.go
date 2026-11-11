@@ -79,7 +79,7 @@ func (s *Session) readTunerSettings() {
 
 // SetTunerReference sets the tuner reference (Hz) and reads it back.
 func (s *Session) SetTunerReference(hz int) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if hz < MinTunerRef || hz > MaxTunerRef {
@@ -90,7 +90,7 @@ func (s *Session) SetTunerReference(hz int) error {
 
 // SetTunerMute sets the tuner output: true Mute, false Bypass.
 func (s *Session) SetTunerMute(mute bool) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	v := uint32(0)
@@ -130,7 +130,7 @@ func (st *State) applyTunerGlobal(id, v uint32) {
 
 // SetTuner turns the pedal's tuner on or off.
 func (s *Session) SetTuner(on bool) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	v := uint32(0)

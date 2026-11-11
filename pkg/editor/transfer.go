@@ -95,7 +95,7 @@ func (s *Session) progress(label string, set, done, total int) {
 // Send writes the changed presets in scope to the pedal's memory.
 func (s *Session) Send(req TransferRequest) (TransferResult, error) {
 	var res TransferResult
-	if s.client == nil {
+	if s.cli() == nil {
 		return res, ErrOffline
 	}
 	refs, err := s.targets(req)
@@ -217,7 +217,7 @@ func (s *Session) writeSlotVerified(set, slot int, body []byte) error {
 // it is reloaded too (the caller confirmed discarding those edits).
 func (s *Session) Receive(req TransferRequest) (TransferResult, error) {
 	var res TransferResult
-	if s.client == nil {
+	if s.cli() == nil {
 		return res, ErrOffline
 	}
 	refs, err := s.targets(req)

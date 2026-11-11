@@ -1,0 +1,70 @@
+/* MIDI window (HX Edit Command Center layout): refinements for the new UI
+   (base rules live in styles/classic.css). */
+html:has(> body > #root > .icon-gallery),
+body:has(> #root > .icon-gallery) {
+  height: auto;
+  min-height: 100%;
+}
+
+.mc {
+  border-radius: 5px;
+}
+
+.mc-snap,
+.mc-snap:disabled {
+  border-radius: 4px;
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mc-done {
+  border-radius: 4px;
+}
+
+.mc-insp {
+  overflow: visible;
+}
+
+.icon-gallery .mc-static-stage {
+  margin: 8px 0 24px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.mc-cell.wide svg.mc-toe {
+  margin-top: 14px;
+}
+
+.mc-cell .mc-stem {
+  top: calc(59px + 14px);
+}
+
+
+/* Inspector title as a control picker (icon, name, caret). */
+.mc-ihead-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  height: 100%;
+  margin: 0 -12px;
+  padding: 0 20px 0 12px; /* right edge lines up with the rows' arrows */
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.mc-ihead-btn:hover,
+.mc-ihead-btn[aria-expanded="true"] {
+  background: #303030;
+}
+.mc-ihead .mc-caret {
+  margin-left: auto;
+  width: 8px;
+  height: 5px;
+  fill: currentColor;
+  stroke: none;
+}

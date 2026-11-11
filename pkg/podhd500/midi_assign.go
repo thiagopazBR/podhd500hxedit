@@ -2,9 +2,14 @@ package podhd500
 
 // MIDI Assign (MOVE held > MIDI ASSIGN on the pedal; the original editor's
 // MIDI ASSIGN pane): what each footswitch / pedal SENDS on MIDI OUT, stored
-// per preset. 13 controls × 6 bytes from 0xD84, in the LCD's order
-// FS1–FS8, LOOPER, TAP, EXP TOE, EXP 1, EXP 2. Learned 2026-11-08 by diffing
-// the edit buffer while the user edited it on the pedal (LCD-verified):
+// per preset. 13 controls × 6 bytes from 0xD84. The storage order is the order
+// of the LCD's MIDI ASSIGN screen read row by row: FS1–FS4, LOOPER, EXP TOE,
+// FS5–FS8, TAP, EXP 1, EXP 2 (CORRECTED 2026-11-10: it was FS1–FS8, LOOPER,
+// TAP, EXP TOE, ...). Verified on the pedal by correlating the 0x34 events with
+// webcam photos of the LCD (FS2/FS3 note+velocity, LPR CC 99, EXP TOE channel),
+// and by the defaults (EXP TOE = CC 59 at index 5, TAP = CC 64 at index 10).
+// Byte layout learned 2026-11-08 by diffing the edit buffer while the user
+// edited it on the pedal:
 //   byte 0  message (switches): 0 CC Toggle, 1 CC, 2 Prog Change, 3 Bank Change, 4 Note On
 //   byte 1  channel: 0x10 None (control sends nothing), 0x11 Base, 0..15 = 1..16
 //   byte 2  CC # / program / bank / note
@@ -20,8 +25,8 @@ const (
 	MIDIChannelBase  = 0x11
 )
 
-// MIDIControlNames, in storage order.
-var MIDIControlNames = [MIDIAssignCount]string{"FS1", "FS2", "FS3", "FS4", "FS5", "FS6", "FS7", "FS8", "Looper", "Tap", "EXP Toe", "EXP 1", "EXP 2"}
+// MIDIControlNames, in storage order (= the LCD screen, row by row).
+var MIDIControlNames = [MIDIAssignCount]string{"FS1", "FS2", "FS3", "FS4", "Looper", "EXP Toe", "FS5", "FS6", "FS7", "FS8", "Tap", "EXP 1", "EXP 2"}
 
 // MIDIMessageOptions (switches) and MIDIChannelOptions in the LCD's order.
 var (

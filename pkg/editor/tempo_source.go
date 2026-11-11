@@ -25,7 +25,7 @@ var TempoSyncOptions = []podhd500.Option{{Value: 1, Label: "Global"}, {Value: 0,
 // The pedal then reports the tempo in use (setup 0x17), which updates
 // State.Tempo.
 func (s *Session) SetTempoSource(value uint32) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	if !podhd500.ValidOption(TempoSyncOptions, value) {

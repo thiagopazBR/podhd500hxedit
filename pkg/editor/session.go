@@ -98,7 +98,8 @@ type waiter struct {
 
 // Session is safe for concurrent use.
 type Session struct {
-	client usb.Client // nil when offline
+	clientp atomic.Pointer[clientHolder] // nil when offline; Attach sets it later
+	onLost  atomic.Pointer[func()]       // called after the pedal is lost
 
 	reqMu sync.Mutex // one request/response exchange at a time
 
@@ -132,10 +133,35 @@ type Session struct {
 	selectedAt atomic.Int64
 }
 
+type clientHolder struct{ c usb.Client }
+
+// cli returns the current client, or nil while offline.
+func (s *Session) cli() usb.Client {
+	if h := s.clientp.Load(); h != nil {
+		return h.c
+	}
+	return nil
+}
+
+// Attach connects an offline session to a client that opened later (the pedal
+// was powered on or plugged in after the editor started). The caller then
+// runs Refresh, as at startup.
+func (s *Session) Attach(c usb.Client) {
+	s.clientp.Store(&clientHolder{c})
+	s.update(func(st *State) {
+		st.Connected = true
+		st.Error = ""
+	})
+	go s.dispatch()
+}
+
 // NewSession wraps an open client (or nil for offline mode, with offlineErr
 // explaining why).
 func NewSession(c usb.Client, offlineErr error) *Session {
-	s := &Session{client: c, subs: map[chan State]struct{}{}}
+	s := &Session{subs: map[chan State]struct{}{}}
+	if c != nil {
+		s.clientp.Store(&clientHolder{c})
+	}
 	s.st.globalTempo = loadGlobalTempo()
 	if c == nil {
 		s.st.Error = fmt.Sprint(offlineErr)
@@ -186,10 +212,32 @@ func (s *Session) update(f func(*State)) {
 // dispatch is the only reader of the client's channel. It must never block on
 // a request (replies arrive through it), so event follow-ups run in goroutines.
 func (s *Session) dispatch() {
-	for m := range s.client.RecvChan() {
+	c := s.cli()
+	for m := range c.RecvChan() {
 		if !s.deliver(m) {
 			s.onEvent(m)
 		}
+	}
+	// The client closed its channel: the pedal went away (power-off, cable, USB reset).
+	s.lost(c)
+}
+
+// SetOnLost registers what to do after the pedal is lost (main starts the reconnect loop).
+func (s *Session) SetOnLost(f func()) { s.onLost.Store(&f) }
+
+// lost marks the session offline, releases the dead client and calls OnLost.
+func (s *Session) lost(c usb.Client) {
+	if s.cli() != c {
+		return
+	}
+	s.clientp.Store(nil)
+	s.update(func(st *State) {
+		st.Connected = false
+		st.Error = "POD HD500 disconnected"
+	})
+	go c.Close()
+	if f := s.onLost.Load(); f != nil && *f != nil {
+		go (*f)()
 	}
 }
 
@@ -215,7 +263,7 @@ func (s *Session) deliver(m *usb.SPSIMessage) bool {
 
 // request sends spsi and waits for the first message with command want.
 func (s *Session) request(spsi []byte, want uint8, timeout time.Duration) (*usb.SPSIMessage, error) {
-	if s.client == nil {
+	if s.cli() == nil {
 		return nil, ErrOffline
 	}
 	s.reqMu.Lock()
@@ -234,7 +282,7 @@ func (s *Session) request(spsi []byte, want uint8, timeout time.Duration) (*usb.
 		}
 		s.waitMu.Unlock()
 	}
-	if err := s.client.SendSPSI(spsi); err != nil {
+	if err := s.cli().SendSPSI(spsi); err != nil {
 		remove()
 		s.noteWrite(err)
 		return nil, err
@@ -252,12 +300,12 @@ func (s *Session) request(spsi []byte, want uint8, timeout time.Duration) (*usb.
 }
 
 func (s *Session) send(spsi []byte) error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	s.reqMu.Lock()
 	defer s.reqMu.Unlock()
-	err := s.client.SendSPSI(spsi)
+	err := s.cli().SendSPSI(spsi)
 	s.noteWrite(err)
 	return err
 }
@@ -620,7 +668,7 @@ type Global struct {
 // Globals reads the given STATUS ids; ids the pedal doesn't answer are
 // skipped. refs/hd500-editor reports that ids 0..0x25 respond.
 func (s *Session) Globals(ids []uint32) ([]Global, error) {
-	if s.client == nil {
+	if s.cli() == nil {
 		return nil, ErrOffline
 	}
 	var out []Global
@@ -684,7 +732,7 @@ func (s *Session) SetInput(id, value uint32) error {
 // panel. Unlike Refresh it doesn't read the edit buffer, which would make
 // the LCD show "SYNC IN PROGRESS".
 func (s *Session) RefreshGlobals() error {
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	is, haveIS := s.readGlobal(podhd500.GlobalInputsSetup)
@@ -720,7 +768,7 @@ func (s *Session) justSelected() bool {
 
 // ReadStatus reads one pedal-wide STATUS id (debugging: GET /api/debug/status).
 func (s *Session) ReadStatus(id uint32) (uint32, bool) {
-	if s.client == nil {
+	if s.cli() == nil {
 		return 0, false
 	}
 	return s.readGlobal(id)

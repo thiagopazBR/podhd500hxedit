@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helix Reference</title>
+<style>
+  :root { color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #111; color: #ccc; font: 12px/1.4 system-ui, sans-serif; }
+  body { display: grid; grid-template-columns: 1fr 340px; }
+  #view { overflow: auto; display: grid; place-items: center; background: #000; }
+  #view img { max-width: 100%; max-height: 100vh; display: block; }
+  #msg { padding: 24px; text-align: center; color: #888; }
+  aside { border-left: 1px solid #333; display: flex; flex-direction: column; min-height: 0; }
+  header { padding: 8px; display: flex; gap: 6px; flex-wrap: wrap; border-bottom: 1px solid #333; }
+  select, input, button { background: #222; color: #ddd; border: 1px solid #444; padding: 4px 6px; font: inherit; }
+  #filter { flex: 1; min-width: 0; }
+  #params { overflow: auto; flex: 1; }
+  .p { padding: 4px 8px; border-bottom: 1px solid #1d1d1d; }
+  .p .n { display: flex; justify-content: space-between; gap: 8px; }
+  .p .v { color: #fff; font-variant-numeric: tabular-nums; }
+  .p input[type=range] { width: 100%; padding: 0; }
+</style>
+</head>
+<body>
+<!-- Development page: Helix Native running in REAPER, as the visual reference
+     for the UI (needs HD500_DEBUG=1 and tools/reaper/hd500_bridge.lua). -->
+<main id="view"><div id="msg">Waiting for the Helix Native window…</div></main>
+<aside>
+  <header>
+    <select id="fx" aria-label="Plugin"></select>
+    <button id="show" type="button">Open window</button>
+    <input id="filter" type="search" placeholder="Filter parameters">
+    <label><input id="live" type="checkbox" checked> Live</label>
+  </header>
+  <div id="params"><div id="pmsg" class="p">Run hd500_bridge.lua in REAPER to list parameters.</div></div>
+</aside>
+<script>
+"use strict";
+const $ = (id) => document.getElementById(id);
+let state = { fx: [] }, cur = null, dragging = false;
+
+async function shot() {
+  if ($("live").checked) {
+    const r = await fetch("/dev/helix/shot.png?t=" + Date.now()).catch(() => null);
+    if (r && r.ok) {
+      const url = URL.createObjectURL(await r.blob());
+      let img = $("view").querySelector("img");
+      if (!img) { $("view").innerHTML = ""; img = document.createElement("img"); img.alt = "Helix Native"; $("view").append(img); }
+      const old = img.src; img.src = url; if (old) URL.revokeObjectURL(old);
+    } else if (r) {
+      $("view").innerHTML = `<div id="msg">${await r.text()}</div>`;
+    }
+  }
+  setTimeout(shot, 400);
+}
+
+const key = (f) => f.track + ":" + f.fx;
+
+async function params() {
+  const r = await fetch("/dev/helix/params").catch(() => null);
+  if (r && r.ok) {
+    state = await r.json();
+    const sel = $("fx"), want = sel.value;
+    const opts = state.fx.map((f) => `<option value="${key(f)}">${f.trackName || "Track " + (f.track + 1)} › ${f.name}</option>`).join("");
+    if (sel.innerHTML !== opts) sel.innerHTML = opts;
+    const pick = state.fx.find((f) => key(f) === want) || state.fx.find((f) => /helix/i.test(f.name)) || state.fx[0];
+    if (pick) sel.value = key(pick);
+    cur = pick || null;
+    if (!dragging) render();
+  } else if (r) {
+    $("params").innerHTML = `<div class="p">${await r.text()}</div>`;
+  }
+  setTimeout(params, 500);
+}
+
+function render() {
+  if (!cur) { $("params").innerHTML = '<div class="p">No plugins in the project.</div>'; return; }
+  const q = $("filter").value.toLowerCase();
+  const rows = cur.params.filter((p) => !q || p.name.toLowerCase().includes(q));
+  $("params").innerHTML = rows.map((p) =>
+    `<div class="p"><div class="n"><span>${p.i}. ${p.name}</span><span class="v">${p.shown}</span></div>` +
+    `<input type="range" min="0" max="1" step="0.001" value="${p.value}" data-i="${p.i}" aria-label="${p.name}"></div>`).join("");
+}
+
+function send(cmd) {
+  return fetch("/dev/helix/cmd", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(cmd) });
+}
+
+$("params").addEventListener("pointerdown", () => { dragging = true; });
+addEventListener("pointerup", () => { dragging = false; });
+$("params").addEventListener("input", (e) => {
+  const i = Number(e.target.dataset.i);
+  if (cur && e.target.type === "range") send({ op: "set", track: cur.track, fx: cur.fx, param: i, value: Number(e.target.value) });
+});
+$("filter").addEventListener("input", render);
+$("fx").addEventListener("change", () => { cur = state.fx.find((f) => key(f) === $("fx").value) || null; render(); });
+$("show").addEventListener("click", () => { if (cur) send({ op: "show", track: cur.track, fx: cur.fx }); });
+
+shot();
+params();
+</script>
+</body>
+</html>

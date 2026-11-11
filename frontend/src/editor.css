@@ -1,0 +1,52 @@
+/* Block editor styles of the new UI only (the rest comes from the classic style.css). */
+.ed-auto .next-todo { padding: 16px; color: #8a8f99; font-size: 12px; }
+.ed-auto .next-todo a { color: #c9ccd1; }
+
+/* ---- HX grid view of the models (amps): categories become a dropdown in
+   the header, the models a grid of large pictures across both columns */
+.ed-cathead .ed-grid { width: 22px; height: 22px; margin-right: -4px; }
+.ed-listbtn svg path { fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+.editors.gridview { grid-template-columns: 380px 1fr; }
+.editors.gridview .ed-cats { display: none; }
+.editors.gridview .ed-subhead { display: grid; grid-template-columns: 1fr 26px 1fr; align-items: center; }
+.ed-gridcat { position: relative; min-width: 0; }
+.ed-catbtn { display: flex; align-items: center; gap: 8px; width: 100%; height: 25px; padding: 0 8px; border: 0; background: none;
+  color: var(--cat); font: inherit; cursor: pointer; text-align: left; }
+.ed-catbtn span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ed-catbtn svg:not(:last-child) { width: 16px; height: 16px; flex: none; }
+.ed-catbtn > svg:last-child { width: 11px; height: 7px; flex: none; }
+.ed-catbtn > svg:last-child path { fill: none; stroke: #dadada; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.ed-catmenu { right: auto; min-width: 100%; }
+.editors.gridview .ed-subhead .ed-listbtn { margin: 0; justify-self: center; width: 22px; height: 22px; }
+.editors.gridview .ed-subhead > div:last-child, .editors.gridview .ed-subhead > .ed-subbtn { position: relative; }
+.ed-tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; padding: 10px 8px 16px; }
+.ed-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 8px 4px 10px; border: 0; border-radius: 4px;
+  background: none; color: #d6d6d6; font: 12px/1.2 var(--font); cursor: pointer; }
+.ed-tile:hover { background: rgba(255,255,255,.05); }
+.ed-tile.cur { background: rgba(255,255,255,.1); color: #fff; }
+.ed-tile svg.amp-art { width: 128px; height: 90px; }
+.editors.gridview .ed-subhead > .ed-submenu { left: calc(50% + 13px); }
+.ed-tile img.gear-pic { width: 128px; height: 90px; object-fit: contain; }
+
+/* changing a model: no dimming (HX doesn't); the picked model is selected at
+   once and the editor only ignores clicks until the preset is read back */
+.editors.ed-busy { opacity: 1; cursor: progress; }
+
+/* ---- Editor frame, measured on Helix Native: the columns sit in a #0f0f0f
+   well with a 3px #323232 frame; the active tab (#323232) runs into the
+   frame, the inactive one (#272725) stops 2px short of it. */
+.editors { position: relative; padding: 0 3px 3px; row-gap: 3px; background: transparent; grid-template-rows: 26px 1fr; }
+.editors::after { content: ""; position: absolute; left: 0; right: 0; top: 26px; bottom: 0; border: 3px solid #323232; pointer-events: none; z-index: 4; }
+.editors > .ed-tabs { margin: 0 -3px; height: 26px; padding: 0; border: 0; gap: 2px; align-items: start; background: transparent; }
+.editors .ed-tab { height: 24px; background: #272725; color: #aaaaaa; }
+.editors .ed-tab.cur { height: 29px; background: #323232; color: #cacaca; position: relative; z-index: 5; }
+.editors > .ed-col, .editors > .ed-auto { background-color: #0f0f0f; }
+
+/* one flat #1b1b1b around the panels (Helix): no seam above the tabs */
+.layout { background: #1b1b1b; }
+/* slightly rounded corners, as Helix: tabs on top, frame at the bottom */
+.editors .ed-tab { border-radius: 4px 4px 0 0; }
+.editors::after { border-radius: 0 0 5px 5px; }
+.editors > .ed-col:last-of-type, .editors > .ed-params { border-bottom-right-radius: 3px; }
+.editors > .ed-cats { border-bottom-left-radius: 3px; }
+.layout > .editors, .layout > .presets { box-shadow: none; } /* the classic panel shadow drew a seam over the tabs */

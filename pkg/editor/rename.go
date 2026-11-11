@@ -45,7 +45,7 @@ func (s *Session) Rename(set, slot int, name string) error {
 	if err != nil {
 		return err
 	}
-	if s.client == nil {
+	if s.cli() == nil {
 		return ErrOffline
 	}
 	s.lib.mu.Lock()

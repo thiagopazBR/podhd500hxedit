@@ -24,6 +24,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"sync/atomic"
 	"time"
 
 	"podhd500-edit/pkg/editor"
@@ -38,17 +39,46 @@ func main() {
 	// HD500_USB_DEBUG=1: also log every raw USB packet the pedal sends (reverse engineering)
 	usb.Debug = os.Getenv("HD500_USB_DEBUG") == "1"
 	addr := flag.String("addr", "127.0.0.1:8500", "Listen address (keep it on localhost)")
-	noOpen := flag.Bool("no-open", false, "Don't open the browser automatically")
+	// The browser is NOT opened by default (it opened the default browser —
+	// Safari — on every restart). -open opens the page in the given app,
+	// e.g. -open "Google Chrome for Testing".
+	openApp := flag.String("open", "Google Chrome for Testing", "browser app that opens the editor page at start (never the system default); -open= to open none")
 	flag.Parse()
 
 	var sess *editor.Session
+	var connecting atomic.Bool
+	// connectLoop keeps trying until the pedal opens: it may be powered on or plugged in after
+	// the editor started (or came back after a power cycle); the l6-rebind daemon frees its
+	// interface by itself.
+	connectLoop := func() {
+		if !connecting.CompareAndSwap(false, true) {
+			return
+		}
+		defer connecting.Store(false)
+		for {
+			time.Sleep(2 * time.Second)
+			c, cerr := usb.OpenDirectClient(usb.DefaultDirectOptions)
+			if cerr != nil {
+				continue
+			}
+			log.Printf("POD HD500 conectada")
+			sess.Attach(c)
+			if rerr := sess.Refresh(); rerr != nil {
+				log.Printf("leitura inicial do pedal falhou: %v", rerr)
+			}
+			return
+		}
+	}
 	dc, err := usb.OpenDirectClient(usb.DefaultDirectOptions)
 	if err != nil {
-		log.Printf("modo offline: %v (se for 0xe00002c5: sudo ./bin/l6-rebind release)", err)
+		log.Printf("modo offline: %v (se for 0xe00002c5: sudo ./bin/l6-rebind release, ou instale o daemon uma vez: sudo ./bin/l6-rebind install)", err)
 		sess = editor.NewSession(nil, err)
+		sess.SetOnLost(func() { connectLoop() })
+		go connectLoop()
 	} else {
 		defer dc.Close()
 		sess = editor.NewSession(dc, nil)
+		sess.SetOnLost(func() { log.Printf("POD HD500 desconectada: tentando reconectar"); connectLoop() })
 		// Read the pedal in the background: the UI is served at once (it
 		// follows the state over SSE) even if the first read is slow.
 		go func() {
@@ -232,6 +262,8 @@ func main() {
 		writeJSON(w, sess.State())
 	})
 	if os.Getenv("HD500_DEBUG") == "1" {
+		registerDevHelix(mux) // Helix Native in REAPER as the UI reference (devhelix.go)
+		registerDevNext(mux)  // the new UI from disk (devnext.go)
 		// raw edit buffer (4096 bytes, pedal byte order), for reverse engineering
 		mux.HandleFunc("/api/debug/buffer", func(w http.ResponseWriter, r *http.Request) {
 			b := sess.BufferCopy()
@@ -861,8 +893,8 @@ func main() {
 
 	appURL := "http://" + *addr + "/"
 	fmt.Println("POD HD500 Edit em", appURL, "(Ctrl+C para sair)")
-	if !*noOpen {
-		go func() { time.Sleep(300 * time.Millisecond); _ = exec.Command("open", appURL).Run() }()
+	if *openApp != "" {
+		go func() { time.Sleep(300 * time.Millisecond); _ = exec.Command("open", "-a", *openApp, appURL).Run() }()
 	}
 	srv := &http.Server{Addr: *addr, Handler: mux, ReadHeaderTimeout: 5 * time.Second}
 	if err := srv.ListenAndServe(); err != nil {
