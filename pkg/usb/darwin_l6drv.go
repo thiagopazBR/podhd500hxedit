@@ -6,7 +6,6 @@ import (
 	"encoding/binary"
 	"encoding/hex"
 	"fmt"
-	"os"
 	"runtime"
 	"sync"
 	"unsafe"
@@ -139,17 +138,6 @@ func initFrameworks() error {
 		globalAsyncCallback = purego.NewCallback(drvMsgAsyncCallback)
 	})
 	return initErr
-}
-
-// Debug enables raw logging (stderr) of every async callback delivered by the
-// Line 6 kext, before any filtering. Use it to tell "hardware sent nothing"
-// apart from "we received it and dropped it".
-var Debug bool
-
-func debugf(format string, args ...any) {
-	if Debug {
-		fmt.Fprintf(os.Stderr, "[DEBUG] "+format+"\n", args...)
-	}
 }
 
 // drvMsgAsyncCallback matches IOKit IOAsyncCallback:

@@ -1,0 +1,14 @@
+[Unit]
+Description=POD HD500 snapshot player
+After=local-fs.target
+
+[Service]
+User=pod
+SupplementaryGroups=plugdev audio
+ExecStart=/home/pod/snap/hd500-snap -dir /home/pod/snap -midi CH345
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

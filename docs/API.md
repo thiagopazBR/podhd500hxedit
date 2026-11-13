@@ -103,6 +103,32 @@ Notes on the pedal's behaviour:
   changes don't.
 - Values are shown by the pedal rounded (e.g. 0.875 → 88%).
 
+## Snapshots
+
+The POD HD500 has no snapshots. The editor keeps 4 per preset in JSON files
+outside the pedal (`~/Library/Application Support/POD HD500 Edit X/snapshots/` (one file per preset, e.g. `set2-2B.snapshots.json` = setlist 2, slot 2B)),
+never inside the preset or the `.h5e` files. A snapshot stores the on/off state
+of each block and the parameter values of the blocks the preset already has; it
+never changes a model. Cabs are not stored (the HD500 "turns a cab off" with
+the model *No Cab*, a model change); parameters driven by EXP/Variax or synced
+to the tempo are not stored. The feature is off by default.
+
+A file belongs to a preset by setlist + slot + name: if the name at that slot
+differs (setlist reordered, preset renamed), the snapshots are not applied.
+Applying sends only the differences, through the same writers as the other
+edit-buffer calls, but does not mark the preset dirty (no asterisk): snapshots
+are a live layer, and "Save to Pedal" only sends dirty presets. A preset that
+was already dirty stays dirty. The editor never applies a snapshot by itself;
+the `hd500-snap` player does (see [RASPBERRY.md](RASPBERRY.md)).
+
+| Method | Path | Body | Effect |
+|---|---|---|---|
+| GET | `/api/snapshots` | | `{enabled, preset: {setlist, slot, name}, slots: [4 × {saved, name?}], mismatch?}` for the loaded preset |
+| POST | `/api/snapshots/enabled` | `{enabled}` | turn the feature on/off (nothing is deleted). 204 |
+| POST | `/api/snapshots/save` | `{slot: 1..4, name?, replace?}` | store the current state of the edit buffer in the slot (nothing is sent to the pedal). If the file of this slot names another preset (renamed/moved) the save is refused (400) unless `replace: true`, which deletes that file's other snapshots. 204 |
+| POST | `/api/snapshots/apply` | `{slot: 1..4}` | send the differences to the pedal, in order: blocks off, parameters, blocks on. `{changes, skipped?}`: frames sent, and the blocks left alone because they are gone or have another model than when saved |
+| POST | `/api/snapshots/prepare-midi` | `{switches?: [{control, number}]}` | write the MIDI Assign that triggers the live player into the loaded preset's edit buffer: CC `number` (value 127, base channel) on each `control`. Default FS5–FS8 (controls 6–9) = CC 80–83. Whether those footswitches send MIDI depends on the pedal's footswitch mode (check on the LCD). 204 |
+
 ## Library (stored presets)
 
 | Method | Path | Body | Effect |

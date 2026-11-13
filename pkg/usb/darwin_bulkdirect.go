@@ -388,20 +388,3 @@ func (c *ControlInterface) Close() {
 	comCall(c.intf, vtUSBInterfaceClose)
 	comCall(c.intf, vtRelease)
 }
-
-// BuildMonitorLevelMsg returns the raw control message the Linux podhd driver
-// sends to set the USB playback ("Monitor Playback Volume") level, 0.0..1.0.
-// Layout (refs/podhd_linux.c podhd_set_monitor_level): 4-byte chunk header
-// [len=0x0c, 0, first=0x01, 0] followed by a 12-byte message whose last word
-// is a little-endian float32.
-func BuildMonitorLevelMsg(level float32) []byte {
-	msg := []byte{
-		0x0c, 0x00, 0x01, 0x00,
-		0x02, 0x00, 0x04, 0x41,
-		0x04, 0x00, 0x13, 0x00,
-		0, 0, 0, 0,
-	}
-	bits := *(*uint32)(unsafe.Pointer(&level))
-	msg[12], msg[13], msg[14], msg[15] = byte(bits), byte(bits>>8), byte(bits>>16), byte(bits>>24)
-	return msg
-}

@@ -43,6 +43,8 @@ as a small local web app: one Go binary that serves the UI on `http://127.0.0.1:
 - **MIDI Assign**: what each footswitch and pedal sends on MIDI OUT
 - **Setlists and presets**: load, rename, copy/move, send/receive, import/export
   `.h5e` / `.h5s` / `.h5b`, backups
+- **Live snapshots** (4 per preset, optional): switch blocks and parameters from the
+  pedal's own footswitches with a Raspberry Pi, see [below](#live-snapshots)
 - **An HTTP API** with everything the UI does: see [docs/API.md](docs/API.md)
 
 <table>
@@ -54,11 +56,13 @@ as a small local web app: one Go binary that serves the UI on `http://127.0.0.1:
 
 ## Quick start
 
-**Requirements:** macOS (Apple Silicon or Intel) and a POD HD500 connected by USB. The
-Line 6 driver may stay installed for audio.
+**Requirements:** macOS (Apple Silicon or Intel), a POD HD500 connected by USB, and to
+build it [Go](https://go.dev/dl/) 1.23+ and [Node](https://nodejs.org/) 20+ (Node builds the
+new interface; without it only the classic one at `/` works). The Line 6 driver may stay
+installed for audio.
 
 ```sh
-scripts/build.sh                # vet, tests and binaries in bin/
+scripts/build.sh                # installs the UI deps once, then vet, tests and binaries in bin/
 sudo ./bin/l6-rebind install    # ONE TIME ONLY (survives reboots and pedal power-ons)
 ./bin/hd500-edit                # serves http://127.0.0.1:8500/
 ```
@@ -121,12 +125,24 @@ and never talks to the pedal. All the logic lives behind the API, so other clien
 - **Mute or Bypass** the output while you tune
 - Also on the HTTP API (`POST /api/tuner`), see [docs/API.md](docs/API.md)
 
+## Live snapshots
+
+The HD500 has no snapshots, so this project adds four per preset. You author them in
+the editor (header **Snapshot** menu, off until you turn it on): a snapshot stores which
+blocks are on and the parameter values of the blocks the preset already has. It never
+changes a model, and applying one never writes to the pedal's flash.
+
+To trigger them from the pedal, FS5–FS8 send MIDI CC 80–83 to a small program,
+`hd500-snap`, that applies the snapshot. It runs on the computer or, for a stage rig, on a
+Raspberry Pi (USB through usbfs, MIDI through ALSA, systemd at boot). Setup, flags and
+troubleshooting: [docs/RASPBERRY.md](docs/RASPBERRY.md). API: [docs/API.md](docs/API.md#snapshots).
+
 ## Status and limitations
 
 Not available yet, or not possible over USB:
 
 - Undo / Redo
-- Snapshots: the HD500 has none, so the Snapshot button is only a placeholder
+- Snapshots are an add-on, off by default: see [Live snapshots](#live-snapshots)
 - Looper position (Pre / Post) and Global EQ: the pedal doesn't expose them over USB
 
 ## Acknowledgements

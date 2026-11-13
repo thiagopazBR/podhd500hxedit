@@ -1,11 +1,12 @@
 // Header (HX Edit layout, POD HD500 features): presets-panel toggle, preset
-// stepper + name + "…" menu, snapshots (a dimmed placeholder: the HD500 has none),
+// stepper + name + "…" menu, snapshots (Snapshots.tsx: off by default, the HD500 has none),
 // app name with the connection
 // LED, MIDI, tuner, Tempo Sync, tap tempo / BPM.
 import { useLayoutEffect, useRef, useState } from "react";
 import { post } from "../api";
 import { useEditor } from "../store";
 import { MenuWrap, useMenu } from "./Menu";
+import { Snapshots } from "./Snapshots";
 import { Tempo } from "./Tempo";
 import { usePresets, type PresetAct } from "../presets";
 
@@ -112,12 +113,7 @@ export function Header({ panelOpen, onTogglePanel, onOpenPanel, onOpenMidi }: { 
         </MenuWrap>
       </div>
 
-      {/* Snapshots: the HD500 has none (planned for later): shown dimmed and not clickable */}
-      <div className="hxh-snapwrap">
-        <button type="button" className="hxh-box hxh-snap" disabled title="Snapshots (not available yet)">
-          <span className="snap-num"><CameraIcon /><b>1</b></span><span>SNAPSHOT 1</span>
-        </button>
-      </div>
+      <Snapshots />
 
       <div className={`brand hxh-brand brand-${brandMode}`}>
         <span className="brand-mark" data-state={led} role="img" aria-label={led === "online" ? "Connected" : led === "stalled" ? "Not responding" : "Offline"} title={ledTip} />

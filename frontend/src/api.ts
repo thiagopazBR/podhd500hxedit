@@ -88,6 +88,14 @@ export interface PresetView {
   midi?: MidiAssign[];
 }
 
+/** GET /api/snapshots: the snapshots of the loaded preset (docs/API.md, "Snapshots"). */
+export interface SnapshotsView {
+  enabled: boolean;
+  preset: { setlist: number; slot: number; name: string };
+  slots: { saved: boolean; name?: string }[];
+  mismatch?: string;
+}
+
 export interface ModelGroup { name: string; kind: "fx" | "amp" | "cab"; models: { type: number; name: string; basedOn?: string; none?: boolean }[] }
 
 export async function apiError(res: Response): Promise<Error> {

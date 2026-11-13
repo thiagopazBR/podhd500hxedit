@@ -131,6 +131,12 @@ type Session struct {
 	// selectedAt: UnixNano of the last preset/setlist selection (event or
 	// our own STATUS_SET): a PRESET_LOAD right after it is the stored version.
 	selectedAt atomic.Int64
+
+	// Snapshots (snapshots.go): snapDir overrides the folder of the snapshot
+	// files; snapPlayer (the live player, cmd/hd500-snap) plays them without
+	// the editor's on/off switch. Both are set once at start-up.
+	snapDir    string
+	snapPlayer bool
 }
 
 type clientHolder struct{ c usb.Client }

@@ -842,6 +842,97 @@ func main() {
 		}
 		writeJSON(w, sess.State())
 	})
+	// Snapshots (pkg/snapshot): kept in files outside the pedal; see docs/API.md.
+	mux.HandleFunc("/api/snapshots", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			http.Error(w, "GET", http.StatusMethodNotAllowed)
+			return
+		}
+		v, err := sess.Snapshots()
+		if err != nil {
+			httpError(w, err)
+			return
+		}
+		writeJSON(w, v)
+	})
+	mux.HandleFunc("/api/snapshots/enabled", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "POST", http.StatusMethodNotAllowed)
+			return
+		}
+		var req struct {
+			Enabled bool `json:"enabled"`
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		if err := sess.SetSnapshotsEnabled(req.Enabled); err != nil {
+			httpError(w, err)
+			return
+		}
+		w.WriteHeader(http.StatusNoContent)
+	})
+	mux.HandleFunc("/api/snapshots/save", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "POST", http.StatusMethodNotAllowed)
+			return
+		}
+		var req struct {
+			Slot    int    `json:"slot"` // 1..4
+			Name    string `json:"name"`
+			Replace bool   `json:"replace"` // overwrite the file of another preset at this slot
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		if err := sess.SaveSnapshot(req.Slot, req.Name, req.Replace); err != nil {
+			httpError(w, err)
+			return
+		}
+		w.WriteHeader(http.StatusNoContent)
+	})
+	mux.HandleFunc("/api/snapshots/apply", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "POST", http.StatusMethodNotAllowed)
+			return
+		}
+		var req struct {
+			Slot int `json:"slot"` // 1..4
+		}
+		if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+			http.Error(w, err.Error(), http.StatusBadRequest)
+			return
+		}
+		res, err := sess.ApplySnapshot(req.Slot)
+		if err != nil {
+			httpError(w, err)
+			return
+		}
+		writeJSON(w, res)
+	})
+	mux.HandleFunc("/api/snapshots/prepare-midi", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "POST", http.StatusMethodNotAllowed)
+			return
+		}
+		// {switches?: [{control, number}]}: default FS5..FS8 = CC 80..83
+		var req struct {
+			Switches []editor.SnapshotMIDI `json:"switches"`
+		}
+		if r.ContentLength != 0 {
+			if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+				http.Error(w, err.Error(), http.StatusBadRequest)
+				return
+			}
+		}
+		if err := sess.PrepareSnapshotMIDI(req.Switches); err != nil {
+			httpError(w, err)
+			return
+		}
+		w.WriteHeader(http.StatusNoContent)
+	})
 	mux.HandleFunc("/api/tuner", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method != http.MethodPost {
 			http.Error(w, "POST", http.StatusMethodNotAllowed)

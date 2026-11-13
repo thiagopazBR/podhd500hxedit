@@ -1,36 +1,17 @@
-//go:build darwin
-
 package usb
 
 import (
 	"fmt"
-	"os"
-	"strings"
 	"sync"
 	"time"
 )
 
-// warnf always reports transport problems (stderr), unlike debugf: a silent
-// failure here means Mac->POD playback quietly stops.
-func warnf(format string, args ...any) {
-	fmt.Fprintf(os.Stderr, "[USB %s] "+format+"\n", append([]any{time.Now().Format("15:04:05.000")}, args...)...)
-}
-
-// Client is the transport-independent API used by the tools: send a complete
-// SPSI message, receive complete SPSI messages.
-type Client interface {
-	SendSPSI(spsi []byte) error
-	RecvChan() <-chan *SPSIMessage
-	Close() error
-}
-
-var (
-	_ Client = (*DriverClient)(nil)
-	_ Client = (*DirectClient)(nil)
-)
+var _ Client = (*DirectClient)(nil)
 
 // DirectClient talks to the POD HD500 control interface (USB interface #1)
-// from user space, bypassing the Line 6 kext's kl6drvmsg layer.
+// from user space. On macOS it bypasses the Line 6 kext's kl6drvmsg layer; on
+// Linux (Raspberry Pi) it uses usbfs. ControlInterface and the error
+// classifiers isAborted/isGone are provided per platform.
 //
 // Requirements found on real hardware (2026-11-03):
 //   - With the kext's bulkpipecomm released, USB playback (Mac audio out of
@@ -61,10 +42,6 @@ type DirectOptions struct {
 	// open and on preset/setlist changes).
 	Keepalive time.Duration
 }
-
-// DefaultDirectOptions keeps Mac playback alive the same way it was verified
-// on hardware (level 1.0, resent every 2s and after preset changes).
-var DefaultDirectOptions = DirectOptions{MonitorLevel: 1.0, Keepalive: 2 * time.Second}
 
 // OpenDirectClient opens interface #1 directly. The Line 6 bulkpipecomm
 // driver must have been released first ('sudo l6-rebind release').
@@ -140,7 +117,7 @@ func (c *DirectClient) SendSPSI(spsi []byte) error {
 	for i, pkt := range pkts {
 		var err error
 		for a := 1; a <= attemptsPerPacket; a++ {
-			if err = c.pacedWrite(pkt); err == nil || !strings.HasSuffix(err.Error(), "0xe00002eb") {
+			if err = c.pacedWrite(pkt); err == nil || !isAborted(err) {
 				break
 			}
 			warnf("pacote %d/%d abortado; repetindo o mesmo pacote (tentativa %d de %d)", i+1, len(pkts), a+1, attemptsPerPacket)
@@ -188,7 +165,7 @@ func (c *DirectClient) readLoop() {
 			if c.stopping() {
 				return
 			}
-			if strings.HasSuffix(err.Error(), "0xe00002eb") {
+			if isAborted(err) {
 				// kIOReturnAborted shows up intermittently under heavy IN
 				// traffic without losing data (the pedal keeps it queued):
 				// post the next read right away, but never spin if it repeats
@@ -206,7 +183,7 @@ func (c *DirectClient) readLoop() {
 			failures++
 			warnf("leitura bulk IN falhou (%d): %v", failures, err)
 			// kIOReturnNotAttached / kIOReturnNoDevice: the device is gone, no point in retrying
-			if strings.HasSuffix(err.Error(), "0xe00002ed") || strings.HasSuffix(err.Error(), "0xe00002c0") {
+			if isGone(err) {
 				warnf("POD HD500 desconectada (%v)", err)
 				return
 			}

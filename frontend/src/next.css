@@ -91,6 +91,20 @@ html { background: #0a0a0a; }
 #root { max-width: 1407px; max-height: 1016px; margin: 0 auto; }
 .layout { height: 100%; }
 .hxh-snap:disabled, .hxh-snap:disabled:hover { color: #d1d1d1; opacity: .4; cursor: not-allowed; }
+/* snapshots off: dimmed but clickable (its menu offers to turn them on) */
+.hxh-snap.off:not(:disabled) { color: #d1d1d1; opacity: .4; }
+.hxh-snap.off:not(:disabled):hover, .hxh-snap.off[aria-expanded="true"] { opacity: .8; }
+.hxh-snapmw { position: relative; }
+.hxh .menu.hxh-snapmenu-wide { min-width: 232px; }
+.hxh-snapmenu .snaprow { display: flex; }
+.hxh-snapmenu .snaprow .snap-apply { flex: 1; min-width: 0; }
+.hxh-snapmenu .snaprow .snap-apply:disabled { opacity: .5; cursor: default; }
+.hxh-snapmenu .snaprow .snap-apply:disabled:hover { background: transparent; color: #d1d1d1; }
+.hxh-snapmenu .snaprow .snap-save { flex: none; padding: 0 10px; color: #9a9a9a; }
+.hxh-snapmenu .snaprow .snap-save:hover { color: #fff; }
+.hxh-snapmenu hr { margin: 4px 0; border: 0; border-top: 1px solid #3a3a3a; }
+.hxh-snapmenu .snap-note { margin: 0; padding: 8px 8px 6px; font: 400 12px/1.35 var(--lp-list); color: #b5b5b5; white-space: normal; }
+.hxh-snapmenu .snap-note.warn { color: #e0b24a; }
 /* block header: the amp/cab thumbnail (as in the models list), with room above and below */
 .ac-title svg.amp-ico { width: 27px; height: 18px; margin: 3px -2px 3px -4px; }  /* the bar is 25px tall: 3px above and below */
 
